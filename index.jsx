@@ -15,9 +15,14 @@ const services = [
 ];
 
 const projects = [
-    { key: "boudjebel", title: "Boudjebel Dashboard", category: "Business Operations Dashboard", text: "A professional dashboard for Boudjebel to manage digital marketing, benchmarks, stock property, sales, products, certifications, registrations, patents, users, and daily operational follow-up." },
     { key: "traveltoko", title: "TravelToko Dashboard", category: "Travel Sales Dashboard", text: "A travel dashboard for bookings, leads, guests, payments, documents, itineraries, follow-ups, revenue, and team activity from one organized control panel." },
-    { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment packages, hotel product positioning, exchange requests, services, and lead generation through WhatsApp and email." }
+    { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment packages, hotel product positioning, exchange requests, services, and lead generation through WhatsApp and email.", url: "https://esmeraldavacation.club/" }
+];
+
+const comingSoonProjects = [
+    { image: "/projects/coming-soon-crm-esmeralda.png", title: "CRM Esmeralda", category: "Coming Soon CRM Dashboard", text: "A sales command center for Esmeralda Vacation Club to manage leads, apartment inventory, payments, exchange activity, and reservation follow-ups." },
+    { image: "/projects/coming-soon-padel-sukabumi.png", title: "Website Padel in Resort Sukabumi", category: "Coming Soon Resort Website", text: "A resort padel website for court booking, guest packages, private coaching, gallery presentation, and premium wellness club positioning." },
+    { image: "/projects/coming-soon-tour-marketplace.png", title: "Travel Tour Marketplace for Travel Tours", category: "Coming Soon Travel Marketplace", text: "A travel marketplace for verified agencies, tour packages, destinations, prices, customer login, seller onboarding, and quotation requests." }
 ];
 
 const packages = [
@@ -357,14 +362,6 @@ function DashboardPreview() {
 }
 
 function ProjectScreenshot({ type }) {
-    if (type === "boudjebel") {
-        return (
-            <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-100 text-slate-950 shadow-2xl shadow-black/20">
-                <img src="/projects/boudjebel-dashboard-screenshot.png" alt="Boudjebel dashboard screenshot" className="h-full w-full object-cover object-left-top" />
-            </div>
-        );
-    }
-
     if (type === "traveltoko") {
         return (
             <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-950 text-white shadow-2xl shadow-black/20">
@@ -413,7 +410,9 @@ function DigitalStudioWebsite() {
 
             <section className="bg-slate-900/70 px-6 py-20 lg:px-20"><div className="mx-auto max-w-7xl"><div className="grid gap-4 md:grid-cols-4">{[{ n: "4", l: "Core services" }, { n: "24/7", l: "Online presence" }, { n: "100%", l: "Custom workflow" }, { n: "Global", l: "Client ready" }].map(function renderStat(item) { return <div key={item.l} className="rounded-3xl border border-white/10 bg-slate-950/60 p-7 text-center"><p className="text-4xl font-black text-cyan-300">{item.n}</p><p className="mt-2 text-sm text-slate-400">{item.l}</p></div>; })}</div></div></section>
 
-            <section id="work" className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Portfolio Screenshots" title="Real project screenshots and dashboard previews." text="Boudjebel Dashboard, TravelToko Dashboard, and the Esmeralda Vacation Club Website are shown as portfolio screenshots so clients can instantly understand the work." /><div className="grid gap-6 lg:grid-cols-3">{projects.map(function renderProject(item, index) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/20"><div className="mb-3 w-fit rounded-2xl bg-white/10 px-3 py-2 text-xs text-cyan-100">Project 0{index + 1}</div><ProjectScreenshot type={item.key} /><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p></div>; })}</div></div></section>
+            <section id="work" className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Portfolio Screenshots" title="Real project screenshots and dashboard previews." text="TravelToko Dashboard and the Esmeralda Vacation Club Website are shown as portfolio screenshots so clients can instantly understand the work." /><div className="grid gap-6 lg:grid-cols-2">{projects.map(function renderProject(item, index) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/20"><div className="mb-3 w-fit rounded-2xl bg-white/10 px-3 py-2 text-xs text-cyan-100">Project 0{index + 1}</div><ProjectScreenshot type={item.key} /><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p>{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-950/30">Visit Website</a> : null}</div>; })}</div></div></section>
+
+            <section id="coming-soon" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Coming Soon" title="New projects currently in the pipeline." text="These upcoming CRM, resort website, and travel marketplace concepts show the next systems PT NusaTech AI Solutions can launch for serious clients." /><div className="grid gap-6 lg:grid-cols-3">{comingSoonProjects.map(function renderComingSoon(item) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-black/20"><div className="mb-5 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-900"><img src={item.image} alt={item.title + " screenshot"} className="h-full w-full object-cover object-left-top" /></div><div className="mb-3 w-fit rounded-2xl bg-cyan-300 px-3 py-2 text-xs font-black text-slate-950">Coming Soon</div><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p></div>; })}</div></div></section>
 
             <section id="marketing" className="bg-gradient-to-b from-slate-950 to-slate-900 px-6 py-24 lg:px-20"><div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2"><div><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Digital Marketing</p><h2 className="text-4xl font-black tracking-tight md:text-5xl">Not only a beautiful website - a complete lead generation system.</h2><p className="mt-6 text-lg leading-8 text-slate-400">We connect premium design with digital marketing strategy: SEO foundations, campaign pages, WhatsApp funnels, content direction, tracking, and CRM lead capture.</p></div><div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"><div className="rounded-3xl bg-slate-950 p-6">{["Website Visitors", "WhatsApp Clicks", "Qualified Leads", "Client Meetings"].map(function renderBar(label, i) { const values = [90, 78, 62, 48]; const growth = [74, 58, 41, 26]; return <div key={label} className="mb-6 last:mb-0"><div className="mb-2 flex justify-between text-sm"><span className="text-slate-300">{label}</span><span className="font-bold text-cyan-300">+{growth[i]}%</span></div><div className="h-3 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-600" style={{ width: String(values[i]) + "%" }} /></div></div>; })}</div></div></div></section>
 
@@ -439,7 +438,8 @@ function DigitalStudioWebsite() {
 
 const tests = [
     { label: "Services section has 4 services", pass: services.length === 4 },
-    { label: "Portfolio has 3 project examples", pass: projects.length === 3 },
+    { label: "Portfolio has 2 project examples", pass: projects.length === 2 },
+    { label: "Coming soon has 3 project examples", pass: comingSoonProjects.length === 3 },
     { label: "Packages section has 3 offers", pass: packages.length === 3 },
     { label: "FAQ has answers", pass: faqs.every(function checkFaq(faq) { return faq.q && faq.a; }) },
     { label: "Logo component is available", pass: typeof Logo === "function" },
