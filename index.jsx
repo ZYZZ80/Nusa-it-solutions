@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 
 const WHATSAPP_DISPLAY = "085770759300";
 const WHATSAPP_URL = "https://wa.me/6285770759300";
-const EMAIL_DISPLAY = "contact@solutions.com";
-const EMAIL_URL = "mailto:azizhannachi80@gmail.com";
+const EMAIL_DISPLAY = "admin@jakartaglobaladviser.com";
+const EMAIL_URL = "mailto:admin@jakartaglobaladviser.com";
 const CONSULTANT_URL = "https://jakartaglobaladviser.com/";
 
 const services = [
@@ -39,9 +39,23 @@ const faqs = [
 ];
 
 const industries = ["Hotels & Resorts", "Travel Agencies", "Vacation Clubs", "Real Estate", "Export Companies", "Consultants", "Retail Brands", "Service Businesses"];
-const heroMetrics = [{ a: "Websites", b: "Premium brand image" }, { a: "Dashboards", b: "Control your operations" }, { a: "Marketing", b: "Generate qualified leads" }];
+const heroMetrics = [{ a: "10+", b: "Projects delivered" }, { a: "3+", b: "Countries served" }, { a: "100%", b: "Custom-built" }];
 const dashboardStats = [{ label: "New Leads", value: "248" }, { label: "Pipeline Value", value: "USD 42K" }, { label: "Conversion", value: "+32%" }];
-const process = [{ num: "01", title: "Business Discovery" }, { num: "02", title: "Premium UI/UX Design" }, { num: "03", title: "Development & Database" }, { num: "04", title: "Launch, Training & Support" }];
+const processSteps = [
+    { num: "01", title: "Business Discovery", desc: "We learn your workflow, clients, goals, and growth gaps before writing a single line of code." },
+    { num: "02", title: "Premium UI/UX Design", desc: "Wireframes and full visual design reviewed and approved by you before development begins." },
+    { num: "03", title: "Development & Database", desc: "Clean, secure code built around your exact data structure, integrations, and business logic." },
+    { num: "04", title: "Launch, Training & Support", desc: "We deploy, train your team, and stay available for improvements after go-live." }
+];
+
+const navLinks = [
+    { href: "#services", label: "Services" },
+    { href: "#work", label: "Work" },
+    { href: "#marketing", label: "Marketing" },
+    { href: "#packages", label: "Packages" },
+    { href: "#consulting", label: "Consulting" },
+    { href: "#contact", label: "Contact" }
+];
 
 const cssRules = [
     "@keyframes spinInfinite { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }",
@@ -78,14 +92,25 @@ const cssRules = [
     ".catShadow { position: absolute; width: 42px; height: 10px; background: rgba(0,0,0,.42); border-radius: 50%; top: 48px; left: 11px; filter: blur(5px); }",
     ".avatarHomeRoof { position: absolute; left: 18px; top: 9px; width: 26px; height: 26px; transform: rotate(45deg); border-left: 2px solid rgba(34,211,238,.75); border-top: 2px solid rgba(34,211,238,.75); background: linear-gradient(135deg, rgba(34,211,238,.22), rgba(37,99,235,.16)); }",
     ".avatarHomeBody { position: absolute; left: 15px; top: 24px; width: 32px; height: 25px; border: 2px solid rgba(34,211,238,.75); border-radius: 8px 8px 10px 10px; background: rgba(15,23,42,.92); box-shadow: inset 0 0 20px rgba(34,211,238,.12); }",
-    ".avatarHomeDoor { position: absolute; left: 27px; top: 34px; width: 9px; height: 15px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #22d3ee, #2563eb); }"
+    ".avatarHomeDoor { position: absolute; left: 27px; top: 34px; width: 9px; height: 15px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #22d3ee, #2563eb); }",
+    "@media (pointer: coarse) { .cat-follower { display: none; } }"
 ];
+
+// Reuse a single AudioContext across calls to avoid browser limits
+let sharedAudioCtx = null;
+function getAudioCtx() {
+    if (!sharedAudioCtx) {
+        const Cls = window.AudioContext || window.webkitAudioContext;
+        if (!Cls) return null;
+        sharedAudioCtx = new Cls();
+    }
+    return sharedAudioCtx;
+}
 
 function playTone(type) {
     try {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContextClass) return;
-        const audio = new AudioContextClass();
+        const audio = getAudioCtx();
+        if (!audio) return;
         const osc = audio.createOscillator();
         const gain = audio.createGain();
         const isMeow = type === "meow";
@@ -228,8 +253,8 @@ function CatFollower() {
             sadTimer.current = window.setTimeout(function resetMood() { setMood("neutral"); }, 3500);
         };
 
-        const onMove = function onMove(event) {
-            const next = { x: event.clientX, y: event.clientY };
+        const updateTarget = function updateTarget(x, y) {
+            const next = { x, y };
             setDirection(next.x >= target.current.x ? "right" : "left");
             target.current = next;
             setSitting(false);
@@ -238,6 +263,16 @@ function CatFollower() {
             if (sadTimer.current) window.clearTimeout(sadTimer.current);
             sitTimer.current = window.setTimeout(function sit() { setSitting(true); }, 900);
             sadTimer.current = window.setTimeout(function becomeSad() { setMood("sad"); }, 6500);
+        };
+
+        const onMove = function onMove(event) {
+            updateTarget(event.clientX, event.clientY);
+        };
+
+        const onTouch = function onTouch(event) {
+            if (event.touches.length > 0) {
+                updateTarget(event.touches[0].clientX, event.touches[0].clientY);
+            }
         };
 
         const onClick = function onClick(event) {
@@ -262,12 +297,14 @@ function CatFollower() {
         };
 
         window.addEventListener("mousemove", onMove);
+        window.addEventListener("touchmove", onTouch, { passive: true });
         window.addEventListener("click", onClick);
         window.addEventListener("scroll", onScroll, { passive: true });
         raf.current = window.requestAnimationFrame(loop);
 
         return function cleanup() {
             window.removeEventListener("mousemove", onMove);
+            window.removeEventListener("touchmove", onTouch);
             window.removeEventListener("click", onClick);
             window.removeEventListener("scroll", onScroll);
             if (sitTimer.current) window.clearTimeout(sitTimer.current);
@@ -283,7 +320,7 @@ function CatFollower() {
     const catClass = ["cat", direction === "left" ? "catLeft" : "", sitting ? "catSit" : "catWalk", "cat-" + mood].join(" ");
 
     return (
-        <>
+        <div className="cat-follower">
             <button type="button" onClick={sendAvatarHome} className="fixed left-4 top-4 z-50 h-16 w-16 rounded-2xl border border-cyan-300/30 bg-slate-950/85 shadow-2xl shadow-cyan-950/40 backdrop-blur transition hover:scale-105 hover:border-cyan-200/70" aria-label="Send avatar home">
                 <span className="avatarHomeRoof" />
                 <span className="avatarHomeBody" />
@@ -299,14 +336,27 @@ function CatFollower() {
                     <div className="catHead"><span className="catFace">{face}</span></div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
 function RobotChat() {
     const [open, setOpen] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(function clickOutsideEffect() {
+        if (!open) return undefined;
+        const handleOutside = function handleOutside(event) {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+        window.addEventListener("mousedown", handleOutside);
+        return function cleanup() { window.removeEventListener("mousedown", handleOutside); };
+    }, [open]);
+
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div ref={containerRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
             {open && (
                 <div className="bubble w-[260px] rounded-3xl border border-white/10 bg-slate-900/90 p-4 shadow-2xl backdrop-blur-xl">
                     <p className="text-sm font-bold text-white">Hello</p>
@@ -365,19 +415,42 @@ function ProjectScreenshot({ type }) {
     if (type === "traveltoko") {
         return (
             <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-950 text-white shadow-2xl shadow-black/20">
-                <img src="/projects/traveltoko-dashboard-screenshot.png" alt="TravelToko dashboard screenshot" className="h-full w-full object-cover object-left-top" />
+                <img src="/projects/traveltoko-dashboard-screenshot.png" alt="TravelToko dashboard screenshot" className="h-full w-full object-cover object-left-top" loading="lazy" />
             </div>
         );
     }
 
     return (
         <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-white/10 bg-stone-50 text-slate-950 shadow-2xl shadow-black/20">
-            <img src="/projects/esmeralda-vacation-club-screenshot.png" alt="Esmeralda Vacation Club website screenshot" className="h-full w-full object-cover object-left-top" />
+            <img src="/projects/esmeralda-vacation-club-screenshot.png" alt="Esmeralda Vacation Club website screenshot" className="h-full w-full object-cover object-left-top" loading="lazy" />
+        </div>
+    );
+}
+
+function MobileMenu({ open, onClose }) {
+    if (!open) return null;
+    return (
+        <div className="mt-3 rounded-3xl border border-white/10 bg-slate-900/95 p-5 shadow-2xl backdrop-blur-xl lg:hidden">
+            <nav className="flex flex-col gap-1">
+                {navLinks.map(function renderLink(link) {
+                    return (
+                        <a key={link.href} href={link.href} onClick={onClose} className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">
+                            {link.label}
+                        </a>
+                    );
+                })}
+            </nav>
+            <div className="mt-4 flex flex-col gap-3 border-t border-white/10 pt-4">
+                <a href="#contact" onClick={onClose} className="rounded-2xl bg-white px-5 py-3 text-center text-sm font-black text-slate-950 transition hover:bg-cyan-100">Start Project</a>
+                <a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-300 px-5 py-3 text-center text-sm font-black text-slate-900 shadow-md shadow-amber-500/25 ring-1 ring-amber-300/40 transition-all hover:from-amber-300 hover:to-yellow-200">Consulting <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 opacity-70"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a>
+            </div>
         </div>
     );
 }
 
 function DigitalStudioWebsite() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
             <Intro />
@@ -388,10 +461,35 @@ function DigitalStudioWebsite() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(6,182,212,0.35),transparent_28%),radial-gradient(circle_at_85%_15%,rgba(37,99,235,0.32),transparent_30%),linear-gradient(135deg,#020617,#0f172a_58%,#111827)]" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:58px_58px] opacity-20" />
                 <div className="relative z-10 mx-auto max-w-7xl">
-                    <nav className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-4 shadow-2xl shadow-black/20 backdrop-blur-xl">
-                        <div className="flex items-center gap-3"><Logo className="h-11 w-11" intro /><div><p className="font-black tracking-wide">PT NusaTech AI Solutions</p><p className="text-xs text-slate-400">Web - CRM - Apps - AI Integrations - Consulting</p></div></div>
-                        <div className="hidden items-center gap-8 text-sm font-medium text-slate-300 lg:flex"><a href="#services" className="transition hover:text-white">Services</a><a href="#work" className="transition hover:text-white">Work</a><a href="#marketing" className="transition hover:text-white">Marketing</a><a href="#packages" className="transition hover:text-white">Packages</a><a href="#consulting" className="transition hover:text-white">Consulting</a><a href="#contact" className="transition hover:text-white">Contact</a></div>
-                        <div className="flex gap-3"><a href="#contact" className="rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-cyan-100">Start Project</a><a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-5 py-3 text-sm font-black text-white">Consulting</a></div>
+                    <nav className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 shadow-2xl shadow-black/20 backdrop-blur-xl">
+                        <div className="flex flex-wrap items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                                <Logo className="h-11 w-11" intro />
+                                <div>
+                                    <p className="font-black tracking-wide">PT NusaTech AI Solutions</p>
+                                    <p className="text-xs text-slate-400">Web - CRM - Apps - AI Integrations - Consulting</p>
+                                </div>
+                            </div>
+                            <div className="hidden items-center gap-8 text-sm font-medium text-slate-300 lg:flex">
+                                {navLinks.map(function renderLink(link) {
+                                    return <a key={link.href} href={link.href} className="transition hover:text-white">{link.label}</a>;
+                                })}
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="hidden gap-3 lg:flex">
+                                    <a href="#contact" className="rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-cyan-100">Start Project</a>
+                                    <a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-300 px-5 py-3 text-sm font-black text-slate-900 shadow-md shadow-amber-500/25 ring-1 ring-amber-300/40 transition-all hover:from-amber-300 hover:to-yellow-200 hover:shadow-amber-400/35">Consulting <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 opacity-70"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a>
+                                </div>
+                                <button type="button" onClick={function toggleMenu() { setMenuOpen(function v(prev) { return !prev; }); }} className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 lg:hidden" aria-label="Toggle navigation menu" aria-expanded={menuOpen}>
+                                    <span className="flex flex-col gap-1.5">
+                                        <span className={"block h-0.5 w-5 bg-white transition-all " + (menuOpen ? "translate-y-2 rotate-45" : "")} />
+                                        <span className={"block h-0.5 w-5 bg-white transition-all " + (menuOpen ? "opacity-0" : "")} />
+                                        <span className={"block h-0.5 w-5 bg-white transition-all " + (menuOpen ? "-translate-y-2 -rotate-45" : "")} />
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <MobileMenu open={menuOpen} onClose={function closeMenu() { setMenuOpen(false); }} />
                     </nav>
                     <div className="grid items-center gap-14 py-24 lg:grid-cols-2 lg:py-32">
                         <div>
@@ -412,50 +510,40 @@ function DigitalStudioWebsite() {
 
             <section id="work" className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Portfolio Screenshots" title="Real project screenshots and dashboard previews." text="TravelToko Dashboard and the Esmeralda Vacation Club Website are shown as portfolio screenshots so clients can instantly understand the work." /><div className="grid gap-6 lg:grid-cols-2">{projects.map(function renderProject(item, index) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-black/20"><div className="mb-3 w-fit rounded-2xl bg-white/10 px-3 py-2 text-xs text-cyan-100">Project 0{index + 1}</div><ProjectScreenshot type={item.key} /><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p>{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-950/30">Visit Website</a> : null}</div>; })}</div></div></section>
 
-            <section id="coming-soon" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Coming Soon" title="New projects currently in the pipeline." text="These upcoming CRM, resort website, and travel marketplace concepts show the next systems PT NusaTech AI Solutions can launch for serious clients." /><div className="grid gap-6 lg:grid-cols-3">{comingSoonProjects.map(function renderComingSoon(item) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-black/20"><div className="mb-5 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-900"><img src={item.image} alt={item.title + " screenshot"} className="h-full w-full object-cover object-left-top" /></div><div className="mb-3 w-fit rounded-2xl bg-cyan-300 px-3 py-2 text-xs font-black text-slate-950">Coming Soon</div><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p></div>; })}</div></div></section>
+            <section id="coming-soon" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Coming Soon" title="New projects currently in the pipeline." text="These upcoming CRM, resort website, and travel marketplace concepts show the next systems PT NusaTech AI Solutions can launch for serious clients." /><div className="grid gap-6 lg:grid-cols-3">{comingSoonProjects.map(function renderComingSoon(item) { return <div key={item.title} className="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-black/20"><div className="mb-5 h-56 overflow-hidden rounded-3xl border border-white/10 bg-slate-900"><img src={item.image} alt={item.title + " screenshot"} className="h-full w-full object-cover object-left-top" loading="lazy" /></div><div className="mb-3 w-fit rounded-2xl bg-cyan-300 px-3 py-2 text-xs font-black text-slate-950">Coming Soon</div><p className="mb-2 text-sm font-bold text-cyan-300">{item.category}</p><h3 className="mb-3 text-2xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.text}</p></div>; })}</div></div></section>
 
             <section id="marketing" className="bg-gradient-to-b from-slate-950 to-slate-900 px-6 py-24 lg:px-20"><div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2"><div><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Digital Marketing</p><h2 className="text-4xl font-black tracking-tight md:text-5xl">Not only a beautiful website - a complete lead generation system.</h2><p className="mt-6 text-lg leading-8 text-slate-400">We connect premium design with digital marketing strategy: SEO foundations, campaign pages, WhatsApp funnels, content direction, tracking, and CRM lead capture.</p></div><div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"><div className="rounded-3xl bg-slate-950 p-6">{["Website Visitors", "WhatsApp Clicks", "Qualified Leads", "Client Meetings"].map(function renderBar(label, i) { const values = [90, 78, 62, 48]; const growth = [74, 58, 41, 26]; return <div key={label} className="mb-6 last:mb-0"><div className="mb-2 flex justify-between text-sm"><span className="text-slate-300">{label}</span><span className="font-bold text-cyan-300">+{growth[i]}%</span></div><div className="h-3 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-600" style={{ width: String(values[i]) + "%" }} /></div></div>; })}</div></div></div></section>
 
             <section className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Industries" title="Industries we can serve from Indonesia." text="A flexible IT solutions and AI integrations partner for Indonesian businesses, foreign entrepreneurs, hotels, exporters, consultants, and international clients." /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{industries.map(function renderIndustry(industry) { return <div key={industry} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center font-bold text-slate-200">{industry}</div>; })}</div></div></section>
 
-            <section id="process" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Process" title="A clear process clients can trust." text="Clients buy faster when the process is clear, professional, and connected to business results." /><div className="grid gap-5 lg:grid-cols-4">{process.map(function renderStep(item) { return <div key={item.num} className="rounded-3xl border border-white/10 bg-slate-950/60 p-7"><p className="mb-5 text-4xl font-black text-cyan-300">{item.num}</p><h3 className="mb-3 text-xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">Clear execution from strategy and design to launch, training, and ongoing improvement.</p></div>; })}</div></div></section>
+            <section id="process" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Process" title="A clear process clients can trust." text="Clients buy faster when the process is clear, professional, and connected to business results." /><div className="grid gap-5 lg:grid-cols-4">{processSteps.map(function renderStep(item) { return <div key={item.num} className="rounded-3xl border border-white/10 bg-slate-950/60 p-7"><p className="mb-5 text-4xl font-black text-cyan-300">{item.num}</p><h3 className="mb-3 text-xl font-black">{item.title}</h3><p className="leading-7 text-slate-400">{item.desc}</p></div>; })}</div></div></section>
 
             <section id="packages" className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Packages" title="Packages designed for different business stages." text="Start with a professional website, upgrade to a CRM dashboard, or build a complete growth system with marketing and consulting support." /><div className="grid gap-6 lg:grid-cols-3">{packages.map(function renderPackage(item, index) { return <div key={item.name} className={"rounded-[2rem] border p-7 " + (index === 1 ? "border-cyan-300/40 bg-cyan-400/10 shadow-2xl shadow-cyan-950/30" : "border-white/10 bg-white/[0.04]")}>{index === 1 ? <p className="mb-4 inline-flex rounded-full bg-cyan-300 px-3 py-1 text-xs font-black text-slate-950">Most Popular</p> : null}<h3 className="text-2xl font-black">{item.name}</h3><p className="mt-3 text-4xl font-black text-cyan-300">{item.price}</p><p className="mt-4 leading-7 text-slate-400">{item.desc}</p></div>; })}</div></div></section>
 
-            <section id="consulting" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-6xl text-center"><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Consulting</p><h2 className="text-4xl font-black tracking-tight md:text-5xl">If your client also needs consulting services</h2><p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">Beyond websites and CRM systems, we can support market entry, business setup, commercial strategy, hotel and travel operations, digital transformation, and growth planning in Indonesia.</p><div className="mt-8"><a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-8 py-4 font-black text-white shadow-xl shadow-blue-900/30">Explore Consulting Support</a></div></div></section>
+            <section id="consulting" className="bg-slate-900/70 px-6 py-24 lg:px-20"><div className="mx-auto max-w-6xl text-center"><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Consulting</p><h2 className="text-4xl font-black tracking-tight md:text-5xl">If your client also needs consulting services</h2><p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">Beyond websites and CRM systems, we can support market entry, business setup, commercial strategy, hotel and travel operations, digital transformation, and growth planning in Indonesia.</p><div className="mt-8"><a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-300 px-9 py-4 font-black text-slate-900 shadow-2xl shadow-amber-500/30 ring-1 ring-amber-300/50 transition-all hover:scale-105 hover:from-amber-300 hover:to-yellow-200 hover:shadow-amber-400/40">Explore Consulting Support <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 1 0-1.06L11.44 7.5H6.75a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-1.5 0V8.56l-6.22 6.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a></div></div></section>
 
             <section className="px-6 py-24 lg:px-20"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="FAQ" title="Questions serious clients usually ask." /><div className="grid gap-5 md:grid-cols-2">{faqs.map(function renderFaq(item) { return <div key={item.q} className="rounded-3xl border border-white/10 bg-white/[0.04] p-7"><h3 className="mb-3 text-xl font-black">{item.q}</h3><p className="leading-7 text-slate-400">{item.a}</p></div>; })}</div></div></section>
 
-            <section id="contact" className="px-6 pb-24 lg:px-20"><div className="mx-auto max-w-6xl rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950 p-10 text-center shadow-2xl shadow-black/30 lg:p-16"><Logo className="mx-auto mb-6 h-16 w-16" /><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Start Your Project</p><h2 className="mx-auto max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Ready to build a website, CRM, AI integration, or digital system your client will respect?</h2><p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">Contact PT NusaTech AI Solutions for premium websites, CRM dashboards, apps, AI integrations, digital marketing funnels, and consulting support from Indonesia.</p><div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row"><a href={WHATSAPP_URL} className="rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-8 py-4 font-black text-white shadow-xl shadow-blue-900/30">WhatsApp {WHATSAPP_DISPLAY}</a><a href={EMAIL_URL} className="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 font-black text-white transition hover:bg-white/10">{EMAIL_DISPLAY}</a></div></div></section>
+            <section id="contact" className="px-6 pb-24 lg:px-20"><div className="mx-auto max-w-6xl rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950 p-10 text-center shadow-2xl shadow-black/30 lg:p-16"><Logo className="mx-auto mb-6 h-16 w-16" /><p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">Start Your Project</p><h2 className="mx-auto max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Ready to build a website, CRM, AI integration, or digital system your business deserves?</h2><p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">Contact PT NusaTech AI Solutions for premium websites, CRM dashboards, apps, AI integrations, digital marketing funnels, and consulting support from Indonesia.</p><div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row"><a href={WHATSAPP_URL} className="rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-600 px-8 py-4 font-black text-white shadow-xl shadow-blue-900/30">WhatsApp {WHATSAPP_DISPLAY}</a><a href={EMAIL_URL} className="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 font-black text-white transition hover:bg-white/10">{EMAIL_DISPLAY}</a></div></div></section>
 
-            <footer className="border-t border-white/10 px-6 py-8 lg:px-20"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row"><p>Copyright 2026 PT NusaTech AI Solutions. All rights reserved.</p><p>WhatsApp {WHATSAPP_DISPLAY} - {EMAIL_DISPLAY}</p></div></footer>
+            <footer className="border-t border-white/10 px-6 py-10 lg:px-20">
+                <div className="mx-auto max-w-7xl">
+                    <div className="mb-6 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+                        {navLinks.map(function renderFooterLink(link) {
+                            return <a key={link.href} href={link.href} className="transition hover:text-white">{link.label}</a>;
+                        })}
+                    </div>
+                    <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 md:flex-row">
+                        <p>Copyright 2026 PT NusaTech AI Solutions. All rights reserved.</p>
+                        <p>WhatsApp {WHATSAPP_DISPLAY} &middot; <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
+                    </div>
+                </div>
+            </footer>
 
-            <div className="hidden">{tests.map(function renderTest(test) { return <span key={test.label}>{test.pass ? "pass" : "fail"}</span>; })}</div>
             <style>{cssRules.join("\n")}</style>
         </main>
     );
 }
-
-const tests = [
-    { label: "Services section has 4 services", pass: services.length === 4 },
-    { label: "Portfolio has 2 project examples", pass: projects.length === 2 },
-    { label: "Coming soon has 3 project examples", pass: comingSoonProjects.length === 3 },
-    { label: "Packages section has 3 offers", pass: packages.length === 3 },
-    { label: "FAQ has answers", pass: faqs.every(function checkFaq(faq) { return faq.q && faq.a; }) },
-    { label: "Logo component is available", pass: typeof Logo === "function" },
-    { label: "Sound function is available", pass: typeof playTone === "function" },
-    { label: "Cat follower mascot added", pass: typeof CatFollower === "function" },
-    { label: "Robot chat added", pass: typeof RobotChat === "function" },
-    { label: "Dashboard preview added", pass: typeof DashboardPreview === "function" },
-    { label: "WhatsApp URL configured", pass: WHATSAPP_URL.indexOf("wa.me") !== -1 },
-    { label: "Consultant URL configured", pass: CONSULTANT_URL.length > 0 },
-    { label: "Hero metrics has 3 cards", pass: heroMetrics.length === 3 },
-    { label: "Dashboard stats has 3 cards", pass: dashboardStats.length === 3 },
-    { label: "Industries has 8 items", pass: industries.length === 8 },
-    { label: "Process has 4 steps", pass: process.length === 4 },
-    { label: "CSS rules are safely joined", pass: cssRules.length > 0 },
-    { label: "No emoji in JavaScript data arrays", pass: services.every(function checkService(service) { return service.icon.length <= 3; }) }
-];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
