@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const WHATSAPP_DISPLAY = "085770759300";
 const WHATSAPP_URL = "https://wa.me/6285770759300";
@@ -591,7 +592,7 @@ function ContactForm({ lang }) {
         );
     }
     return (
-        <form onSubmit={submit} className="grid gap-4">
+        <form onSubmit={submit} method="post" className="grid gap-4">
             <div className="grid gap-4 sm:grid-cols-2">
                 <div><label htmlFor="contact-name" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formName}</label><input id="contact-name" type="text" name="name" value={form.name} onChange={change} required placeholder={t.formPlaceholderName} className={inp} /></div>
                 <div><label htmlFor="contact-method" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formContact}</label><input id="contact-method" type="text" name="contact" value={form.contact} onChange={change} required placeholder={t.formPlaceholderContact} className={inp} /></div>
@@ -958,7 +959,7 @@ function DigitalStudioWebsite() {
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
                                     <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
-                                    {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">Visit Website</a> : null}
+                                    {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">Visit Website <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a> : null}
                                 </div>
                             );
                         })}
