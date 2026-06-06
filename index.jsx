@@ -36,7 +36,7 @@ const faqs = [
     { q: "Can you build a website and CRM dashboard together?", a: "Yes. A website can capture leads through forms or WhatsApp, then the CRM dashboard can help the client manage those leads, follow-ups, documents, and revenue." },
     { q: "Do you work with Indonesian and international clients?", a: "Yes. We are based in Indonesia and can serve local companies, foreign entrepreneurs, hotels, agencies, exporters, consultants, and global clients remotely." },
     { q: "Can you also provide consulting services?", a: "Yes. For clients who need more than development, we can also support business strategy, market entry, operational structure, and digital transformation planning." },
-    { q: "How long does a project take?", a: "A standard business website takes 2Ã¢â‚¬â€œ4 weeks. A CRM dashboard or custom portal typically takes 4Ã¢â‚¬â€œ8 weeks depending on complexity. We provide a clear timeline before any project begins." },
+    { q: "How long does a project take?", a: "A standard business website takes 2-4 weeks. A CRM dashboard or custom portal typically takes 4-8 weeks depending on complexity. We provide a clear timeline before any project begins." },
     { q: "Do you offer ongoing maintenance and support?", a: "Yes. After launch we offer maintenance, updates, and support packages so the system keeps improving as the business grows. We do not disappear after delivery." },
     { q: "What is the payment structure?", a: "We typically work with a 50% deposit to begin and 50% upon delivery. For larger projects, milestone-based payments can be arranged. All terms are agreed in writing before work starts." }
 ];
@@ -171,7 +171,6 @@ function playTone(type) {
     } catch (e) { }
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Logo Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function Logo(props) {
     const className = props.className || "h-10 w-10";
     const intro = Boolean(props.intro);
@@ -211,7 +210,6 @@ function Logo(props) {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Intro splash Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function Intro() {
     const [show, setShow] = useState(false);
     useEffect(function () {
@@ -232,7 +230,6 @@ function Intro() {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Cat mascot Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function CatFollower() {
     const [dismissed, setDismissed] = useState(false);
     const [pos, setPos] = useState({ x: 120, y: 120 });
@@ -303,8 +300,6 @@ function CatFollower() {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ AI Chat bubble Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-// Ã¢â€â‚¬Ã¢â€â‚¬ AI Chat knowledge base Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const chatKB = [
     { keys: ["price", "cost", "how much", "pricing", "usd", "rate", "charge", "harga", "biaya", "berapa", "prix", "tarif", "combien"], answer: "Our packages:\n\nWebsite Launch - From USD 500\nCRM Dashboard - From USD 1,200\nGrowth Suite - Custom pricing\n\nFor an exact quote, send your project details in the contact form." },
     { keys: ["how long", "timeline", "duration", "delivery", "weeks", "berapa lama", "durasi", "waktu", "combien de temps", "delai"], answer: "Typical timelines:\n\nBusiness website: 2-4 weeks\nCRM dashboard: 4-8 weeks\nFull growth suite: 8-12 weeks\n\nWe confirm the schedule in writing before starting." },
@@ -341,7 +336,6 @@ function getBotAnswer(input) {
     }).join("\n\n---\n\n");
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ AI Chat widget Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const QUICK_REPLIES = ["Pricing", "Timeline", "CRM?", "International?", "Contact"];
 
 function RobotChat() {
@@ -404,7 +398,7 @@ function RobotChat() {
                                     <div className={"max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-6 " + (isUser ? "bg-gradient-to-br from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-white" : "border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-200")}>
                                         <p className="whitespace-pre-line">{msg.text}</p>
                                         {msg.cta && (
-                                            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-xs font-bold text-white transition hover:bg-green-400">
+                                            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-xs font-bold text-white transition hover:bg-green-400">
                                                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z" /></svg>
                                                 Chat on WhatsApp
                                             </a>
@@ -461,7 +455,6 @@ function RobotChat() {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Shared section title Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function SectionTitle({ eyebrow, title, text }) {
     return (
         <div className="mx-auto mb-14 max-w-3xl text-center">
@@ -472,7 +465,6 @@ function SectionTitle({ eyebrow, title, text }) {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Hero dashboard mockup Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function SoftwareShowcase() {
     return (
         <div className="relative min-h-[520px]">
@@ -538,7 +530,6 @@ function SoftwareShowcase() {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Portfolio screenshot frames Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function ProjectScreenshot({ type }) {
     if (type === "traveltoko") {
         return (
@@ -554,8 +545,8 @@ function ProjectScreenshot({ type }) {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Mobile menu dropdown Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-function MobileMenu({ open, onClose }) {
+function MobileMenu({ open, onClose, lang }) {
+    const t = LANGS[lang] || LANGS.en;
     if (!open) return null;
     return (
         <div className="mt-3 rounded-3xl border border-[#E96A9A]/15 bg-[#1A1A1F]/98 p-5 shadow-2xl backdrop-blur-xl lg:hidden">
@@ -565,9 +556,9 @@ function MobileMenu({ open, onClose }) {
                 })}
             </nav>
             <div className="mt-4 flex flex-col gap-3 border-t border-[#E96A9A]/15 pt-4">
-                <a href="#contact" onClick={onClose} className="rounded-2xl border border-[#E96A9A]/30 bg-[#E96A9A]/10 px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#E96A9A]/20">Start Project</a>
-                <a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-5 py-3 text-center text-sm font-black text-slate-900 shadow-md shadow-[#F28B7A]/25 ring-1 ring-[#F6A08A]/40 transition-all hover:from-[#F6A08A] hover:to-[#F28B7A]">
-                    Consulting
+                <a href="#contact" onClick={onClose} className="rounded-2xl border border-[#E96A9A]/30 bg-[#E96A9A]/10 px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#E96A9A]/20">{t.startProject}</a>
+                <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-5 py-3 text-center text-sm font-black text-slate-900 shadow-md shadow-[#F28B7A]/25 ring-1 ring-[#F6A08A]/40 transition-all hover:from-[#F6A08A] hover:to-[#F28B7A]">
+                    {t.consulting}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 opacity-70"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg>
                 </a>
             </div>
@@ -575,15 +566,15 @@ function MobileMenu({ open, onClose }) {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Contact form Ã¢â€ â€™ opens WhatsApp Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-function ContactForm() {
+function ContactForm({ lang }) {
+    const t = LANGS[lang] || LANGS.en;
     const [form, setForm] = useState({ name: "", contact: "", service: serviceOptions[0], message: "" });
     const [sent, setSent] = useState(false);
     const change = function (e) { const { name, value } = e.target; setForm(function (p) { return Object.assign({}, p, { [name]: value }); }); };
     const submit = function (e) {
         e.preventDefault();
         const text = encodeURIComponent("Hello PT NusaTech,\n\nI would like to discuss a project.\n\nName: " + form.name + "\nContact: " + form.contact + "\nInterested in: " + form.service + "\n\nMessage:\n" + form.message);
-        window.open(WHATSAPP_URL + "?text=" + text, "_blank", "noreferrer");
+        window.open(WHATSAPP_URL + "?text=" + text, "_blank", "noopener,noreferrer");
         setSent(true);
     };
     const inp = "w-full rounded-2xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 px-5 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-[#E96A9A]/50 focus:bg-[#E96A9A]/10 focus:ring-1 focus:ring-[#E96A9A]/30";
@@ -593,31 +584,30 @@ function ContactForm() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#E96A9A]/20">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7 text-[#F6A08A]"><path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" /></svg>
                 </div>
-                <p className="text-xl font-black text-white">Message ready!</p>
-                <p className="mt-2 text-sm text-slate-400">WhatsApp opened with your message pre-filled. If it did not open, <a href={WHATSAPP_URL} className="text-[#F6A08A] underline">click here</a>.</p>
-                <button type="button" onClick={function () { setSent(false); setForm({ name: "", contact: "", service: serviceOptions[0], message: "" }); }} className="mt-6 rounded-xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#E96A9A]/10">Send another message</button>
+                <p className="text-xl font-black text-white">{t.sentTitle}</p>
+                <p className="mt-2 text-sm text-slate-400">{t.sentSub} <a href={WHATSAPP_URL} className="text-[#F6A08A] underline">click here</a>.</p>
+                <button type="button" onClick={function () { setSent(false); setForm({ name: "", contact: "", service: serviceOptions[0], message: "" }); }} className="mt-6 rounded-xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#E96A9A]/10">{t.sendAnother}</button>
             </div>
         );
     }
     return (
         <form onSubmit={submit} className="grid gap-4">
             <div className="grid gap-4 sm:grid-cols-2">
-                <div><label className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">Your Name</label><input type="text" name="name" value={form.name} onChange={change} required placeholder="John Smith" className={inp} /></div>
-                <div><label className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">Email or WhatsApp</label><input type="text" name="contact" value={form.contact} onChange={change} required placeholder="you@company.com" className={inp} /></div>
+                <div><label htmlFor="contact-name" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formName}</label><input id="contact-name" type="text" name="name" value={form.name} onChange={change} required placeholder={t.formPlaceholderName} className={inp} /></div>
+                <div><label htmlFor="contact-method" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formContact}</label><input id="contact-method" type="text" name="contact" value={form.contact} onChange={change} required placeholder={t.formPlaceholderContact} className={inp} /></div>
             </div>
-            <div><label className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">I'm interested in</label>
-                <select name="service" value={form.service} onChange={change} className={inp + " cursor-pointer"}>
+            <div><label htmlFor="contact-service" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formService}</label>
+                <select id="contact-service" name="service" value={form.service} onChange={change} className={inp + " cursor-pointer"}>
                     {serviceOptions.map(function (s) { return <option key={s} value={s} className="bg-[#1A1A1F] text-white">{s}</option>; })}
                 </select>
             </div>
-            <div><label className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">Tell us about your project</label><textarea name="message" value={form.message} onChange={change} required placeholder="Briefly describe your business, what you need, and your timeline..." rows={5} className={inp + " resize-none"} /></div>
-            <button type="submit" className="w-full rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] py-4 font-black text-white shadow-xl shadow-[#1E4FA6]/40 transition hover:opacity-90">Send via WhatsApp</button>
-            <p className="text-center text-xs text-slate-500">Your message opens pre-filled in WhatsApp. No data is stored on our end.</p>
+            <div><label htmlFor="contact-message" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formMsg}</label><textarea id="contact-message" name="message" value={form.message} onChange={change} required placeholder={t.formPlaceholderMsg} rows={5} className={inp + " resize-none"} /></div>
+            <button type="submit" className="w-full rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] py-4 font-black text-white shadow-xl shadow-[#1E4FA6]/40 transition hover:opacity-90">{t.sendCta}</button>
+            <p className="text-center text-xs text-slate-500">{t.disclaimer}</p>
         </form>
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Star rating Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 function StarRating() {
     return (
         <div className="mb-5 flex gap-1">
@@ -628,8 +618,109 @@ function StarRating() {
     );
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Main page Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-// Ã¢â€â‚¬Ã¢â€â‚¬ Translations Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+function FadeIn({ children, delay, className }) {
+    const ref = useRef(null);
+    const [visible, setVisible] = useState(false);
+    useEffect(function () {
+        const el = ref.current;
+        if (!el) return;
+        if (typeof IntersectionObserver === "undefined") { setVisible(true); return; }
+        const obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { setVisible(true); obs.unobserve(entry.target); }
+            });
+        }, { threshold: 0.15 });
+        obs.observe(el);
+        return function () { obs.disconnect(); };
+    }, []);
+    return (
+        <div
+            ref={ref}
+            className={className || ""}
+            style={{
+                opacity: visible ? 1 : 0,
+                animation: visible ? "fadeInUp .8s cubic-bezier(.16,1,.3,1) " + (delay || 0) + "s both" : "none"
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+
+function Counter({ value, className }) {
+    const ref = useRef(null);
+    const [display, setDisplay] = useState(value);
+    useEffect(function () {
+        const el = ref.current;
+        if (!el) return;
+        const match = /^([0-9]+)(.*)$/.exec(String(value));
+        if (!match) { setDisplay(value); return; }
+        const target = parseInt(match[1], 10);
+        const suffix = match[2] || "";
+        if (typeof IntersectionObserver === "undefined") { setDisplay(value); return; }
+        let started = false;
+        const obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && !started) {
+                    started = true;
+                    const duration = 1100;
+                    const start = performance.now();
+                    function tick(now) {
+                        const progress = Math.min(1, (now - start) / duration);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        setDisplay(Math.round(target * eased) + suffix);
+                        if (progress < 1) requestAnimationFrame(tick);
+                        else setDisplay(target + suffix);
+                    }
+                    requestAnimationFrame(tick);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        obs.observe(el);
+        return function () { obs.disconnect(); };
+    }, [value]);
+    return <p ref={ref} className={className}>{display}</p>;
+}
+
+function FloatingBlobs({ variant }) {
+    if (variant === "section") {
+        return (
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl" style={{ animation: "floatBlob 22s ease-in-out infinite" }} />
+                <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-violet-600/10 blur-3xl" style={{ animation: "floatBlob2 26s ease-in-out infinite" }} />
+            </div>
+        );
+    }
+    return (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="absolute -left-32 -top-20 h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-fuchsia-500/25 via-pink-500/15 to-transparent blur-3xl" style={{ animation: "floatBlob 18s ease-in-out infinite" }} />
+            <div className="absolute -right-28 top-24 h-[24rem] w-[24rem] rounded-full bg-gradient-to-br from-violet-600/25 via-indigo-500/15 to-transparent blur-3xl" style={{ animation: "floatBlob2 22s ease-in-out infinite" }} />
+            <div className="absolute bottom-[-10rem] left-1/3 h-[26rem] w-[26rem] rounded-full bg-gradient-to-br from-pink-500/15 via-fuchsia-600/10 to-transparent blur-3xl" style={{ animation: "floatBlob 26s ease-in-out infinite reverse" }} />
+        </div>
+    );
+}
+
+function CookieConsent() {
+    const [visible, setVisible] = useState(function () {
+        try { return window.localStorage.getItem("cookie_consent") !== "accepted"; } catch (e) { return false; }
+    });
+    if (!visible) return null;
+    return (
+        <div className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-4xl rounded-3xl border border-[#E96A9A]/25 bg-[#1A1A1F]/95 p-5 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur-xl">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <p className="text-sm leading-6 text-slate-300">
+                    We use essential cookies and Google Analytics to understand website performance and improve the experience.
+                    Read our <a href="/cookies.html" className="font-bold text-[#F6A08A] underline">Cookie Policy</a>.
+                </p>
+                <button type="button" onClick={function () { try { window.localStorage.setItem("cookie_consent", "accepted"); } catch (e) { } setVisible(false); }} className="shrink-0 rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/30">
+                    Accept
+                </button>
+            </div>
+        </div>
+    );
+}
+
 const LANGS = {
     en: {
         badge: "Indonesia-based IT solutions & AI integrations partner",
@@ -704,31 +795,31 @@ const LANGS = {
         consultingSub: "Selain website dan sistem CRM, kami mendukung masuk pasar, pendirian bisnis, strategi komersial, operasi hotel dan perjalanan, transformasi digital, dan perencanaan pertumbuhan di Indonesia."
     },
     fr: {
-        badge: "Partenaire de solutions IT et d'intÃ©grations IA basÃ© en IndonÃ©sie",
-        heroTitle: "Sites web premium, tableaux de bord CRM, applications et systÃ¨mes marketing pour les entreprises sÃ©rieuses.",
-        heroSub: "PT NusaTech AI Solutions aide les hÃ´tels, sociÃ©tÃ©s de voyage, exportateurs, consultants et entreprises de services Ã  paraÃ®tre premium, mieux gÃ©rer leurs clients et transformer leurs systÃ¨mes numÃ©riques en opportunitÃ©s de vente rÃ©elles.",
+        badge: "Partenaire de solutions IT et integrations IA base en Indonesie",
+        heroTitle: "Sites web premium, tableaux de bord CRM, applications et systemes marketing pour les entreprises serieuses.",
+        heroSub: "PT NusaTech AI Solutions aide les hotels, societes de voyage, exportateurs, consultants et entreprises de services a paraitre premium, mieux gerer leurs clients et transformer leurs systemes numeriques en opportunites de vente reelles.",
         cta1: "Construire Mon Site / CRM", cta2: "Voir le Portfolio",
-        metrics: [{ a: "10+", b: "Projets livrÃ©s" }, { a: "3+", b: "Pays servis" }, { a: "100%", b: "Sur-mesure" }],
-        startProject: "DÃ©marrer", consulting: "Conseil",
-        servicesEyebrow: "Services", servicesTitle: "Des solutions digitales construites autour des opÃ©rations rÃ©elles.",
-        servicesSub: "Du site web public au tableau de bord privÃ©, nous crÃ©ons des systÃ¨mes numÃ©riques qui amÃ©liorent la confiance, les ventes, la gestion des clients et le flux de travail quotidien.",
-        packagesEyebrow: "Forfaits", packagesTitle: "Forfaits conÃ§us pour diffÃ©rentes Ã©tapes d'entreprise.",
-        faqEyebrow: "FAQ", faqTitle: "Questions que posent gÃ©nÃ©ralement les clients sÃ©rieux.",
-        contactEyebrow: "DÃ©marrer Votre Projet", contactTitle: "PrÃªt Ã  construire quelque chose que votre entreprise mÃ©rite ?",
+        metrics: [{ a: "10+", b: "Projets livres" }, { a: "3+", b: "Pays servis" }, { a: "100%", b: "Sur-mesure" }],
+        startProject: "Demarrer", consulting: "Conseil",
+        servicesEyebrow: "Services", servicesTitle: "Des solutions digitales construites autour des operations reelles.",
+        servicesSub: "Du site web public au tableau de bord prive, nous creons des systemes numeriques qui ameliorent la confiance, les ventes, la gestion des clients et le flux de travail quotidien.",
+        packagesEyebrow: "Forfaits", packagesTitle: "Forfaits concus pour differentes etapes d entreprise.",
+        faqEyebrow: "FAQ", faqTitle: "Questions que posent generalement les clients serieux.",
+        contactEyebrow: "Demarrer Votre Projet", contactTitle: "Pret a construire quelque chose que votre entreprise merite ?",
         sendMsg: "Envoyez-nous un message", sendCta: "Envoyer via WhatsApp",
-        formName: "Votre Nom", formContact: "Email ou WhatsApp", formService: "Je suis intÃ©ressÃ© par", formMsg: "Parlez-nous de votre projet",
+        formName: "Votre Nom", formContact: "Email ou WhatsApp", formService: "Je suis interesse par", formMsg: "Parlez-nous de votre projet",
         formPlaceholderName: "Jean Dupont", formPlaceholderContact: "vous@entreprise.com",
-        formPlaceholderMsg: "DÃ©crivez briÃ¨vement votre entreprise, vos besoins et votre calendrier...",
-        disclaimer: "Votre message s'ouvre prÃ©-rempli dans WhatsApp. Aucune donnÃ©e n'est stockÃ©e.",
-        sentTitle: "Message prÃªt !", sentSub: "WhatsApp s'est ouvert avec votre message prÃ©-rempli.", sendAnother: "Envoyer un autre",
+        formPlaceholderMsg: "Decrivez brievement votre entreprise, vos besoins et votre calendrier...",
+        disclaimer: "Votre message s ouvre pre-rempli dans WhatsApp. Aucune donnee n est stockee.",
+        sentTitle: "Message pret !", sentSub: "WhatsApp s est ouvert avec votre message pre-rempli.", sendAnother: "Envoyer un autre",
         popular: "Le Plus Populaire", getStarted: "Commencer",
-        comingSoonEyebrow: "BientÃ´t Disponible", comingSoonTitle: "Nouveaux projets en cours de dÃ©veloppement.",
-        processCta: "Explorer le Conseil", testimonialsEyebrow: "RÃ©sultats Clients", testimonialsTitle: "Ce que disent nos clients.",
-        industryEyebrow: "Secteurs", industryTitle: "Secteurs que nous servons depuis l'IndonÃ©sie.",
+        comingSoonEyebrow: "Bientot Disponible", comingSoonTitle: "Nouveaux projets en cours de developpement.",
+        processCta: "Explorer le Conseil", testimonialsEyebrow: "Resultats Clients", testimonialsTitle: "Ce que disent nos clients.",
+        industryEyebrow: "Secteurs", industryTitle: "Secteurs que nous servons depuis l Indonesie.",
         processEyebrow: "Processus", processTitle: "Un processus clair en qui les clients peuvent avoir confiance.",
-        marketingEyebrow: "Marketing Digital", marketingTitle: "Pas seulement un beau site - un systÃ¨me complet de gÃ©nÃ©ration de leads.",
-        consultingEyebrow: "Conseil", consultingTitle: "Besoin de plus que du dÃ©veloppement ?",
-        chartDisclaimer: "Exemples de rÃ©sultats de campagne - les rÃ©sultats rÃ©els varient selon les clients"
+        marketingEyebrow: "Marketing Digital", marketingTitle: "Pas seulement un beau site - un systeme complet de generation de leads.",
+        consultingEyebrow: "Conseil", consultingTitle: "Besoin de plus que du developpement ?",
+        chartDisclaimer: "Exemples de resultats de campagne - les resultats reels varient selon les clients"
     }
 };
 
@@ -747,16 +838,16 @@ function DigitalStudioWebsite() {
             <Intro />
             <CatFollower />
             <RobotChat />
+            <CookieConsent />
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero + Nav Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section className="relative px-4 pb-24 pt-6 lg:px-16">
                 {/* Background */}
                 <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 15% 20%, rgba(246,160,138,0.38) 0%, transparent 42%), radial-gradient(ellipse at 82% 12%, rgba(233,106,154,0.34) 0%, transparent 40%), radial-gradient(ellipse at 60% 72%, rgba(45,93,184,0.34) 0%, transparent 52%), linear-gradient(135deg, #1E4FA6 0%, #7A4F9A 35%, #E96A9A 65%, #F6A08A 100%)" }} />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:60px_60px]" />
+                <FloatingBlobs variant="hero" />
 
                 <div className="relative z-10 mx-auto max-w-7xl">
 
-                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ Navbar - reference screenshot layout Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
                     <nav aria-label="Main navigation" className="flex items-center justify-between gap-4 rounded-2xl border border-[#E96A9A]/20 bg-[#1A1A1F]/70 px-5 py-3 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur-2xl">
 
                         {/* Brand */}
@@ -790,7 +881,7 @@ function DigitalStudioWebsite() {
                             <a href="#contact" className="hidden rounded-xl border border-[#E96A9A]/30 bg-[#E96A9A]/10 px-5 py-2.5 text-sm font-black text-white transition hover:border-[#E96A9A]/50 hover:bg-[#E96A9A]/20 lg:inline-flex">
                                 {t.startProject}
                             </a>
-                            <a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="hidden items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-5 py-2.5 text-sm font-black text-slate-900 shadow-md shadow-[#F28B7A]/25 ring-1 ring-[#F6A08A]/40 transition-all hover:from-[#F6A08A] hover:to-[#F28B7A] lg:inline-flex">
+                            <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-5 py-2.5 text-sm font-black text-slate-900 shadow-md shadow-[#F28B7A]/25 ring-1 ring-[#F6A08A]/40 transition-all hover:from-[#F6A08A] hover:to-[#F28B7A] lg:inline-flex">
                                 {t.consulting}
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 opacity-70"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg>
                             </a>
@@ -804,11 +895,10 @@ function DigitalStudioWebsite() {
                         </div>
                     </nav>
 
-                    <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} />
+                    <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} />
 
-                    {/* Ã¢â€â‚¬Ã¢â€â‚¬ Hero content Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
                     <div className="grid items-center gap-14 py-24 lg:grid-cols-2 lg:py-32">
-                        <div>
+                        <FadeIn>
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E96A9A]/25 bg-[#E96A9A]/10 px-4 py-2 text-sm font-semibold text-[#F6A08A]">
                                 {t.badge}
                             </div>
@@ -819,18 +909,19 @@ function DigitalStudioWebsite() {
                                 <a href="#work" className="rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-7 py-4 text-center font-black text-white transition hover:bg-[#E96A9A]/10">{t.cta2}</a>
                             </div>
                             <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
-                                {t.metrics.map(function (m) { return <div key={m.a} className="rounded-2xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 p-4"><p className="text-xl font-black">{m.a}</p><p className="text-sm text-slate-400">{m.b}</p></div>; })}
+                                {t.metrics.map(function (m, i) { return <div key={m.a} className="rounded-2xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 p-4 transition hover:-translate-y-0.5 hover:bg-[#E96A9A]/10" style={{ animation: "fadeInUp .7s cubic-bezier(.16,1,.3,1) " + (.15 + i * .1) + "s both" }}><Counter value={m.a} className="text-xl font-black" /><p className="text-sm text-slate-400">{m.b}</p></div>; })}
                             </div>
-                        </div>
-                        <SoftwareShowcase />
+                        </FadeIn>
+                        <FadeIn delay={0.15}>
+                            <SoftwareShowcase />
+                        </FadeIn>
                     </div>
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Services Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="services" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Services" title="Digital solutions built around real business operations." text="From the public website to the private dashboard, we create digital systems that improve trust, sales, client management, and daily workflow." />
+                    <FadeIn><SectionTitle eyebrow={t.servicesEyebrow} title={t.servicesTitle} text={t.servicesSub} /></FadeIn>
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         {services.map(function (item) {
                             return (
@@ -845,7 +936,6 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Stats band Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section className="px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid gap-4 md:grid-cols-4">
@@ -856,10 +946,9 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Portfolio Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="work" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Portfolio Screenshots" title="Real project screenshots and dashboard previews." text="TravelToko Dashboard and the Esmeralda Vacation Club Website are shown as portfolio screenshots so clients can instantly understand the work." />
+                    <FadeIn><SectionTitle eyebrow={t.portfolioEyebrow} title={t.portfolioTitle} text={t.portfolioSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-2">
                         {projects.map(function (item, i) {
                             return (
@@ -869,7 +958,7 @@ function DigitalStudioWebsite() {
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
                                     <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
-                                    {item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">Visit Website</a> : null}
+                                    {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">Visit Website</a> : null}
                                 </div>
                             );
                         })}
@@ -877,10 +966,9 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Coming Soon Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="coming-soon" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Coming Soon" title="New projects currently in the pipeline." text="These upcoming CRM, resort website, and travel marketplace concepts show the next systems PT NusaTech AI Solutions can launch for serious clients." />
+                    <FadeIn><SectionTitle eyebrow={t.comingSoonEyebrow} title={t.comingSoonTitle} text={t.comingSoonSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {comingSoonProjects.map(function (item) {
                             return (
@@ -899,55 +987,61 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Marketing Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
-            <section id="marketing" className="px-6 py-24 lg:px-20">
-                <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-                    <div>
-                        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Digital Marketing</p>
-                        <h2 className="text-4xl font-black tracking-tight md:text-5xl">Not only a beautiful website - a complete lead generation system.</h2>
-                        <p className="mt-6 text-lg leading-8 text-slate-400">We connect premium design with digital marketing strategy: SEO foundations, campaign pages, WhatsApp funnels, content direction, tracking, and CRM lead capture.</p>
-                    </div>
-                    <div className="luxBorder rounded-[2rem] p-6">
-                        <div className="rounded-3xl bg-[#0F172A] p-6">
-                            <p className="mb-5 text-xs font-bold uppercase tracking-widest text-slate-500">Example campaign results - actual results vary by client</p>
-                            {["Website Visitors", "WhatsApp Clicks", "Qualified Leads", "Client Meetings"].map(function (label, i) {
-                                const vals = [90, 78, 62, 48], gr = [74, 58, 41, 26];
-                                return (
-                                    <div key={label} className="mb-6 last:mb-0">
-                                        <div className="mb-2 flex justify-between text-sm"><span className="text-slate-300">{label}</span><span className="font-bold text-[#F6A08A]">+{gr[i]}%</span></div>
-                                        <div className="h-3 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB]" style={{ width: vals[i] + "%" }} /></div>
-                                    </div>
-                                );
-                            })}
+            <section id="marketing" className="relative overflow-hidden px-6 py-24 lg:px-20">
+                <FloatingBlobs variant="section" />
+                <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+                    <FadeIn>
+                        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.marketingEyebrow}</p>
+                        <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.marketingTitle}</h2>
+                        <p className="mt-6 text-lg leading-8 text-slate-400">{t.marketingSub}</p>
+                    </FadeIn>
+                    <FadeIn delay={0.15}>
+                        <div className="luxBorder rounded-[2rem] p-6">
+                            <div className="rounded-3xl bg-[#0F172A] p-6">
+                                <p className="mb-5 text-xs font-bold uppercase tracking-widest text-slate-500">{t.chartDisclaimer}</p>
+                                {["Website Visitors", "WhatsApp Clicks", "Qualified Leads", "Client Meetings"].map(function (label, i) {
+                                    const vals = [90, 78, 62, 48], gr = [74, 58, 41, 26];
+                                    return (
+                                        <div key={label} className="mb-6 last:mb-0">
+                                            <div className="mb-2 flex justify-between text-sm"><span className="text-slate-300">{label}</span><span className="font-bold text-[#F6A08A]">+{gr[i]}%</span></div>
+                                            <div className="h-3 overflow-hidden rounded-full bg-slate-800"><div className="h-full rounded-full bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB]" style={{ width: vals[i] + "%", animation: "fadeInUp 1.1s cubic-bezier(.16,1,.3,1) " + (i * .12) + "s both" }} /></div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
+                    </FadeIn>
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Industries Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
-            <section id="platform" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 52%, #7A4F9A 100%)" }}>
-                <div className="mx-auto max-w-7xl">
-                    <div className="mb-14 grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr]">
-                        <div>
-                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Software Systems</p>
-                            <h2 className="text-4xl font-black tracking-tight md:text-6xl">From beautiful website to complete business operating system.</h2>
+            <section id="platform" className="relative overflow-hidden px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 52%, #7A4F9A 100%)" }}>
+                <FloatingBlobs variant="section" />
+                <div className="relative z-10 mx-auto max-w-7xl">
+                    <FadeIn>
+                        <div className="mb-14 grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr]">
+                            <div>
+                                <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Software Systems</p>
+                                <h2 className="text-4xl font-black tracking-tight md:text-6xl">From beautiful website to complete business operating system.</h2>
+                            </div>
+                            <p className="text-lg leading-8 text-slate-400">Inspired by modern app builders, but custom-made for your company: data, workflows, dashboards, AI assistants, client portals, and premium interfaces connected into one system.</p>
                         </div>
-                        <p className="text-lg leading-8 text-slate-400">Inspired by modern app builders, but custom-made for your company: data, workflows, dashboards, AI assistants, client portals, and premium interfaces connected into one system.</p>
-                    </div>
+                    </FadeIn>
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                         {platformFeatures.map(function (feature, index) {
                             return (
-                                <div key={feature.title} className="luxBorder group relative min-h-[220px] overflow-hidden rounded-[2rem] p-7 transition hover:-translate-y-1">
-                                    <div className="absolute inset-x-6 top-6 h-20 rounded-3xl bg-gradient-to-r from-[#E96A9A]/20 via-[#F28B7A]/10 to-[#2563EB]/20 blur-2xl transition group-hover:opacity-100" style={{ opacity: .45 }} />
-                                    <div className="relative z-10">
-                                        <div className="mb-8 flex items-center justify-between gap-3">
-                                            <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 text-sm font-black text-[#F6A08A]">0{index + 1}</span>
-                                            <span className="h-px flex-1 bg-gradient-to-r from-[#E96A9A]/40 to-transparent" />
+                                <FadeIn key={feature.title} delay={index * 0.08}>
+                                    <div className="luxBorder group relative min-h-[220px] overflow-hidden rounded-[2rem] p-7 transition hover:-translate-y-1">
+                                        <div className="absolute inset-x-6 top-6 h-20 rounded-3xl bg-gradient-to-r from-[#E96A9A]/20 via-[#F28B7A]/10 to-[#2563EB]/20 blur-2xl transition group-hover:opacity-100" style={{ opacity: .45 }} />
+                                        <div className="relative z-10">
+                                            <div className="mb-8 flex items-center justify-between gap-3">
+                                                <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 text-sm font-black text-[#F6A08A]">0{index + 1}</span>
+                                                <span className="h-px flex-1 bg-gradient-to-r from-[#E96A9A]/40 to-transparent" />
+                                            </div>
+                                            <h3 className="text-2xl font-black">{feature.title}</h3>
+                                            <p className="mt-4 leading-7 text-slate-400">{feature.text}</p>
                                         </div>
-                                        <h3 className="text-2xl font-black">{feature.title}</h3>
-                                        <p className="mt-4 leading-7 text-slate-400">{feature.text}</p>
                                     </div>
-                                </div>
+                                </FadeIn>
                             );
                         })}
                     </div>
@@ -956,17 +1050,16 @@ function DigitalStudioWebsite() {
 
             <section className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Industries" title="Industries we can serve from Indonesia." text="A flexible IT solutions and AI integrations partner for Indonesian businesses, foreign entrepreneurs, hotels, exporters, consultants, and international clients." />
+                    <FadeIn><SectionTitle eyebrow={t.industryEyebrow} title={t.industryTitle} text={t.industrySub} /></FadeIn>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {industries.map(function (ind) { return <div key={ind} className="luxBorder rounded-2xl p-5 text-center font-bold text-slate-200 transition hover:bg-[#E96A9A]/5">{ind}</div>; })}
                     </div>
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Process Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="process" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Process" title="A clear process clients can trust." text="Clients buy faster when the process is clear, professional, and connected to business results." />
+                    <FadeIn><SectionTitle eyebrow={t.processEyebrow} title={t.processTitle} text={t.processSub} /></FadeIn>
                     <div className="grid gap-5 lg:grid-cols-4">
                         {processSteps.map(function (s) {
                             return (
@@ -981,21 +1074,20 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Packages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="packages" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Packages" title="Packages designed for different business stages." text="Start with a professional website, upgrade to a CRM dashboard, or build a complete growth system with marketing and consulting support." />
+                    <FadeIn><SectionTitle eyebrow={t.packagesEyebrow} title={t.packagesTitle} text={t.packagesSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {packages.map(function (item, idx) {
                             const featured = idx === 1;
                             return (
                                 <div key={item.name} className={"flex flex-col rounded-[2rem] p-7 " + (featured ? "border border-[#E96A9A]/40 bg-[#E96A9A]/10 shadow-2xl shadow-[#1E4FA6]/35 ring-1 ring-[#E96A9A]/20" : "luxBorder")}>
-                                    {featured ? <p className="mb-4 w-fit rounded-full bg-[#F6A08A] px-3 py-1 text-xs font-black text-slate-950">Most Popular</p> : null}
+                                    {featured ? <p className="mb-4 w-fit rounded-full bg-[#F6A08A] px-3 py-1 text-xs font-black text-slate-950">{t.popular}</p> : null}
                                     <h3 className="text-2xl font-black">{item.name}</h3>
                                     <p className="mt-3 text-4xl font-black text-[#F6A08A]">{item.price}</p>
                                     <p className="mt-4 flex-1 leading-7 text-slate-400">{item.desc}</p>
                                     <a href="#contact" className={"mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 text-center text-sm font-black transition " + (featured ? "bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-white shadow-lg shadow-[#1E4FA6]/40 hover:opacity-90" : "border border-[#E96A9A]/25 bg-[#E96A9A]/5 text-white hover:bg-[#E96A9A]/10")}>
-                                        Get Started
+                                        {t.getStarted}
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" /></svg>
                                     </a>
                                 </div>
@@ -1005,25 +1097,23 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Consulting Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="consulting" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-6xl text-center">
-                    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Consulting</p>
-                    <h2 className="text-4xl font-black tracking-tight md:text-5xl">Need more than development?</h2>
-                    <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">Beyond websites and CRM systems, we support market entry, business setup, commercial strategy, hotel and travel operations, digital transformation, and growth planning in Indonesia.</p>
+                    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.consultingEyebrow}</p>
+                    <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.consultingTitle}</h2>
+                    <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">{t.consultingSub}</p>
                     <div className="mt-8">
-                        <a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-9 py-4 font-black text-slate-900 shadow-2xl shadow-[#F28B7A]/30 ring-1 ring-[#F6A08A]/50 transition-all hover:scale-105 hover:from-[#F6A08A] hover:to-[#F28B7A] hover:shadow-[#F28B7A]/40">
-                            Explore Consulting Support
+                        <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-9 py-4 font-black text-slate-900 shadow-2xl shadow-[#F28B7A]/30 ring-1 ring-[#F6A08A]/50 transition-all hover:scale-105 hover:from-[#F6A08A] hover:to-[#F28B7A] hover:shadow-[#F28B7A]/40">
+                            {t.processCta}
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 1 0-1.06L11.44 7.5H6.75a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-1.5 0V8.56l-6.22 6.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg>
                         </a>
                     </div>
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Testimonials Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="Client Results" title="What clients say about working with us." text="Real feedback from businesses across hospitality, travel, and international trade." />
+                    <FadeIn><SectionTitle eyebrow={t.testimonialsEyebrow} title={t.testimonialsTitle} text={t.testimonialsSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {testimonials.map(function (item) {
                             return (
@@ -1045,10 +1135,9 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ FAQ Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
-                    <SectionTitle eyebrow="FAQ" title="Questions serious clients usually ask." />
+                    <FadeIn><SectionTitle eyebrow={t.faqEyebrow} title={t.faqTitle} /></FadeIn>
                     <div className="grid gap-5 md:grid-cols-2">
                         {faqs.map(function (item) {
                             return (
@@ -1062,19 +1151,18 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Contact Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <section id="contact" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
                         <div className="flex flex-col justify-center">
                             <Logo className="mb-6 h-16 w-16" />
-                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Start Your Project</p>
-                            <h2 className="text-4xl font-black tracking-tight md:text-5xl">Ready to build something your business deserves?</h2>
+                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.contactEyebrow}</p>
+                            <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.contactTitle}</h2>
                             <p className="mt-6 text-lg leading-8 text-slate-300">Fill in the form and we'll open WhatsApp with your message pre-filled, ready to send. Or reach us directly below.</p>
                             <div className="mt-8 flex flex-col gap-3">
                                 <a href={WHATSAPP_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-green-400"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm5.07 13.6c-.213.598-1.249 1.14-1.712 1.213-.438.069-.993.097-1.6-.1-.369-.12-.843-.28-1.448-.548-2.55-1.1-4.213-3.66-4.34-3.83-.127-.17-1.033-1.374-1.033-2.62 0-1.248.654-1.862.887-2.116.233-.254.508-.318.677-.318.17 0 .339.002.487.008.156.007.365-.059.572.436.212.508.72 1.757.783 1.884.063.127.106.277.021.445-.085.17-.127.277-.254.424-.128.148-.268.33-.384.444-.127.127-.258.264-.11.517.148.254.654 1.079 1.404 1.747.963.856 1.775 1.12 2.028 1.247.255.127.403.106.55-.064.149-.17.635-.742.804-.996.17-.254.338-.212.572-.127.233.084 1.48.698 1.734.825.254.127.424.19.487.296.063.106.063.614-.15 1.212Z" /></svg>
-                                    WhatsApp {WHATSAPP_DISPLAY}
+                        <p>WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
                                 </a>
                                 <a href={EMAIL_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-[#7C3AED]"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
@@ -1083,14 +1171,13 @@ function DigitalStudioWebsite() {
                             </div>
                         </div>
                         <div className="luxBorder rounded-[2rem] p-8 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur">
-                            <p className="mb-6 text-xl font-black">Send us a message</p>
-                            <ContactForm />
+                            <p className="mb-6 text-xl font-black">{t.sendMsg}</p>
+                            <ContactForm lang={lang} />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Ticker Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <div className="overflow-hidden border-y border-[#E96A9A]/10 py-4" style={{ background: "#1A1A1F" }}>
                 <div className="flex gap-10 whitespace-nowrap" style={{ animation: "ticker 28s linear infinite", width: "max-content" }}>
                     {[...industries, "Web Development", "CRM Dashboards", "AI Integrations", "Digital Marketing", "Client Portals", "Business Apps", ...industries, "Web Development", "CRM Dashboards", "AI Integrations", "Digital Marketing", "Client Portals", "Business Apps"].map(function (t, i) {
@@ -1099,7 +1186,6 @@ function DigitalStudioWebsite() {
                 </div>
             </div>
 
-            {/* Ã¢â€â‚¬Ã¢â€â‚¬ Footer Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
             <footer className="border-t border-[#E96A9A]/10 px-6 pt-16 pb-8 lg:px-20" style={{ background: "linear-gradient(180deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
 
@@ -1118,11 +1204,11 @@ function DigitalStudioWebsite() {
                             <p className="text-sm leading-7 text-slate-400">Premium websites, CRM dashboards, AI integrations and digital marketing - built in Indonesia for serious global businesses.</p>
                             <div className="mt-6 flex gap-3">
                                 {/* LinkedIn */}
-                                <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-[#E96A9A]/40 hover:text-white">
+                                <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" aria-label="Consulting website" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-[#E96A9A]/40 hover:text-white">
                                     <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
                                 </a>
                                 {/* Instagram */}
-                                <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-[#E96A9A]/40 hover:text-white">
+                                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-[#E96A9A]/40 hover:text-white">
                                     <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" /></svg>
                                 </a>
                                 {/* WhatsApp */}
@@ -1167,10 +1253,10 @@ function DigitalStudioWebsite() {
                             <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">Contact</p>
                             <ul className="space-y-2.5 text-sm text-slate-400">
                                 <li><a href="#contact" className="transition hover:text-[#F6A08A]">Start a Project</a></li>
-                                <li><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="transition hover:text-green-400">{WHATSAPP_DISPLAY}</a></li>
+                                <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-green-400">{WHATSAPP_DISPLAY}</a></li>
                                 <li><a href={EMAIL_URL} className="break-all transition hover:text-[#F6A08A]">{EMAIL_DISPLAY}</a></li>
-                                <li><a href={CONSULTANT_URL} target="_blank" rel="noreferrer" className="transition hover:text-[#F28B7A]">Consulting Portal - open</a></li>
-                                <li><a href="https://esmeraldavacation.club/" target="_blank" rel="noreferrer" className="transition hover:text-[#F6A08A]">Esmeralda Vacation Club - open</a></li>
+                                <li><a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F28B7A]">Consulting Portal - open</a></li>
+                                <li><a href="https://esmeraldavacation.club/" target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F6A08A]">Esmeralda Vacation Club - open</a></li>
                                 <li className="pt-1 text-slate-500">Location: Jakarta, Indonesia</li>
                             </ul>
                         </div>
@@ -1181,13 +1267,13 @@ function DigitalStudioWebsite() {
 
                     {/* Bottom bar */}
                     <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 md:flex-row">
-                        <p>Ã‚Copyright 2026 PT NusaTech AI Solutions. All rights reserved. Ã‚- Indonesia</p>
+                        <p>Copyright 2026 PT NusaTech AI Solutions. All rights reserved. - Indonesia</p>
                         <div className="flex gap-6">
-                            <a href="#" className="transition hover:text-slate-300">Privacy Policy</a>
-                            <a href="#" className="transition hover:text-slate-300">Terms of Use</a>
-                            <a href="#" className="transition hover:text-slate-300">Cookie Policy</a>
+                            <a href="/privacy.html" className="transition hover:text-slate-300">Privacy Policy</a>
+                            <a href="/terms.html" className="transition hover:text-slate-300">Terms of Use</a>
+                            <a href="/cookies.html" className="transition hover:text-slate-300">Cookie Policy</a>
                         </div>
-                        <p>WhatsApp {WHATSAPP_DISPLAY} Ã‚- <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
+                        <p>WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
                     </div>
                 </div>
             </footer>
