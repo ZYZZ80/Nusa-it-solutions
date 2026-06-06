@@ -35,11 +35,16 @@ const packages = [
 const faqs = [
     { q: "What makes PT NusaTech AI Solutions different?", a: "We do not only design websites. We build business systems: website, CRM, dashboard, client portal, AI integrations, and marketing funnel connected to real operations." },
     { q: "Can you build a website and CRM dashboard together?", a: "Yes. A website can capture leads through forms or WhatsApp, then the CRM dashboard can help the client manage those leads, follow-ups, documents, and revenue." },
+    { q: "What kind of AI integrations can you add?", a: "We can add AI chat assistants, lead qualification flows, internal knowledge search, automated follow-up drafts, reporting summaries, document helpers, and workflow automations depending on your business process." },
+    { q: "Can you redesign an existing website?", a: "Yes. We can improve an existing website with a premium visual design, clearer messaging, faster pages, better mobile layout, stronger SEO structure, and WhatsApp or CRM lead capture." },
     { q: "Do you work with Indonesian and international clients?", a: "Yes. We are based in Indonesia and can serve local companies, foreign entrepreneurs, hotels, agencies, exporters, consultants, and global clients remotely." },
     { q: "Can you also provide consulting services?", a: "Yes. For clients who need more than development, we can also support business strategy, market entry, operational structure, and digital transformation planning." },
     { q: "How long does a project take?", a: "A standard business website takes 2-4 weeks. A CRM dashboard or custom portal typically takes 4-8 weeks depending on complexity. We provide a clear timeline before any project begins." },
+    { q: "Do you provide hosting and deployment?", a: "Yes. We can prepare and deploy the website on platforms such as Vercel, connect a custom domain, configure basic SEO metadata, analytics, sitemap, robots.txt, and production build settings." },
+    { q: "Will the system work on mobile?", a: "Yes. Websites, dashboards, and client portals are built with responsive layouts so owners, teams, and clients can use them from desktop, tablet, and mobile screens." },
     { q: "Do you offer ongoing maintenance and support?", a: "Yes. After launch we offer maintenance, updates, and support packages so the system keeps improving as the business grows. We do not disappear after delivery." },
-    { q: "What is the payment structure?", a: "We typically work with a 50% deposit to begin and 50% upon delivery. For larger projects, milestone-based payments can be arranged. All terms are agreed in writing before work starts." }
+    { q: "What is the payment structure?", a: "We typically work with a 50% deposit to begin and 50% upon delivery. For larger projects, milestone-based payments can be arranged. All terms are agreed in writing before work starts." },
+    { q: "What do you need from a client before starting?", a: "We usually need a short business brief, logo or brand references, service details, target customers, examples of websites you like, domain or hosting access if available, and the main goal of the project." }
 ];
 
 const testimonials = [
@@ -377,9 +382,9 @@ function RobotChat() {
     }
 
     return (
-        <div ref={ref} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div ref={ref} className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
             {open && (
-                <div className="bubble flex flex-col overflow-hidden rounded-3xl border border-[#E96A9A]/20 shadow-2xl shadow-[#1E4FA6]/40" style={{ width: 340, height: 520, background: "#1A1A1F" }}>
+                <div className="bubble flex w-[calc(100vw-2rem)] max-w-[340px] flex-col overflow-hidden rounded-3xl border border-[#E96A9A]/20 shadow-2xl shadow-[#1E4FA6]/40" style={{ height: "min(520px, 75vh)", background: "#1A1A1F" }}>
                     {/* Header */}
                     <div className="flex shrink-0 items-center gap-3 border-b border-[#E96A9A]/15 px-5 py-3.5" style={{ background: "#1A1A1F" }}>
                         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-xs font-black shadow-lg shadow-[#1E4FA6]/40">AI</div>
@@ -463,6 +468,38 @@ function SectionTitle({ eyebrow, title, text }) {
             <h2 className="text-4xl font-black tracking-tight text-white md:text-5xl">{title}</h2>
             {text ? <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-400">{text}</p> : null}
         </div>
+    );
+}
+
+function FAQSection({ eyebrow, title }) {
+    const [open, setOpen] = useState(0);
+    return (
+        <section id="faq" className="px-6 py-24 lg:px-20">
+            <div className="mx-auto max-w-7xl">
+                <FadeIn><SectionTitle eyebrow={eyebrow} title={title} text="Clear answers about websites, CRM dashboards, AI integrations, timelines, support, and how we work with serious businesses." /></FadeIn>
+                <div className="mx-auto grid max-w-5xl gap-4">
+                    {faqs.map(function (item, index) {
+                        const active = open === index;
+                        return (
+                            <div key={item.q} className={"luxBorder overflow-hidden rounded-3xl transition " + (active ? "bg-[#E96A9A]/8" : "")}>
+                                <button
+                                    type="button"
+                                    onClick={function () { setOpen(active ? -1 : index); }}
+                                    className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
+                                    aria-expanded={active}
+                                >
+                                    <span className="text-lg font-black text-white md:text-xl">{item.q}</span>
+                                    <span className={"grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-[#E96A9A]/20 text-[#F6A08A] transition " + (active ? "rotate-45 bg-[#E96A9A]/10" : "")}>
+                                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="h-4 w-4"><path d="M12 5v14M5 12h14" strokeLinecap="round" /></svg>
+                                    </span>
+                                </button>
+                                {active ? <div className="px-6 pb-6 pr-16 text-base leading-8 text-slate-400">{item.a}</div> : null}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
     );
 }
 
@@ -1136,21 +1173,7 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section className="px-6 py-24 lg:px-20">
-                <div className="mx-auto max-w-7xl">
-                    <FadeIn><SectionTitle eyebrow={t.faqEyebrow} title={t.faqTitle} /></FadeIn>
-                    <div className="grid gap-5 md:grid-cols-2">
-                        {faqs.map(function (item) {
-                            return (
-                                <div key={item.q} className="luxBorder rounded-3xl p-7">
-                                    <h3 className="mb-3 text-xl font-black">{item.q}</h3>
-                                    <p className="leading-7 text-slate-400">{item.a}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
+            <FAQSection eyebrow={t.faqEyebrow} title={t.faqTitle} />
 
             <section id="contact" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
@@ -1163,7 +1186,7 @@ function DigitalStudioWebsite() {
                             <div className="mt-8 flex flex-col gap-3">
                                 <a href={WHATSAPP_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-green-400"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm5.07 13.6c-.213.598-1.249 1.14-1.712 1.213-.438.069-.993.097-1.6-.1-.369-.12-.843-.28-1.448-.548-2.55-1.1-4.213-3.66-4.34-3.83-.127-.17-1.033-1.374-1.033-2.62 0-1.248.654-1.862.887-2.116.233-.254.508-.318.677-.318.17 0 .339.002.487.008.156.007.365-.059.572.436.212.508.72 1.757.783 1.884.063.127.106.277.021.445-.085.17-.127.277-.254.424-.128.148-.268.33-.384.444-.127.127-.258.264-.11.517.148.254.654 1.079 1.404 1.747.963.856 1.775 1.12 2.028 1.247.255.127.403.106.55-.064.149-.17.635-.742.804-.996.17-.254.338-.212.572-.127.233.084 1.48.698 1.734.825.254.127.424.19.487.296.063.106.063.614-.15 1.212Z" /></svg>
-                        <p>WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
+                                    {WHATSAPP_DISPLAY}
                                 </a>
                                 <a href={EMAIL_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-[#7C3AED]"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
@@ -1191,10 +1214,10 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
 
                     {/* Top: brand + columns */}
-                    <div className="mb-14 grid gap-10 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
+                    <div className="mb-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
 
                         {/* Brand column */}
-                        <div>
+                        <div className="sm:col-span-2 lg:col-span-1">
                             <div className="mb-5 flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-sm font-black shadow-lg shadow-[#1E4FA6]/40">N</div>
                                 <div>
