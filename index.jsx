@@ -481,7 +481,7 @@ function FAQSection({ eyebrow, title }) {
                     {faqs.map(function (item, index) {
                         const active = open === index;
                         return (
-                            <div key={item.q} className={"luxBorder overflow-hidden rounded-3xl transition " + (active ? "bg-[#E96A9A]/8" : "")}>
+                            <div key={item.q} className={"luxBorder overflow-hidden rounded-3xl transition " + (active ? "bg-[#E96A9A]/10" : "")}>
                                 <button
                                     type="button"
                                     onClick={function () { setOpen(active ? -1 : index); }}
