@@ -33,7 +33,7 @@ const packages = [
 ];
 
 const faqs = [
-    { q: "What makes PT NusaTech AI Solutions different?", a: "We do not only design websites. We build business systems: website, CRM, dashboard, client portal, AI integrations, and marketing funnel connected to real operations." },
+    { q: "What makes NusaTech Solutions different?", a: "We do not only design websites. We build business systems: website, CRM, dashboard, client portal, AI integrations, and marketing funnel connected to real operations." },
     { q: "Can you build a website and CRM dashboard together?", a: "Yes. A website can capture leads through forms or WhatsApp, then the CRM dashboard can help the client manage those leads, follow-ups, documents, and revenue." },
     { q: "What kind of AI integrations can you add?", a: "We can add AI chat assistants, lead qualification flows, internal knowledge search, automated follow-up drafts, reporting summaries, document helpers, and workflow automations depending on your business process." },
     { q: "Can you redesign an existing website?", a: "Yes. We can improve an existing website with a premium visual design, clearer messaging, faster pages, better mobile layout, stronger SEO structure, and WhatsApp or CRM lead capture." },
@@ -48,7 +48,7 @@ const faqs = [
 ];
 
 const testimonials = [
-    { quote: "PT NusaTech built a CRM dashboard that completely changed how we manage our leads and client follow-ups. They genuinely understood our business operations from day one and delivered beyond expectations.", name: "Operations Director", company: "Travel Club - Jakarta", initial: "T" },
+    { quote: "NusaTech built a CRM dashboard that completely changed how we manage our leads and client follow-ups. They genuinely understood our business operations from day one and delivered beyond expectations.", name: "Operations Director", company: "Travel Club - Jakarta", initial: "T" },
     { quote: "Our new website generates more serious inquiries in a week than the old one did in a month. The design is premium and the WhatsApp integration converts visitors into conversations immediately.", name: "General Manager", company: "Boutique Resort - Bali", initial: "B" },
     { quote: "As an international business entering Indonesia, I needed a partner who understood both local and global standards. NusaTech delivered a professional website, CRM, and real strategic direction.", name: "Managing Director", company: "Export Consultancy - Singapore", initial: "M" }
 ];
@@ -196,24 +196,17 @@ function Logo(props) {
 
     const active = spin || introSpin;
     return (
-        <button type="button" aria-label="PT NusaTech AI Solutions logo"
+        <button type="button" aria-label="NusaTech Solutions logo"
             onClick={function () { setSpin(function (v) { return !v; }); playTone("whoosh"); }}
             className={"relative grid place-items-center rounded-2xl outline-none " + (active ? "logoSpin" : "")}>
             <span className={"absolute inset-[-10px] rounded-3xl logoGlow " + (active ? "opacity-100" : "opacity-30")} />
-            <svg viewBox="0 0 100 100" className={className + " relative z-10"}>
-                <defs>
-                    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#F6A08A" />
-                        <stop offset="40%" stopColor="#E96A9A" />
-                        <stop offset="72%" stopColor="#7C3AED" />
-                        <stop offset="100%" stopColor="#2563EB" />
-                    </linearGradient>
-                </defs>
-                <rect x="10" y="10" width="80" height="80" rx={active ? "30" : "20"} fill="url(#lg)" />
-                <path d={active ? "M30 70 V30 L70 70 V30" : "M35 65 L50 35 L65 65"} stroke="white" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round" className="logoPath" />
-            </svg>
+            <img src="/nusatech-mark.svg" alt="" className={className + " relative z-10"} />
         </button>
     );
+}
+
+function BrandLogo({ className }) {
+    return <img src="/nusatech-logo.svg" alt="NusaTech Solutions" className={className || "h-14 w-auto"} />;
 }
 
 function Intro() {
@@ -228,9 +221,8 @@ function Intro() {
     return (
         <div className="intro fixed inset-0 z-50 grid place-items-center bg-[#0F172A]">
             <div className="text-center">
-                <Logo className="h-28 w-28" />
-                <p className="mt-8 text-xs font-bold uppercase tracking-[0.55em] text-white/80">PT NusaTech</p>
-                <p className="mt-3 text-xs tracking-[0.3em] text-[#F6A08A]/70">AI Solutions</p>
+                <BrandLogo className="mx-auto h-40 w-auto max-w-[82vw]" />
+                <p className="mt-6 text-xs tracking-[0.3em] text-[#F6A08A]/70">Digital Systems - AI Integrations</p>
             </div>
         </div>
     );
@@ -323,7 +315,7 @@ const chatKB = [
     { keys: ["contact", "reach", "whatsapp", "email", "talk", "speak", "kontak", "hubungi"], answer: "Contact us directly:\n\nWhatsApp: 085770759300\nEmail: admin@jakartaglobaladviser.com\n\nYou can also use the contact form to create a ready-to-send WhatsApp message." },
     { keys: ["refund", "cancel", "guarantee", "warranty", "jaminan", "garantie"], answer: "We work milestone-by-milestone with written agreements before starting.\n\nIf something is not right, we fix it. Clear scope and communication protect both sides." },
     { keys: ["hotel", "resort", "travel", "tourism", "vacation", "pariwisata"], answer: "Hospitality and travel systems:\n\nBooking and reservation tools\nGuest management portals\nRevenue dashboards\nVacation club and membership systems\nTravel agency CRM dashboards" },
-    { keys: ["hello", "hi", "hey", "halo", "bonjour", "salut", "good morning", "good day"], answer: "Hello, welcome to PT NusaTech AI Solutions.\n\nAsk me about services, pricing, CRM dashboards, AI integrations, timelines, or how to start a project." }
+    { keys: ["hello", "hi", "hey", "halo", "bonjour", "salut", "good morning", "good day"], answer: "Hello, welcome to NusaTech Solutions.\n\nAsk me about services, pricing, CRM dashboards, AI integrations, timelines, or how to start a project." }
 ];
 function getBotAnswer(input) {
     const text = input.toLowerCase();
@@ -611,7 +603,7 @@ function ContactForm({ lang }) {
     const change = function (e) { const { name, value } = e.target; setForm(function (p) { return Object.assign({}, p, { [name]: value }); }); };
     const submit = function (e) {
         e.preventDefault();
-        const text = encodeURIComponent("Hello PT NusaTech,\n\nI would like to discuss a project.\n\nName: " + form.name + "\nContact: " + form.contact + "\nInterested in: " + form.service + "\n\nMessage:\n" + form.message);
+        const text = encodeURIComponent("Hello NusaTech,\n\nI would like to discuss a project.\n\nName: " + form.name + "\nContact: " + form.contact + "\nInterested in: " + form.service + "\n\nMessage:\n" + form.message);
         window.open(WHATSAPP_URL + "?text=" + text, "_blank", "noopener,noreferrer");
         setSent(true);
     };
@@ -763,7 +755,7 @@ const LANGS = {
     en: {
         badge: "Indonesia-based IT solutions & AI integrations partner",
         heroTitle: "Premium websites, CRM dashboards, apps and marketing systems for serious businesses.",
-        heroSub: "PT NusaTech AI Solutions helps hotels, travel companies, exporters, consultants, and service businesses look premium, manage clients better, and turn digital systems into real sales.",
+        heroSub: "NusaTech Solutions helps hotels, travel companies, exporters, consultants, and service businesses look premium, manage clients better, and turn digital systems into real sales.",
         cta1: "Build My Website / CRM", cta2: "View Work",
         metrics: [{ a: "10+", b: "Projects delivered" }, { a: "3+", b: "Countries served" }, { a: "100%", b: "Custom-built" }],
         startProject: "Start Project", consulting: "Consulting",
@@ -788,7 +780,7 @@ const LANGS = {
         chartDisclaimer: "Example campaign results - actual results vary by client",
         portfolioEyebrow: "Portfolio Screenshots", portfolioTitle: "Real project screenshots and dashboard previews.",
         portfolioSub: "TravelToko Dashboard and the Esmeralda Vacation Club Website are shown as portfolio screenshots so clients can instantly understand the work.",
-        comingSoonSub: "These upcoming CRM, resort website, and travel marketplace concepts show the next systems PT NusaTech AI Solutions can launch for serious clients.",
+        comingSoonSub: "These upcoming CRM, resort website, and travel marketplace concepts show the next systems NusaTech Solutions can launch for serious clients.",
         industrySub: "A flexible IT solutions and AI integrations partner for Indonesian businesses, foreign entrepreneurs, hotels, exporters, consultants, and international clients.",
         processSub: "Clients buy faster when the process is clear, professional, and connected to business results.",
         packagesSub: "Start with a professional website, upgrade to a CRM dashboard, or build a complete growth system with marketing and consulting support.",
@@ -799,7 +791,7 @@ const LANGS = {
     id: {
         badge: "Mitra solusi IT dan integrasi AI berbasis Indonesia",
         heroTitle: "Website premium, dashboard CRM, aplikasi dan sistem pemasaran untuk bisnis serius.",
-        heroSub: "PT NusaTech AI Solutions membantu hotel, perusahaan perjalanan, eksportir, konsultan, dan bisnis layanan tampil premium, mengelola klien lebih baik, dan mengubah sistem digital menjadi peluang penjualan nyata.",
+        heroSub: "NusaTech Solutions membantu hotel, perusahaan perjalanan, eksportir, konsultan, dan bisnis layanan tampil premium, mengelola klien lebih baik, dan mengubah sistem digital menjadi peluang penjualan nyata.",
         cta1: "Bangun Website / CRM Saya", cta2: "Lihat Portofolio",
         metrics: [{ a: "10+", b: "Proyek selesai" }, { a: "3+", b: "Negara dilayani" }, { a: "100%", b: "Kustom penuh" }],
         startProject: "Mulai Proyek", consulting: "Konsultasi",
@@ -824,7 +816,7 @@ const LANGS = {
         chartDisclaimer: "Contoh hasil kampanye - hasil aktual bervariasi per klien",
         portfolioEyebrow: "Tangkapan Layar Portofolio", portfolioTitle: "Tangkapan layar proyek nyata dan pratinjau dashboard.",
         portfolioSub: "Dashboard TravelToko dan Website Esmeralda Vacation Club ditampilkan sebagai tangkapan layar portofolio agar klien dapat langsung memahami hasil kerja kami.",
-        comingSoonSub: "Konsep CRM, website resort, dan marketplace perjalanan yang akan datang ini menunjukkan sistem berikutnya yang dapat diluncurkan PT NusaTech AI Solutions untuk klien serius.",
+        comingSoonSub: "Konsep CRM, website resort, dan marketplace perjalanan yang akan datang ini menunjukkan sistem berikutnya yang dapat diluncurkan NusaTech Solutions untuk klien serius.",
         industrySub: "Mitra solusi IT dan integrasi AI yang fleksibel untuk bisnis Indonesia, pengusaha asing, hotel, eksportir, konsultan, dan klien internasional.",
         processSub: "Klien membeli lebih cepat ketika prosesnya jelas, profesional, dan terhubung dengan hasil bisnis.",
         packagesSub: "Mulai dengan website profesional, tingkatkan ke dashboard CRM, atau bangun sistem pertumbuhan lengkap dengan dukungan pemasaran dan konsultasi.",
@@ -835,7 +827,7 @@ const LANGS = {
     fr: {
         badge: "Partenaire de solutions IT et integrations IA base en Indonesie",
         heroTitle: "Sites web premium, tableaux de bord CRM, applications et systemes marketing pour les entreprises serieuses.",
-        heroSub: "PT NusaTech AI Solutions aide les hotels, societes de voyage, exportateurs, consultants et entreprises de services a paraitre premium, mieux gerer leurs clients et transformer leurs systemes numeriques en opportunites de vente reelles.",
+        heroSub: "NusaTech Solutions aide les hotels, societes de voyage, exportateurs, consultants et entreprises de services a paraitre premium, mieux gerer leurs clients et transformer leurs systemes numeriques en opportunites de vente reelles.",
         cta1: "Construire Mon Site / CRM", cta2: "Voir le Portfolio",
         metrics: [{ a: "10+", b: "Projets livres" }, { a: "3+", b: "Pays servis" }, { a: "100%", b: "Sur-mesure" }],
         startProject: "Demarrer", consulting: "Conseil",
@@ -890,11 +882,7 @@ function DigitalStudioWebsite() {
 
                         {/* Brand */}
                         <div className="flex shrink-0 items-center gap-3">
-                            <Logo className="h-9 w-9" intro />
-                            <div>
-                                <p className="text-sm font-black tracking-tight text-white">PT NusaTech</p>
-                                <p className="text-[10px] font-medium tracking-wider text-[#F6A08A]/70">AI Solutions</p>
-                            </div>
+                            <BrandLogo className="h-12 w-auto max-w-[180px]" />
                         </div>
 
                         {/* Centre links */}
@@ -1219,11 +1207,7 @@ function DigitalStudioWebsite() {
                         {/* Brand column */}
                         <div className="sm:col-span-2 lg:col-span-1">
                             <div className="mb-5 flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-sm font-black shadow-lg shadow-[#1E4FA6]/40">N</div>
-                                <div>
-                                    <p className="font-black text-white">PT NusaTech</p>
-                                    <p className="text-xs text-[#F6A08A]/70">AI Solutions</p>
-                                </div>
+                                <BrandLogo className="h-16 w-auto max-w-[220px]" />
                             </div>
                             <p className="text-sm leading-7 text-slate-400">Premium websites, CRM dashboards, AI integrations and digital marketing - built in Indonesia for serious global businesses.</p>
                             <div className="mt-6 flex gap-3">
@@ -1291,7 +1275,7 @@ function DigitalStudioWebsite() {
 
                     {/* Bottom bar */}
                     <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 md:flex-row">
-                        <p>Copyright 2026 PT NusaTech AI Solutions. All rights reserved. - Indonesia</p>
+                        <p>Copyright 2026 NusaTech Solutions. All rights reserved. - Indonesia</p>
                         <div className="flex gap-6">
                             <a href="/privacy.html" className="transition hover:text-slate-300">Privacy Policy</a>
                             <a href="/terms.html" className="transition hover:text-slate-300">Terms of Use</a>

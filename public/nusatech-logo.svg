@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="title desc">
+  <title id="title">NusaTech Solutions</title>
+  <desc id="desc">Cyan, purple, and pink NusaTech Solutions logo with a flowing technology wave mark.</desc>
+  <defs>
+    <linearGradient id="wave" x1="250" y1="150" x2="650" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08D9FF"/>
+      <stop offset="0.42" stop-color="#2563EB"/>
+      <stop offset="0.68" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#FB4FA3"/>
+    </linearGradient>
+    <linearGradient id="text" x1="210" y1="340" x2="700" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08D9FF"/>
+      <stop offset="0.45" stop-color="#2563EB"/>
+      <stop offset="0.75" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#FB4FA3"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.15 0 0 0 0 0.72 0 0 0 0 1 0 0 0 .75 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textShadow" x="-10%" y="-25%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="4" flood-color="#020617" flood-opacity=".55"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#08D9FF" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="920" height="520" fill="none"/>
+  <path d="M154 317c96-72 198-92 300-86" fill="none" stroke="#7DD3FC" stroke-width="13" stroke-linecap="round" opacity=".78" filter="url(#glow)"/>
+  <path d="M486 255c58-92 103-126 140-92 34 31 18 104 81 72 38-19 73-40 106-56" fill="none" stroke="#D946EF" stroke-width="10" stroke-linecap="round" opacity=".75" filter="url(#glow)"/>
+  <path d="M292 276c72 8 103-138 185-136 78 2 92 160 167 145 53-10 72-90 132-122" fill="none" stroke="url(#wave)" stroke-width="55" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M292 276c72 8 103-138 185-136 78 2 92 160 167 145 53-10 72-90 132-122" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity=".36"/>
+  <path d="M734 146l34 8 7-34 8 34 34-8-28 21 22 28-32-14-18 32 1-36-35-2 31-18z" fill="#fff" opacity=".95" filter="url(#glow)"/>
+  <text x="460" y="382" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" fill="url(#text)" filter="url(#textShadow)">NusaTech</text>
+  <text x="460" y="444" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="800" letter-spacing="18" fill="#E0F2FE" filter="url(#textShadow)">SOLUTIONS</text>
+</svg>
