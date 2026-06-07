@@ -1,38 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
   <title id="title">NusaTech Solutions</title>
-  <desc id="desc">Cyan, purple, and pink NusaTech Solutions logo with a flowing technology wave mark.</desc>
+  <desc id="desc">Premium NusaTech Solutions logo with an NT monogram, blue purple pink gradient, and the tagline Innovate Solve Elevate.</desc>
   <defs>
-    <linearGradient id="wave" x1="250" y1="150" x2="650" y2="330" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#08D9FF"/>
-      <stop offset="0.42" stop-color="#2563EB"/>
-      <stop offset="0.68" stop-color="#A855F7"/>
-      <stop offset="1" stop-color="#FB4FA3"/>
+    <radialGradient id="bgGlow" cx="50%" cy="46%" r="55%">
+      <stop offset="0" stop-color="#2E1B56" stop-opacity=".62"/>
+      <stop offset=".48" stop-color="#111827" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#050816"/>
+    </radialGradient>
+    <linearGradient id="ntBlue" x1="410" y1="210" x2="815" y2="570" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EE7FF"/>
+      <stop offset=".28" stop-color="#0EA5E9"/>
+      <stop offset=".62" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#7C3AED"/>
     </linearGradient>
-    <linearGradient id="text" x1="210" y1="340" x2="700" y2="430" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#08D9FF"/>
-      <stop offset="0.45" stop-color="#2563EB"/>
-      <stop offset="0.75" stop-color="#A855F7"/>
-      <stop offset="1" stop-color="#FB4FA3"/>
+    <linearGradient id="ntPink" x1="760" y1="230" x2="1135" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FB7185"/>
+      <stop offset=".42" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#FDBA74"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.15 0 0 0 0 0.72 0 0 0 0 1 0 0 0 .75 0"/>
+    <linearGradient id="nameGrad" x1="350" y1="618" x2="1190" y2="740" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset=".35" stop-color="#2563EB"/>
+      <stop offset=".63" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#FB7185"/>
+    </linearGradient>
+    <filter id="softGlow" x="-25%" y="-35%" width="150%" height="170%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 .18 0 0 0 0 .38 0 0 0 0 1 0 0 0 .68 0"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="textShadow" x="-10%" y="-25%" width="120%" height="150%">
-      <feDropShadow dx="0" dy="7" stdDeviation="4" flood-color="#020617" flood-opacity=".55"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#08D9FF" flood-opacity=".28"/>
+    <filter id="wordShadow" x="-12%" y="-28%" width="124%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#020617" flood-opacity=".75"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38BDF8" flood-opacity=".28"/>
     </filter>
   </defs>
-  <rect width="920" height="520" fill="none"/>
-  <path d="M154 317c96-72 198-92 300-86" fill="none" stroke="#7DD3FC" stroke-width="13" stroke-linecap="round" opacity=".78" filter="url(#glow)"/>
-  <path d="M486 255c58-92 103-126 140-92 34 31 18 104 81 72 38-19 73-40 106-56" fill="none" stroke="#D946EF" stroke-width="10" stroke-linecap="round" opacity=".75" filter="url(#glow)"/>
-  <path d="M292 276c72 8 103-138 185-136 78 2 92 160 167 145 53-10 72-90 132-122" fill="none" stroke="url(#wave)" stroke-width="55" stroke-linecap="round" filter="url(#glow)"/>
-  <path d="M292 276c72 8 103-138 185-136 78 2 92 160 167 145 53-10 72-90 132-122" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity=".36"/>
-  <path d="M734 146l34 8 7-34 8 34 34-8-28 21 22 28-32-14-18 32 1-36-35-2 31-18z" fill="#fff" opacity=".95" filter="url(#glow)"/>
-  <text x="460" y="382" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" fill="url(#text)" filter="url(#textShadow)">NusaTech</text>
-  <text x="460" y="444" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="800" letter-spacing="18" fill="#E0F2FE" filter="url(#textShadow)">SOLUTIONS</text>
+  <rect width="1536" height="1024" fill="url(#bgGlow)"/>
+  <ellipse cx="768" cy="470" rx="510" ry="330" fill="#1E1B4B" opacity=".14"/>
+
+  <g filter="url(#softGlow)">
+    <path d="M487 350c0-49 31-78 79-78h74c32 0 58 13 79 40l244 309c-22 36-48 55-78 57-31 3-58-13-82-48L634 410c-12-15-24-23-38-23h-59v192c0 76-33 134-99 172h-71c80-62 120-134 120-216V350Z" fill="url(#ntBlue)"/>
+    <path d="M535 388v189c0 72-37 129-111 171 64-9 111-37 140-83 26-41 39-94 39-160v-82l-68-35Z" fill="#111827" opacity=".35"/>
+    <path d="M840 270h470c-31 65-70 97-116 97H934l-94-97Z" fill="url(#ntPink)"/>
+    <path d="M973 368h128l-48 261c-8 45-30 82-65 109-34 26-74 39-120 39h-76c78-39 122-94 131-165l50-244Z" fill="url(#ntPink)"/>
+    <path d="M493 275h142c37 0 67 14 91 43l235 296" fill="none" stroke="#DFF9FF" stroke-width="4" stroke-linecap="round" opacity=".48"/>
+    <path d="M849 273h459" fill="none" stroke="#FFE4E6" stroke-width="4" stroke-linecap="round" opacity=".58"/>
+  </g>
+
+  <g filter="url(#wordShadow)">
+    <text x="768" y="714" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="124" font-weight="900" fill="url(#nameGrad)">NusaTech</text>
+    <path d="M352 779h96M1088 779h96" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1088 779h96" fill="none" stroke="#FB7185" stroke-width="5" stroke-linecap="round"/>
+    <text x="768" y="803" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" letter-spacing="25" fill="#E5E7EB">SOLUTIONS</text>
+    <text x="768" y="870" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="24" fill="#38BDF8">INNOVATE  •  SOLVE  •  ELEVATE</text>
+  </g>
 </svg>

@@ -1,19 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="NusaTech Solutions mark">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="NusaTech Solutions NT mark">
   <defs>
-    <linearGradient id="wave" x1="12" y1="34" x2="112" y2="94" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#08D9FF"/>
-      <stop offset="0.44" stop-color="#2563EB"/>
-      <stop offset="0.7" stop-color="#A855F7"/>
-      <stop offset="1" stop-color="#FB4FA3"/>
+    <linearGradient id="ntBlue" x1="42" y1="54" x2="145" y2="181" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EE7FF"/>
+      <stop offset=".32" stop-color="#0EA5E9"/>
+      <stop offset=".68" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#7C3AED"/>
     </linearGradient>
-    <filter id="glow" x="-25%" y="-35%" width="150%" height="170%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 .05 0 0 0 0 .75 0 0 0 0 1 0 0 0 .8 0"/>
+    <linearGradient id="ntPink" x1="126" y1="52" x2="222" y2="166" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FB7185"/>
+      <stop offset=".44" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#FDBA74"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="44%" r="62%">
+      <stop offset="0" stop-color="#1E1B4B"/>
+      <stop offset="1" stop-color="#050816"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-40%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 .14 0 0 0 0 .38 0 0 0 0 1 0 0 0 .65 0"/>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="128" height="128" rx="28" fill="#050816"/>
-  <path d="M16 82c29-22 55-30 86-28" fill="none" stroke="#7DD3FC" stroke-width="5" stroke-linecap="round" opacity=".75"/>
-  <path d="M24 70c23 3 36-48 63-47 27 1 31 55 55 49 16-4 24-24 41-33" transform="translate(-32 10)" fill="none" stroke="url(#wave)" stroke-width="18" stroke-linecap="round" filter="url(#glow)"/>
-  <path d="M95 34l9 3 2-9 2 9 9-3-7 6 6 8-9-4-5 9v-10l-10-1 9-5z" fill="#fff" filter="url(#glow)"/>
+  <rect width="256" height="256" rx="48" fill="url(#bg)"/>
+  <g filter="url(#glow)">
+    <path d="M69 79c0-18 11-29 29-29h25c12 0 22 5 30 15l73 93c-9 14-19 21-31 22-12 1-23-5-32-18l-48-63c-5-6-9-9-14-9H92v61c0 30-13 52-39 67H28c27-25 41-52 41-82V79Z" fill="url(#ntBlue)"/>
+    <path d="M135 50h93c-12 25-27 37-45 37h-67l19-37Z" fill="url(#ntPink)"/>
+    <path d="M172 88h33l-18 76c-5 21-15 38-31 50-15 11-33 17-55 17h-18c28-16 44-36 49-61l40-82Z" fill="url(#ntPink)"/>
+    <path d="M73 52h47c14 0 25 5 34 16l70 89" fill="none" stroke="#E0F2FE" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+  </g>
 </svg>
