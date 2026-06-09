@@ -16,20 +16,22 @@ const services = [
 ];
 
 const projects = [
-    { key: "traveltoko", title: "TravelToko Dashboard", category: "Travel Sales Dashboard", text: "A travel dashboard for bookings, leads, guests, payments, documents, itineraries, follow-ups, revenue, and team activity from one organized control panel." },
-    { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment packages, hotel product positioning, exchange requests, services, and lead generation through WhatsApp and email.", url: "https://esmeraldavacation.club/" }
+    { key: "traveltoko", title: "TravelToko CRM Dashboard", category: "Travel Agency Management System", text: "A complete travel CRM built for a Jakarta-based agency: bookings, leads, guest profiles, payments, itineraries, follow-up tasks, team activity, and revenue analytics — all from one organized control panel." },
+    { key: "sunny-crm", title: "Sunny Vacation Club CRM", category: "Vacation Club Operations Dashboard", text: "A full operations CRM for a vacation club running across Indonesia: apartment inventory, membership leads, hotel packages, RCI exchange requests, payment tracking, and client administration.", url: "https://sunnyvacationclubcrm.business/" },
+    { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment and hotel packages, exchange program positioning, services overview, and lead generation via WhatsApp and email.", url: "https://esmeraldavacation.club/" },
+    { key: "jga", title: "Jakarta Global Adviser", category: "International Business Consulting Website", text: "A professional website for an international advisory firm in Jakarta: market entry strategy, business setup, hotel and travel operations, export consulting, and digital transformation services.", url: "https://jakartaglobaladviser.com/" },
+    { key: "boudjebel", title: "Boudjebel Operations Dashboard", category: "B2B Import & Trade Management", text: "An internal management system for a premium Tunisian dates importer operating across Indonesia: SPG team tracking, regional sales performance, client database, inventory, and exhibition management." }
 ];
 
 const comingSoonProjects = [
-    { image: "/projects/coming-soon-crm-esmeralda.png", title: "CRM Esmeralda", category: "Coming Soon CRM Dashboard", text: "A sales command center for Esmeralda Vacation Club to manage leads, apartment inventory, payments, exchange activity, and reservation follow-ups." },
-    { image: "/projects/coming-soon-padel-sukabumi.png", title: "Website Padel in Resort Sukabumi", category: "Coming Soon Resort Website", text: "A resort padel website for court booking, guest packages, private coaching, gallery presentation, and premium wellness club positioning." },
-    { image: "/projects/coming-soon-tour-marketplace.png", title: "Travel Tour Marketplace for Travel Tours", category: "Coming Soon Travel Marketplace", text: "A travel marketplace for verified agencies, tour packages, destinations, prices, customer login, seller onboarding, and quotation requests." }
+    { image: "/projects/coming-soon-padel-sukabumi.png", title: "Padel Resort Sukabumi", category: "Coming Soon — Resort Website", text: "A resort padel website for court booking, guest packages, private coaching, gallery presentation, and premium wellness club positioning." },
+    { image: "/projects/coming-soon-tour-marketplace.png", title: "Travel Tour Marketplace", category: "Coming Soon — Travel Platform", text: "A travel marketplace for verified agencies, tour packages, destinations, prices, customer login, seller onboarding, and quotation requests." }
 ];
 
 const packages = [
-    { name: "Website Launch", price: "From USD 500", desc: "Premium business website, mobile responsive design, WhatsApp/contact flow, basic SEO, and professional brand presentation." },
-    { name: "CRM Dashboard System", price: "From USD 1,200", desc: "Secure login, client database, lead pipeline, document tracking, sales overview, admin dashboard, and business analytics." },
-    { name: "Growth & Automation Suite", price: "Custom", desc: "Website, CRM dashboard, client portal, digital marketing funnel, reporting system, and consulting support for serious growth." }
+    { name: "Website Launch", price: "From USD 500", desc: "Premium business website, mobile responsive design, WhatsApp/contact flow, basic SEO, and professional brand presentation.", features: ["Premium responsive design", "Mobile-first layout", "WhatsApp lead capture", "Contact forms & CTAs", "SEO structure & meta", "Custom domain deployment", "1 month post-launch support"] },
+    { name: "CRM Dashboard System", price: "From USD 1,200", desc: "Secure login, client database, lead pipeline, document tracking, sales overview, admin dashboard, and business analytics.", features: ["Secure login & role access", "Lead & client database", "Sales pipeline management", "Document & file tracking", "Payment & invoice records", "Admin dashboard & analytics", "Team task management", "3 months support"] },
+    { name: "Growth & Automation Suite", price: "Custom", desc: "Website, CRM dashboard, client portal, digital marketing funnel, reporting system, and consulting support for serious growth.", features: ["Everything in both plans", "AI chat assistant", "WhatsApp automation flows", "Client portal access", "Marketing funnel & landing pages", "Custom integrations & APIs", "Business strategy consulting", "Priority ongoing support"] }
 ];
 
 const faqs = [
@@ -48,13 +50,13 @@ const faqs = [
 ];
 
 const testimonials = [
-    { quote: "NusaTech built a CRM dashboard that completely changed how we manage our leads and client follow-ups. They genuinely understood our business operations from day one and delivered beyond expectations.", name: "Operations Director", company: "Travel Club - Jakarta", initial: "T" },
-    { quote: "Our new website generates more serious inquiries in a week than the old one did in a month. The design is premium and the WhatsApp integration converts visitors into conversations immediately.", name: "General Manager", company: "Boutique Resort - Bali", initial: "B" },
-    { quote: "As an international business entering Indonesia, I needed a partner who understood both local and global standards. NusaTech delivered a professional website, CRM, and real strategic direction.", name: "Managing Director", company: "Export Consultancy - Singapore", initial: "M" }
+    { quote: "NusaTech built a CRM dashboard that completely changed how we manage leads and client follow-ups. They understood our operations from day one and delivered something our whole team actually uses every day.", name: "Operations Director", company: "TravelToko — Jakarta", initial: "T" },
+    { quote: "From the website to the full CRM system, NusaTech handled everything. Managing our vacation club members, leads, payments, and exchange requests is now fully organized in one clean platform.", name: "Managing Director", company: "Sunny Vacation Club — Indonesia", initial: "S" },
+    { quote: "As an international advisory firm operating in Indonesia, we needed a partner who understood both local and global standards. NusaTech delivered a professional digital presence and real strategic direction.", name: "Managing Director", company: "Jakarta Global Adviser", initial: "J" }
 ];
 
 const industries = ["Hotels & Resorts", "Travel Agencies", "Vacation Clubs", "Real Estate", "Export Companies", "Consultants", "Retail Brands", "Service Businesses"];
-const heroMetrics = [{ a: "10+", b: "Projects delivered" }, { a: "3+", b: "Countries served" }, { a: "100%", b: "Custom-built" }];
+const heroMetrics = [{ a: "6+", b: "Projects delivered" }, { a: "4+", b: "Countries served" }, { a: "100%", b: "Custom-built" }];
 const dashboardStats = [{ label: "New Leads", value: "248" }, { label: "Pipeline Value", value: "USD 42K" }, { label: "Conversion", value: "+32%" }];
 const platformFeatures = [
     { title: "Data & CRM", text: "Client records, leads, bookings, payments, documents, and team activity in one source of truth." },
@@ -561,16 +563,17 @@ function SoftwareShowcase() {
 }
 
 function ProjectScreenshot({ type }) {
-    if (type === "traveltoko") {
-        return (
-            <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-[#E96A9A]/15 bg-[#0F172A] shadow-2xl shadow-[#1E4FA6]/30">
-                <img src="/projects/traveltoko-dashboard-screenshot.png" alt="TravelToko dashboard screenshot" className="h-full w-full object-cover object-left-top" loading="lazy" />
-            </div>
-        );
-    }
+    const map = {
+        "traveltoko":  { src: "/projects/traveltoko-crm-screenshot.png",          alt: "TravelToko CRM dashboard screenshot",         dark: true },
+        "sunny-crm":   { src: "/projects/coming-soon-crm-esmeralda.png",           alt: "Sunny Vacation Club CRM dashboard screenshot", dark: true },
+        "esmeralda":   { src: "/projects/esmeralda-vacation-club-screenshot.png",  alt: "Esmeralda Vacation Club website screenshot",   dark: false },
+        "jga":         { src: "/projects/jga-website-screenshot.png",              alt: "Jakarta Global Adviser website screenshot",    dark: false },
+        "boudjebel":   { src: "/projects/boudjebel-dashboard-screenshot.png",      alt: "Boudjebel Operations Dashboard screenshot",    dark: true },
+    };
+    const s = map[type] || map["esmeralda"];
     return (
-        <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-[#E96A9A]/15 bg-stone-50 shadow-2xl shadow-[#1E4FA6]/30">
-            <img src="/projects/esmeralda-vacation-club-screenshot.png" alt="Esmeralda Vacation Club website screenshot" className="h-full w-full object-cover object-left-top" loading="lazy" />
+        <div className="mb-6 h-56 overflow-hidden rounded-3xl border border-[#E96A9A]/15 shadow-2xl shadow-[#1E4FA6]/30" style={{ background: s.dark ? "#0F172A" : "#f8f5f0" }}>
+            <img src={s.src} alt={s.alt} className="h-full w-full object-cover object-left-top" loading="lazy" />
         </div>
     );
 }
@@ -1111,7 +1114,17 @@ function DigitalStudioWebsite() {
                                     {featured ? <p className="mb-4 w-fit rounded-full bg-[#F6A08A] px-3 py-1 text-xs font-black text-slate-950">{t.popular}</p> : null}
                                     <h3 className="text-2xl font-black">{item.name}</h3>
                                     <p className="mt-3 text-4xl font-black text-[#F6A08A]">{item.price}</p>
-                                    <p className="mt-4 flex-1 leading-7 text-slate-400">{item.desc}</p>
+                                    <p className="mt-4 leading-7 text-slate-400">{item.desc}</p>
+                                    <ul className="mt-5 flex-1 space-y-2">
+                                        {item.features.map(function (f) {
+                                            return (
+                                                <li key={f} className="flex items-center gap-2.5 text-sm text-slate-300">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 shrink-0 text-[#F6A08A]"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" /></svg>
+                                                    {f}
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
                                     <a href="#contact" className={"mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 text-center text-sm font-black transition " + (featured ? "bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] text-white shadow-lg shadow-[#1E4FA6]/40 hover:opacity-90" : "border border-[#E96A9A]/25 bg-[#E96A9A]/5 text-white hover:bg-[#E96A9A]/10")}>
                                         {t.getStarted}
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4"><path fillRule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clipRule="evenodd" /></svg>
