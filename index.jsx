@@ -17,7 +17,7 @@ const services = [
 
 const projects = [
     { key: "traveltoko", title: "TravelToko CRM Dashboard", category: "Travel Agency Management System", text: "A complete travel CRM built for a Jakarta-based agency: bookings, leads, guest profiles, payments, itineraries, follow-up tasks, team activity, and revenue analytics — all from one organized control panel." },
-    { key: "sunny-crm", title: "Sunny Vacation Club CRM", category: "Vacation Club Operations Dashboard", text: "A full operations CRM for a vacation club running across Indonesia: apartment inventory, membership leads, hotel packages, RCI exchange requests, payment tracking, and client administration.", url: "https://sunnyvacationclubcrm.business/" },
+    { key: "sunny-crm", title: "Sunny Vacation Club CRM", category: "Vacation Club Operations Dashboard", text: "A full operations CRM for a vacation club running across Indonesia: apartment inventory, membership leads, hotel packages, RCI exchange requests, payment tracking, and client administration." },
     { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment and hotel packages, exchange program positioning, services overview, and lead generation via WhatsApp and email.", url: "https://esmeraldavacation.club/" },
     { key: "jga", title: "Jakarta Global Adviser", category: "International Business Consulting Website", text: "A professional website for an international advisory firm in Jakarta: market entry strategy, business setup, hotel and travel operations, export consulting, and digital transformation services.", url: "https://jakartaglobaladviser.com/" },
     { key: "boudjebel", title: "Boudjebel Operations Dashboard", category: "B2B Import & Trade Management", text: "An internal management system for a premium Tunisian dates importer operating across Indonesia: SPG team tracking, regional sales performance, client database, inventory, and exhibition management." }
@@ -873,7 +873,7 @@ function DigitalStudioWebsite() {
             <RobotChat />
             <CookieConsent />
 
-            <section className="relative px-4 pb-24 pt-2 lg:px-16">
+            <section className="relative px-4 pb-24 pt-0 lg:px-16">
                 {/* Background */}
                 <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 15% 20%, rgba(246,160,138,0.38) 0%, transparent 42%), radial-gradient(ellipse at 82% 12%, rgba(233,106,154,0.34) 0%, transparent 40%), radial-gradient(ellipse at 60% 72%, rgba(45,93,184,0.34) 0%, transparent 52%), linear-gradient(135deg, #1E4FA6 0%, #7A4F9A 35%, #E96A9A 65%, #F6A08A 100%)" }} />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -926,7 +926,7 @@ function DigitalStudioWebsite() {
 
                     <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} />
 
-                    <div className="grid items-center gap-14 pb-24 pt-10 lg:grid-cols-2 lg:pb-32 lg:pt-14">
+                    <div className="grid items-center gap-14 pb-24 pt-6 lg:grid-cols-2 lg:pb-32 lg:pt-8">
                         <FadeIn>
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E96A9A]/25 bg-[#E96A9A]/10 px-4 py-2 text-sm font-semibold text-[#F6A08A]">
                                 {t.badge}
