@@ -938,7 +938,7 @@ function DigitalStudioWebsite() {
                                 {t.metrics.map(function (m, i) { return <div key={m.a} className="rounded-2xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 p-4 transition hover:-translate-y-0.5 hover:bg-[#E96A9A]/10" style={{ animation: "fadeInUp .7s cubic-bezier(.16,1,.3,1) " + (.15 + i * .1) + "s both" }}><Counter value={m.a} className="text-xl font-black" /><p className="text-sm text-slate-400">{m.b}</p></div>; })}
                             </div>
                         </FadeIn>
-                        <FadeIn delay={0.15} className="-mt-16 lg:-mt-24">
+                        <FadeIn delay={0.15} className="-mt-32 lg:-mt-48">
                             <SoftwareShowcase />
                         </FadeIn>
                     </div>
