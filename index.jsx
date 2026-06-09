@@ -870,7 +870,7 @@ function DigitalStudioWebsite() {
             <RobotChat />
             <CookieConsent />
 
-            <section className="relative px-4 pb-24 pt-6 lg:px-16">
+            <section className="relative px-4 pb-24 pt-2 lg:px-16">
                 {/* Background */}
                 <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 15% 20%, rgba(246,160,138,0.38) 0%, transparent 42%), radial-gradient(ellipse at 82% 12%, rgba(233,106,154,0.34) 0%, transparent 40%), radial-gradient(ellipse at 60% 72%, rgba(45,93,184,0.34) 0%, transparent 52%), linear-gradient(135deg, #1E4FA6 0%, #7A4F9A 35%, #E96A9A 65%, #F6A08A 100%)" }} />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -923,7 +923,7 @@ function DigitalStudioWebsite() {
 
                     <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} />
 
-                    <div className="grid items-center gap-14 py-24 lg:grid-cols-2 lg:py-32">
+                    <div className="grid items-center gap-14 pb-24 pt-10 lg:grid-cols-2 lg:pb-32 lg:pt-14">
                         <FadeIn>
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E96A9A]/25 bg-[#E96A9A]/10 px-4 py-2 text-sm font-semibold text-[#F6A08A]">
                                 {t.badge}
