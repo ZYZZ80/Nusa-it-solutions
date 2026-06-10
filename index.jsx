@@ -758,6 +758,8 @@ function CookieConsent() {
 
 const LANGS = {
     en: {
+        metaTitle: "NusaTech Solutions | Websites & CRM Indonesia",
+        metaDescription: "NusaTech Solutions builds premium business websites, CRM dashboards, client portals, and digital marketing systems for hotels, travel agencies, exporters, and serious businesses across Indonesia and globally.",
         badge: "Indonesia-based IT solutions & AI integrations partner",
         heroTitle: "Premium websites, CRM dashboards, apps and marketing systems for serious businesses.",
         heroSub: "NusaTech Solutions helps hotels, travel companies, exporters, consultants, and service businesses look premium, manage clients better, and turn digital systems into real sales.",
@@ -794,6 +796,8 @@ const LANGS = {
         consultingSub: "Beyond websites and CRM systems, we support market entry, business setup, commercial strategy, hotel and travel operations, digital transformation, and growth planning in Indonesia."
     },
     id: {
+        metaTitle: "NusaTech Solutions | Jasa Website & CRM Indonesia",
+        metaDescription: "NusaTech Solutions membangun website bisnis premium, dashboard CRM, portal klien, dan sistem pemasaran digital untuk hotel, agen perjalanan, eksportir, dan bisnis serius di Indonesia dan global.",
         badge: "Mitra solusi IT dan integrasi AI berbasis Indonesia",
         heroTitle: "Website premium, dashboard CRM, aplikasi dan sistem pemasaran untuk bisnis serius.",
         heroSub: "NusaTech Solutions membantu hotel, perusahaan perjalanan, eksportir, konsultan, dan bisnis layanan tampil premium, mengelola klien lebih baik, dan mengubah sistem digital menjadi peluang penjualan nyata.",
@@ -830,6 +834,8 @@ const LANGS = {
         consultingSub: "Selain website dan sistem CRM, kami mendukung masuk pasar, pendirian bisnis, strategi komersial, operasi hotel dan perjalanan, transformasi digital, dan perencanaan pertumbuhan di Indonesia."
     },
     fr: {
+        metaTitle: "NusaTech Solutions | Sites Web & CRM Indonesie",
+        metaDescription: "NusaTech Solutions cree des sites web premium, des tableaux de bord CRM, des portails clients et des systemes marketing pour hotels, agences de voyage, exportateurs et entreprises serieuses en Indonesie et a l'international.",
         badge: "Partenaire de solutions IT et integrations IA base en Indonesie",
         heroTitle: "Sites web premium, tableaux de bord CRM, applications et systemes marketing pour les entreprises serieuses.",
         heroSub: "NusaTech Solutions aide les hotels, societes de voyage, exportateurs, consultants et entreprises de services a paraitre premium, mieux gerer leurs clients et transformer leurs systemes numeriques en opportunites de vente reelles.",
@@ -865,6 +871,14 @@ function DigitalStudioWebsite() {
     });
     const t = LANGS[lang] || LANGS.en;
     function switchLang(l) { setLang(l); try { window.localStorage.setItem("lang", l); } catch (e) { } }
+    useEffect(function () {
+        try {
+            document.documentElement.lang = lang;
+            var d = document.querySelector('meta[name="description"]');
+            if (d && t.metaDescription) d.setAttribute("content", t.metaDescription);
+            if (document.title && t.metaTitle) document.title = t.metaTitle;
+        } catch (e) { }
+    }, [lang]);
 
     return (
         <main id="main-content" className="min-h-screen overflow-hidden bg-[#0F172A] text-white">

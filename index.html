@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1A1A1F" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Performance: resource hints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+    <!-- Local SEO -->
+    <meta name="author" content="NusaTech Solutions" />
+    <meta name="geo.region" content="ID-JK" />
+    <meta name="geo.placename" content="Jakarta, Indonesia" />
+    <meta name="geo.position" content="-6.2088;106.8456" />
+    <meta name="ICBM" content="-6.2088, 106.8456" />
 
     <!-- Primary SEO -->
     <title>NusaTech Solutions | Websites & CRM Indonesia</title>
@@ -18,16 +32,21 @@
     <meta property="og:title" content="NusaTech Solutions | Websites & CRM Indonesia" />
     <meta property="og:description" content="We build premium business websites, CRM dashboards, and digital marketing systems for hotels, travel agencies, exporters, and serious businesses across Indonesia and globally." />
     <meta property="og:image" content="https://www.nusatechsolutions.company/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NusaTech Solutions - premium websites, CRM dashboards and digital systems for businesses in Indonesia." />
     <meta property="og:site_name" content="NusaTech Solutions" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+    <meta property="og:locale:alternate" content="fr_FR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="NusaTech Solutions | Websites & CRM Indonesia" />
     <meta name="twitter:description" content="Premium business websites, CRM dashboards, and digital marketing systems built in Indonesia for serious global businesses." />
     <meta name="twitter:image" content="https://www.nusatechsolutions.company/og-image.png" />
+    <meta name="twitter:image:alt" content="NusaTech Solutions - websites, CRM dashboards and digital systems." />
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -50,19 +69,61 @@
           "about": { "@id": "https://www.nusatechsolutions.company/#business" }
         },
         {
-          "@type": "LocalBusiness",
+          "@type": ["ProfessionalService", "LocalBusiness"],
           "@id": "https://www.nusatechsolutions.company/#business",
           "name": "NusaTech Solutions",
+          "image": "https://www.nusatechsolutions.company/og-image.png",
+          "logo": "https://www.nusatechsolutions.company/nusatech-logo.svg",
           "url": "https://www.nusatechsolutions.company/",
           "email": "admin@jakartaglobaladviser.com",
           "telephone": "+6285770759300",
+          "priceRange": "$$",
           "description": "NusaTech Solutions builds premium business websites, CRM dashboards, client portals, and digital marketing systems for hotels, travel agencies, exporters, and serious businesses in Indonesia and globally.",
           "address": {
             "@type": "PostalAddress",
+            "addressLocality": "Jakarta",
+            "addressRegion": "DKI Jakarta",
             "addressCountry": "ID"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -6.2088,
+            "longitude": 106.8456
+          },
           "areaServed": ["ID", "Worldwide"],
-          "serviceType": ["Web Development", "CRM Dashboard", "Digital Marketing", "IT Consulting", "AI Integrations"]
+          "knowsLanguage": ["en", "id", "fr"],
+          "serviceType": ["Web Development", "CRM Dashboard", "Digital Marketing", "IT Consulting", "AI Integrations"],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "NusaTech Solutions Packages",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Website Launch",
+                "priceCurrency": "USD",
+                "price": "500",
+                "description": "Premium responsive business website with WhatsApp lead capture, SEO structure, and custom domain deployment."
+              },
+              {
+                "@type": "Offer",
+                "name": "CRM Dashboard System",
+                "priceCurrency": "USD",
+                "price": "1200",
+                "description": "Secure CRM with lead pipeline, client database, document tracking, payments, and admin analytics."
+              },
+              {
+                "@type": "Offer",
+                "name": "Growth & Automation Suite",
+                "description": "Website, CRM dashboard, AI chat assistant, WhatsApp automation, marketing funnel, and consulting support."
+              }
+            ]
+          }
         },
         {
           "@type": "Service",
