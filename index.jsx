@@ -20,7 +20,8 @@ const projects = [
     { key: "sunny-crm", title: "Sunny Vacation Club CRM", category: "Vacation Club Operations Dashboard", text: "A full operations CRM for a vacation club running across Indonesia: apartment inventory, membership leads, hotel packages, RCI exchange requests, payment tracking, and client administration." },
     { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment and hotel packages, exchange program positioning, services overview, and lead generation via WhatsApp and email.", url: "https://esmeraldavacation.club/" },
     { key: "jga", title: "Jakarta Global Adviser", category: "International Business Consulting Website", text: "A professional website for an international advisory firm in Jakarta: market entry strategy, business setup, hotel and travel operations, export consulting, and digital transformation services.", url: "https://jakartaglobaladviser.com/" },
-    { key: "boudjebel", title: "Boudjebel Operations Dashboard", category: "B2B Import & Trade Management", text: "An internal management system for a premium Tunisian dates importer operating across Indonesia: SPG team tracking, regional sales performance, client database, inventory, and exhibition management." }
+    { key: "boudjebel", title: "Boudjebel Operations Dashboard", category: "B2B Import & Trade Management", text: "An internal management system for a premium Tunisian dates importer operating across Indonesia: SPG team tracking, regional sales performance, client database, inventory, and exhibition management." },
+    { key: "nightbox", title: "NightBox Website", category: "Nightlife Retail & Vending Network", text: "A modern website for a nightlife convenience network operating smart vending machines across Jakarta, Bali, Bandung, and beyond — serving power banks, essentials, and party items via cashless payment.", url: "https://nightbox.company/" }
 ];
 
 const comingSoonProjects = [
@@ -569,6 +570,7 @@ function ProjectScreenshot({ type }) {
         "esmeralda":   { src: "/projects/esmeralda-vacation-club-screenshot.png",  alt: "Esmeralda Vacation Club website screenshot",   dark: false },
         "jga":         { src: "/projects/jga-website-screenshot.png",              alt: "Jakarta Global Adviser website screenshot",    dark: false },
         "boudjebel":   { src: "/projects/boudjebel-dashboard-screenshot.png",      alt: "Boudjebel Operations Dashboard screenshot",    dark: true },
+        "nightbox":    { src: "/projects/nightbox-screenshot.png",                alt: "NightBox website screenshot",                  dark: false },
     };
     const s = map[type] || map["esmeralda"];
     return (
