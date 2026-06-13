@@ -16,17 +16,18 @@ const services = [
 ];
 
 const projects = [
-    { key: "traveltoko", title: "TravelToko CRM Dashboard", category: "Travel Agency Management System", text: "A complete travel CRM built for a Jakarta-based agency: bookings, leads, guest profiles, payments, itineraries, follow-up tasks, team activity, and revenue analytics — all from one organized control panel." },
+    { key: "traveltoko", title: "TravelToko CRM Dashboard", category: "Travel Agency Management System", text: "A complete travel CRM built for a Jakarta-based agency: bookings, leads, guest profiles, payments, itineraries, follow-up tasks, team activity, and revenue analytics - all from one organized control panel." },
     { key: "sunny-crm", title: "Sunny Vacation Club CRM", category: "Vacation Club Operations Dashboard", text: "A full operations CRM for a vacation club running across Indonesia: apartment inventory, membership leads, hotel packages, RCI exchange requests, payment tracking, and client administration." },
     { key: "esmeralda", title: "Esmeralda Vacation Club Website", category: "Luxury Vacation Club Website", text: "A premium vacation club website for holiday ownership, apartment and hotel packages, exchange program positioning, services overview, and lead generation via WhatsApp and email.", url: "https://esmeraldavacation.club/" },
     { key: "jga", title: "Jakarta Global Adviser", category: "International Business Consulting Website", text: "A professional website for an international advisory firm in Jakarta: market entry strategy, business setup, hotel and travel operations, export consulting, and digital transformation services.", url: "https://jakartaglobaladviser.com/" },
     { key: "boudjebel", title: "Boudjebel Operations Dashboard", category: "B2B Import & Trade Management", text: "An internal management system for a premium Tunisian dates importer operating across Indonesia: SPG team tracking, regional sales performance, client database, inventory, and exhibition management." },
-    { key: "nightbox", title: "NightBox Website", category: "Nightlife Retail & Vending Network", text: "A modern website for a nightlife convenience network operating smart vending machines across Jakarta, Bali, Bandung, and beyond — serving power banks, essentials, and party items via cashless payment.", url: "https://nightbox.company/" }
+    { key: "nightbox", title: "NightBox Website", category: "Nightlife Retail & Vending Network", text: "A modern website for a nightlife convenience network operating smart vending machines across Jakarta, Bali, Bandung, and beyond - serving power banks, essentials, and party items via cashless payment.", url: "https://nightbox.company/" }
 ];
 
 const comingSoonProjects = [
-    { image: "/projects/coming-soon-padel-sukabumi.png", title: "Padel Resort Sukabumi", category: "Coming Soon — Resort Website", text: "A resort padel website for court booking, guest packages, private coaching, gallery presentation, and premium wellness club positioning." },
-    { image: "/projects/coming-soon-tour-marketplace.png", title: "Travel Tour Marketplace", category: "Coming Soon — Travel Platform", text: "A travel marketplace for verified agencies, tour packages, destinations, prices, customer login, seller onboarding, and quotation requests." }
+    { image: "/projects/coming-soon-crm-esmeralda.png", title: "CRM Esmeralda", category: "Coming Soon CRM Dashboard", text: "A sales command center for Esmeralda Vacation Club to manage leads, apartment inventory, payments, exchange activity, and reservation follow-ups." },
+    { image: "/projects/coming-soon-padel-sukabumi.png", title: "Padel Resort Sukabumi", category: "Coming Soon - Resort Website", text: "A resort padel website for court booking, guest packages, private coaching, gallery presentation, and premium wellness club positioning." },
+    { image: "/projects/coming-soon-tour-marketplace.png", title: "Travel Tour Marketplace", category: "Coming Soon - Travel Platform", text: "A travel marketplace for verified agencies, tour packages, destinations, prices, customer login, seller onboarding, and quotation requests." }
 ];
 
 const packages = [
@@ -51,9 +52,17 @@ const faqs = [
 ];
 
 const testimonials = [
-    { quote: "NusaTech built a CRM dashboard that completely changed how we manage leads and client follow-ups. They understood our operations from day one and delivered something our whole team actually uses every day.", name: "Operations Director", company: "TravelToko — Jakarta", initial: "T" },
-    { quote: "From the website to the full CRM system, NusaTech handled everything. Managing our vacation club members, leads, payments, and exchange requests is now fully organized in one clean platform.", name: "Managing Director", company: "Sunny Vacation Club — Indonesia", initial: "S" },
+    { quote: "NusaTech built a CRM dashboard that completely changed how we manage leads and client follow-ups. They understood our operations from day one and delivered something our whole team actually uses every day.", name: "Operations Director", company: "TravelToko - Jakarta", initial: "T" },
+    { quote: "From the website to the full CRM system, NusaTech handled everything. Managing our vacation club members, leads, payments, and exchange requests is now fully organized in one clean platform.", name: "Managing Director", company: "Sunny Vacation Club - Indonesia", initial: "S" },
     { quote: "As an international advisory firm operating in Indonesia, we needed a partner who understood both local and global standards. NusaTech delivered a professional digital presence and real strategic direction.", name: "Managing Director", company: "Jakarta Global Adviser", initial: "J" }
+];
+
+const partners = [
+    { name: "Boudjebel", logo: "/partners/boudjebel.svg" },
+    { name: "Travel Toko", logo: "/partners/traveltoko.svg" },
+    { name: "Living Asia Resort & Spa Lombok", logo: "/partners/living-asia.svg" },
+    { name: "Sunny Vacation Club", logo: "/partners/sunny-vacation-club.svg" },
+    { name: "Hijra", logo: "/partners/hijra.svg" }
 ];
 
 const industries = ["Hotels & Resorts", "Travel Agencies", "Vacation Clubs", "Real Estate", "Export Companies", "Consultants", "Retail Brands", "Service Businesses"];
@@ -756,6 +765,36 @@ function CookieConsent() {
     );
 }
 
+function PartnersSection() {
+    return (
+        <section id="partners" className="relative overflow-hidden px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #070B18 0%, #111827 48%, #160B2F 100%)" }}>
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(37,99,235,0.20),transparent_28%),radial-gradient(circle_at_85%_10%,rgba(233,106,154,0.16),transparent_30%)]" />
+            <div className="relative z-10 mx-auto max-w-7xl">
+                <FadeIn>
+                    <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                        <div>
+                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Partners & Clients</p>
+                            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-5xl">Trusted by brands across travel, hospitality, retail and trade.</h2>
+                        </div>
+                        <p className="max-w-md text-sm leading-7 text-slate-400">A growing network of businesses using NusaTech for websites, dashboards, CRM systems and digital growth.</p>
+                    </div>
+                </FadeIn>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    {partners.map(function (partner) {
+                        return (
+                            <FadeIn key={partner.name}>
+                                <div className="group flex h-32 items-center justify-center rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-xl shadow-black/20 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#F6A08A]/35 hover:bg-white/[0.09]">
+                                    <img src={partner.logo} alt={partner.name + " logo"} loading="lazy" className="max-h-20 max-w-full object-contain transition duration-300 group-hover:scale-105" />
+                                </div>
+                            </FadeIn>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
+
 const LANGS = {
     en: {
         metaTitle: "NusaTech Solutions | Websites & CRM Indonesia",
@@ -990,6 +1029,8 @@ function DigitalStudioWebsite() {
                     </div>
                 </div>
             </section>
+
+            <PartnersSection />
 
             <section id="work" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
