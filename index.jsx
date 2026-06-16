@@ -83,6 +83,33 @@ const processSteps = [
     { num: "04", title: "Launch, Training & Support", desc: "We deploy, train your team, and stay available for improvements after go-live." }
 ];
 
+const serviceLandingPages = [
+    { href: "/web-development-jakarta.html", title: "Web Development Jakarta", text: "Premium websites for Jakarta businesses, hotels, travel agencies, consultants and exporters." },
+    { href: "/crm-dashboard-jakarta.html", title: "CRM Dashboard Jakarta", text: "Custom CRM dashboards for leads, clients, teams, sales pipelines, documents and payments." },
+    { href: "/ai-integrations-jakarta.html", title: "AI Integrations Jakarta", text: "AI assistants, lead qualification, reporting summaries and automation for business workflows." },
+    { href: "/hotel-travel-crm.html", title: "Hotel & Travel CRM", text: "Booking, guest, membership, itinerary, payment and follow-up systems for hospitality and travel." },
+    { href: "/business-website-indonesia.html", title: "Business Website Indonesia", text: "SEO-ready websites for Indonesian and international businesses that need trust and conversion." },
+    { href: "/whatsapp-funnel-crm.html", title: "WhatsApp Funnel + CRM", text: "Connect WhatsApp inquiries to lead pipelines, tasks, reminders, and sales dashboards." }
+];
+
+const caseStudies = [
+    { title: "TravelToko CRM Dashboard", result: "Travel leads, bookings and revenue organized in one dashboard.", points: ["Lead and client database", "Tour revenue dashboard", "Tasks, meetings and sales pipeline"] },
+    { title: "Sunny Vacation Club CRM", result: "Vacation club operations structured for memberships, payments and exchange requests.", points: ["Member and apartment records", "Payment tracking", "Exchange and reservation workflows"] },
+    { title: "Boudjebel Operations Dashboard", result: "Importer operations improved with sales, inventory and team visibility.", points: ["SPG sales tracking", "Regional performance", "Client and stock database"] },
+    { title: "Esmeralda Vacation Club Website", result: "Premium vacation ownership website connected to WhatsApp and email leads.", points: ["Luxury brand presentation", "SEO-ready structure", "Inquiry-focused CTAs"] }
+];
+
+const trustBadges = [
+    "Based in Jakarta, Indonesia",
+    "Serving local and international clients",
+    "Google Analytics and SEO-ready setup",
+    "Custom CRM and dashboard architecture",
+    "WhatsApp-first lead capture",
+    "Post-launch support and training",
+    "Mobile responsive business systems",
+    "English, Indonesian, French, Spanish, Italian, Arabic, Russian, Chinese, Japanese, German and Korean"
+];
+
 const navLinks = [
     { href: "#services", label: "Services" },
     { href: "#work", label: "Work" },
@@ -109,7 +136,12 @@ const languageOptions = [
     { code: "fr", label: "FR" },
     { code: "es", label: "ES" },
     { code: "it", label: "IT" },
-    { code: "ar", label: "AR" }
+    { code: "ar", label: "AR" },
+    { code: "ru", label: "RU" },
+    { code: "zh", label: "中文" },
+    { code: "ja", label: "JP" },
+    { code: "de", label: "DE" },
+    { code: "ko", label: "KO" }
 ];
 
 const cssRules = [
@@ -809,6 +841,93 @@ function PartnersSection() {
     );
 }
 
+function CredibilitySection() {
+    return (
+        <section id="jakarta-seo" className="relative overflow-hidden px-6 py-24 lg:px-20">
+            <FloatingBlobs variant="section" />
+            <div className="relative z-10 mx-auto max-w-7xl">
+                <FadeIn>
+                    <div className="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+                        <div>
+                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Jakarta Digital Agency</p>
+                            <h2 className="text-4xl font-black tracking-tight md:text-6xl">Web development, CRM dashboards and AI integrations for Jakarta businesses.</h2>
+                            <p className="mt-6 text-lg leading-8 text-slate-400">NusaTech Solutions is built for companies that need more than a nice homepage. We help Jakarta hotels, travel companies, exporters, consultants, real estate teams and service businesses build websites, dashboards, CRM systems, WhatsApp funnels and AI-supported workflows that look premium and support real operations.</p>
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                {["Jakarta", "Indonesia", "Hotels", "Travel", "Export", "CRM", "AI", "WhatsApp"].map(function (tag) {
+                                    return <span key={tag} className="rounded-full border border-[#E96A9A]/20 bg-[#E96A9A]/8 px-4 py-2 text-sm font-bold text-slate-200">{tag}</span>;
+                                })}
+                            </div>
+                        </div>
+                        <div className="luxBorder rounded-[2rem] p-7 shadow-2xl shadow-[#1E4FA6]/30">
+                            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Trust Signals</p>
+                            <div className="grid gap-3 sm:grid-cols-2">
+                                {trustBadges.map(function (badge) {
+                                    return (
+                                        <div key={badge} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-slate-300">
+                                            <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#F6A08A]" />
+                                            {badge}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </FadeIn>
+            </div>
+        </section>
+    );
+}
+
+function ServiceLandingLinks() {
+    return (
+        <section id="service-pages" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <div className="mx-auto max-w-7xl">
+                <FadeIn><SectionTitle eyebrow="SEO Service Pages" title="Focused pages for the searches clients actually make." text="Each page targets a high-intent Jakarta or Indonesia search topic and gives prospects a clearer path to the service they need." /></FadeIn>
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    {serviceLandingPages.map(function (item) {
+                        return (
+                            <a key={item.href} href={item.href} className="luxBorder group rounded-3xl p-7 transition hover:-translate-y-1">
+                                <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-[#F6A08A]">Landing Page</p>
+                                <h3 className="text-2xl font-black text-white">{item.title}</h3>
+                                <p className="mt-4 leading-7 text-slate-400">{item.text}</p>
+                                <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#F6A08A]">Open page <span className="transition group-hover:translate-x-1">→</span></span>
+                            </a>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function CaseStudySection() {
+    return (
+        <section id="case-studies" className="px-6 py-24 lg:px-20">
+            <div className="mx-auto max-w-7xl">
+                <FadeIn><SectionTitle eyebrow="Case Studies" title="Proof clients can inspect before they talk to us." text="Credibility grows when prospects can see the business problem, the system delivered, and the operational value behind each project." /></FadeIn>
+                <div className="grid gap-6 lg:grid-cols-4">
+                    {caseStudies.map(function (item, index) {
+                        return (
+                            <FadeIn key={item.title} delay={index * 0.06}>
+                                <div className="luxBorder h-full rounded-[2rem] p-7">
+                                    <p className="mb-4 text-4xl font-black text-[#F6A08A]">0{index + 1}</p>
+                                    <h3 className="text-2xl font-black">{item.title}</h3>
+                                    <p className="mt-4 leading-7 text-slate-400">{item.result}</p>
+                                    <ul className="mt-6 space-y-3">
+                                        {item.points.map(function (point) {
+                                            return <li key={point} className="flex gap-3 text-sm text-slate-300"><span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#E96A9A]" />{point}</li>;
+                                        })}
+                                    </ul>
+                                </div>
+                            </FadeIn>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
+
 const LANGS = {
     en: {
         metaTitle: "NusaTech Solutions | Websites & CRM Indonesia",
@@ -1031,6 +1150,63 @@ const LANGS = {
     }
 };
 
+Object.assign(LANGS, {
+    ru: Object.assign({}, LANGS.en, {
+        metaTitle: "NusaTech Solutions | Сайты и CRM в Индонезии",
+        metaDescription: "NusaTech Solutions создает премиальные сайты, CRM панели, клиентские порталы и digital marketing системы для отелей, travel компаний, экспортеров и серьезного бизнеса в Индонезии.",
+        badge: "IT решения и AI интеграции из Индонезии",
+        heroTitle: "Премиальные сайты, CRM панели, приложения и marketing системы для серьезного бизнеса.",
+        heroSub: "NusaTech Solutions помогает отелям, travel компаниям, экспортерам, консультантам и сервисным бизнесам выглядеть премиально, лучше управлять клиентами и превращать цифровые системы в продажи.",
+        cta1: "Создать Website / CRM", cta2: "Смотреть Работы",
+        startProject: "Начать Проект", consulting: "Консалтинг",
+        contactEyebrow: "Начните Проект", contactTitle: "Готовы построить систему, которой достоин ваш бизнес?",
+        sendMsg: "Напишите нам", formName: "Ваше Имя", formContact: "Email или WhatsApp", formService: "Меня интересует", formMsg: "Расскажите о проекте",
+        formPlaceholderName: "Иван", formPlaceholderContact: "you@company.com", formPlaceholderMsg: "Кратко опишите бизнес, задачу и сроки..."
+    }),
+    zh: Object.assign({}, LANGS.en, {
+        metaTitle: "NusaTech Solutions | 印尼网站与CRM系统",
+        metaDescription: "NusaTech Solutions 为酒店、旅行社、出口企业和成长型公司打造高端网站、CRM仪表盘、客户门户和数字营销系统。",
+        badge: "印尼 IT 解决方案与 AI 集成伙伴",
+        heroTitle: "为认真发展的企业打造高端网站、CRM仪表盘、应用和营销系统。",
+        heroSub: "NusaTech Solutions 帮助酒店、旅行公司、出口商、顾问和服务企业提升品牌形象、管理客户，并把数字系统转化为真实销售机会。",
+        cta1: "建设我的网站 / CRM", cta2: "查看案例",
+        startProject: "开始项目", consulting: "咨询",
+        contactEyebrow: "开始你的项目", contactTitle: "准备好打造值得你企业拥有的系统了吗？",
+        sendMsg: "给我们留言", formName: "你的姓名", formContact: "邮箱或 WhatsApp", formService: "我感兴趣的是", formMsg: "告诉我们你的项目",
+        formPlaceholderName: "张先生", formPlaceholderContact: "you@company.com", formPlaceholderMsg: "简单描述你的业务、需求和时间计划..."
+    }),
+    ja: Object.assign({}, LANGS.en, {
+        metaTitle: "NusaTech Solutions | インドネシアのWeb制作とCRM",
+        metaDescription: "NusaTech Solutions はホテル、旅行会社、輸出企業、成長企業向けに高品質なWebサイト、CRMダッシュボード、顧客ポータル、デジタルマーケティングシステムを構築します。",
+        badge: "インドネシア発のITソリューションとAI連携パートナー",
+        heroTitle: "本気のビジネスのための高品質Webサイト、CRM、アプリ、マーケティングシステム。",
+        heroSub: "NusaTech Solutions はホテル、旅行会社、輸出企業、コンサルタント、サービス企業のブランド力、顧客管理、売上につながるデジタル基盤を支援します。",
+        cta1: "Website / CRM を作る", cta2: "実績を見る",
+        startProject: "プロジェクト開始", consulting: "コンサルティング",
+        contactEyebrow: "プロジェクト開始", contactTitle: "あなたのビジネスにふさわしいシステムを作りませんか？",
+        sendMsg: "メッセージを送る", formName: "お名前", formContact: "メールまたはWhatsApp", formService: "興味がある内容", formMsg: "プロジェクトについて",
+        formPlaceholderName: "山田 太郎", formPlaceholderContact: "you@company.com", formPlaceholderMsg: "事業内容、必要な機能、希望スケジュールを簡単にご記入ください..."
+    }),
+    de: Object.assign({}, LANGS.en, {
+        metaTitle: "NusaTech Solutions | Websites & CRM Indonesien",
+        metaDescription: "NusaTech Solutions baut Premium-Websites, CRM-Dashboards, Kundenportale und digitale Marketing-Systeme fuer Hotels, Reiseunternehmen, Exporteure und professionelle Unternehmen in Indonesien.",
+        badge: "IT-Loesungen und AI-Integrationen aus Indonesien",
+        heroTitle: "Premium-Websites, CRM-Dashboards, Apps und Marketing-Systeme fuer professionelle Unternehmen.",
+        heroSub: "NusaTech Solutions hilft Hotels, Reiseunternehmen, Exporteuren, Beratern und Servicefirmen, professioneller aufzutreten, Kunden besser zu verwalten und digitale Systeme in Umsatz zu verwandeln.",
+        cta1: "Website / CRM bauen", cta2: "Arbeiten ansehen",
+        startProject: "Projekt starten", consulting: "Beratung"
+    }),
+    ko: Object.assign({}, LANGS.en, {
+        metaTitle: "NusaTech Solutions | 인도네시아 웹사이트 및 CRM",
+        metaDescription: "NusaTech Solutions는 호텔, 여행사, 수출 기업 및 성장 기업을 위한 프리미엄 웹사이트, CRM 대시보드, 고객 포털, 디지털 마케팅 시스템을 구축합니다.",
+        badge: "인도네시아 기반 IT 솔루션 및 AI 통합 파트너",
+        heroTitle: "진지한 비즈니스를 위한 프리미엄 웹사이트, CRM 대시보드, 앱, 마케팅 시스템.",
+        heroSub: "NusaTech Solutions는 호텔, 여행사, 수출 기업, 컨설턴트와 서비스 기업이 더 전문적으로 보이고 고객을 더 잘 관리하며 디지털 시스템을 실제 매출로 연결하도록 돕습니다.",
+        cta1: "Website / CRM 만들기", cta2: "작업 보기",
+        startProject: "프로젝트 시작", consulting: "컨설팅"
+    })
+});
+
 function DigitalStudioWebsite() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [lang, setLang] = useState(function () {
@@ -1149,6 +1325,10 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
+            <CredibilitySection />
+
+            <ServiceLandingLinks />
+
             <section className="px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid gap-4 md:grid-cols-4">
@@ -1160,6 +1340,8 @@ function DigitalStudioWebsite() {
             </section>
 
             <PartnersSection />
+
+            <CaseStudySection />
 
             <section id="work" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">

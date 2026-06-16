@@ -3,13 +3,49 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.nusatechsolutions.company/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.nusatechsolutions.company/og-image.png</image:loc>
       <image:title>NusaTech Solutions - Websites, CRM Dashboards &amp; Digital Systems</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/web-development-jakarta.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/crm-dashboard-jakarta.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/ai-integrations-jakarta.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/hotel-travel-crm.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/business-website-indonesia.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nusatechsolutions.company/whatsapp-funnel-crm.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nusatechsolutions.company/privacy.html</loc>
