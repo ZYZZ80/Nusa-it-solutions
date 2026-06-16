@@ -103,6 +103,15 @@ const serviceOptions = [
     "Other - Let's discuss"
 ];
 
+const languageOptions = [
+    { code: "en", label: "EN" },
+    { code: "id", label: "ID" },
+    { code: "fr", label: "FR" },
+    { code: "es", label: "ES" },
+    { code: "it", label: "IT" },
+    { code: "ar", label: "AR" }
+];
+
 const cssRules = [
     "@keyframes spinInfinite { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }",
     "@keyframes fadeOut { 0% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }",
@@ -589,7 +598,7 @@ function ProjectScreenshot({ type }) {
     );
 }
 
-function MobileMenu({ open, onClose, lang }) {
+function MobileMenu({ open, onClose, lang, onLangChange }) {
     const t = LANGS[lang] || LANGS.en;
     if (!open) return null;
     return (
@@ -600,6 +609,11 @@ function MobileMenu({ open, onClose, lang }) {
                 })}
             </nav>
             <div className="mt-4 flex flex-col gap-3 border-t border-[#E96A9A]/15 pt-4">
+                <div className="grid grid-cols-3 gap-2">
+                    {languageOptions.map(function (item) {
+                        return <button key={item.code} type="button" onClick={function () { onLangChange(item.code); }} className={"rounded-xl px-3 py-2 text-xs font-black transition " + (lang === item.code ? "bg-[#E96A9A] text-white" : "border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 hover:text-white")}>{item.label}</button>;
+                    })}
+                </div>
                 <a href="#contact" onClick={onClose} className="rounded-2xl border border-[#E96A9A]/30 bg-[#E96A9A]/10 px-5 py-3 text-center text-sm font-black text-white transition hover:bg-[#E96A9A]/20">{t.startProject}</a>
                 <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-5 py-3 text-center text-sm font-black text-slate-900 shadow-md shadow-[#F28B7A]/25 ring-1 ring-[#F6A08A]/40 transition-all hover:from-[#F6A08A] hover:to-[#F28B7A]">
                     {t.consulting}
@@ -900,6 +914,120 @@ const LANGS = {
         marketingEyebrow: "Marketing Digital", marketingTitle: "Pas seulement un beau site - un systeme complet de generation de leads.",
         consultingEyebrow: "Conseil", consultingTitle: "Besoin de plus que du developpement ?",
         chartDisclaimer: "Exemples de resultats de campagne - les resultats reels varient selon les clients"
+    },
+    es: {
+        metaTitle: "NusaTech Solutions | Sitios Web y CRM Indonesia",
+        metaDescription: "NusaTech Solutions crea sitios web premium, dashboards CRM, portales de clientes y sistemas de marketing digital para hoteles, agencias de viaje, exportadores y empresas serias en Indonesia y el mundo.",
+        badge: "Socio de soluciones IT e integraciones IA basado en Indonesia",
+        heroTitle: "Sitios web premium, dashboards CRM, apps y sistemas de marketing para empresas serias.",
+        heroSub: "NusaTech Solutions ayuda a hoteles, empresas de viaje, exportadores, consultores y negocios de servicios a verse premium, gestionar mejor clientes y convertir sistemas digitales en ventas reales.",
+        cta1: "Crear Mi Website / CRM", cta2: "Ver Trabajos",
+        metrics: [{ a: "10+", b: "Proyectos entregados" }, { a: "3+", b: "Paises atendidos" }, { a: "100%", b: "A medida" }],
+        startProject: "Iniciar Proyecto", consulting: "Consultoria",
+        servicesEyebrow: "Servicios", servicesTitle: "Soluciones digitales creadas alrededor de operaciones reales.",
+        servicesSub: "Del sitio web publico al dashboard privado, creamos sistemas digitales que mejoran confianza, ventas, gestion de clientes y flujo diario de trabajo.",
+        packagesEyebrow: "Paquetes", packagesTitle: "Paquetes para diferentes etapas del negocio.",
+        faqEyebrow: "FAQ", faqTitle: "Preguntas que hacen los clientes serios.",
+        contactEyebrow: "Inicia Tu Proyecto", contactTitle: "Listo para construir algo que tu negocio merece?",
+        sendMsg: "Envianos un mensaje", sendCta: "Enviar por WhatsApp",
+        formName: "Tu Nombre", formContact: "Email o WhatsApp", formService: "Me interesa", formMsg: "Cuentanos sobre tu proyecto",
+        formPlaceholderName: "Juan Perez", formPlaceholderContact: "tu@empresa.com",
+        formPlaceholderMsg: "Describe brevemente tu negocio, lo que necesitas y tu calendario...",
+        disclaimer: "Tu mensaje se abre prellenado en WhatsApp. No guardamos datos.",
+        sentTitle: "Mensaje listo!", sentSub: "WhatsApp se abrio con tu mensaje prellenado.", sendAnother: "Enviar otro",
+        popular: "Mas Popular", getStarted: "Empezar",
+        comingSoonEyebrow: "Proximamente", comingSoonTitle: "Nuevos proyectos en desarrollo.",
+        processCta: "Explorar Consultoria", testimonialsEyebrow: "Resultados de Clientes", testimonialsTitle: "Lo que dicen los clientes sobre trabajar con nosotros.",
+        industryEyebrow: "Industrias", industryTitle: "Industrias que servimos desde Indonesia.",
+        processEyebrow: "Proceso", processTitle: "Un proceso claro en el que los clientes pueden confiar.",
+        marketingEyebrow: "Marketing Digital", marketingTitle: "No solo un sitio bonito - un sistema completo de generacion de leads.",
+        consultingEyebrow: "Consultoria", consultingTitle: "Necesitas mas que desarrollo?",
+        chartDisclaimer: "Resultados de campana de ejemplo - los resultados reales varian por cliente",
+        portfolioEyebrow: "Capturas de Portfolio", portfolioTitle: "Capturas reales de proyectos y previews de dashboards.",
+        portfolioSub: "Mostramos dashboards y websites para que los clientes entiendan rapidamente el tipo de trabajo que podemos entregar.",
+        comingSoonSub: "Estos conceptos de CRM, resort website y marketplace de viajes muestran los proximos sistemas que NusaTech Solutions puede lanzar para clientes serios.",
+        industrySub: "Un socio flexible de soluciones IT e integraciones IA para empresas indonesias, emprendedores extranjeros, hoteles, exportadores, consultores y clientes internacionales.",
+        processSub: "Los clientes deciden mas rapido cuando el proceso es claro, profesional y conectado a resultados de negocio.",
+        packagesSub: "Empieza con un website profesional, sube a un dashboard CRM o crea un sistema completo de crecimiento con marketing y consultoria.",
+        testimonialsSub: "Feedback real de empresas de hospitalidad, viajes y comercio internacional.",
+        marketingSub: "Conectamos diseno premium con estrategia digital: SEO, paginas de campana, funnels de WhatsApp, contenido, tracking y captura de leads en CRM.",
+        consultingSub: "Mas alla de websites y CRM, apoyamos entrada al mercado, setup de negocio, estrategia comercial, operaciones hoteleras y de viaje, transformacion digital y crecimiento en Indonesia."
+    },
+    it: {
+        metaTitle: "NusaTech Solutions | Siti Web e CRM Indonesia",
+        metaDescription: "NusaTech Solutions crea siti web premium, dashboard CRM, portali clienti e sistemi di marketing digitale per hotel, agenzie viaggi, esportatori e aziende serie in Indonesia e nel mondo.",
+        badge: "Partner indonesiano per soluzioni IT e integrazioni AI",
+        heroTitle: "Siti web premium, dashboard CRM, app e sistemi marketing per aziende serie.",
+        heroSub: "NusaTech Solutions aiuta hotel, aziende travel, esportatori, consulenti e servizi a presentarsi in modo premium, gestire meglio i clienti e trasformare i sistemi digitali in vendite reali.",
+        cta1: "Crea Il Mio Website / CRM", cta2: "Vedi Portfolio",
+        metrics: [{ a: "10+", b: "Progetti consegnati" }, { a: "3+", b: "Paesi serviti" }, { a: "100%", b: "Su misura" }],
+        startProject: "Avvia Progetto", consulting: "Consulenza",
+        servicesEyebrow: "Servizi", servicesTitle: "Soluzioni digitali costruite intorno a operazioni reali.",
+        servicesSub: "Dal sito pubblico alla dashboard privata, creiamo sistemi digitali che migliorano fiducia, vendite, gestione clienti e lavoro quotidiano.",
+        packagesEyebrow: "Pacchetti", packagesTitle: "Pacchetti pensati per diverse fasi aziendali.",
+        faqEyebrow: "FAQ", faqTitle: "Domande che fanno i clienti seri.",
+        contactEyebrow: "Avvia Il Tuo Progetto", contactTitle: "Pronto a costruire qualcosa che la tua azienda merita?",
+        sendMsg: "Mandaci un messaggio", sendCta: "Invia via WhatsApp",
+        formName: "Il Tuo Nome", formContact: "Email o WhatsApp", formService: "Mi interessa", formMsg: "Raccontaci il progetto",
+        formPlaceholderName: "Mario Rossi", formPlaceholderContact: "tu@azienda.com",
+        formPlaceholderMsg: "Descrivi brevemente la tua azienda, cosa ti serve e le tempistiche...",
+        disclaimer: "Il messaggio si apre precompilato in WhatsApp. Nessun dato viene salvato.",
+        sentTitle: "Messaggio pronto!", sentSub: "WhatsApp si e aperto con il messaggio precompilato.", sendAnother: "Invia un altro",
+        popular: "Piu Popolare", getStarted: "Inizia",
+        comingSoonEyebrow: "Prossimamente", comingSoonTitle: "Nuovi progetti in sviluppo.",
+        processCta: "Esplora Consulenza", testimonialsEyebrow: "Risultati Clienti", testimonialsTitle: "Cosa dicono i clienti di noi.",
+        industryEyebrow: "Settori", industryTitle: "Settori che serviamo dall'Indonesia.",
+        processEyebrow: "Processo", processTitle: "Un processo chiaro di cui i clienti si fidano.",
+        marketingEyebrow: "Marketing Digitale", marketingTitle: "Non solo un bel sito - un sistema completo di lead generation.",
+        consultingEyebrow: "Consulenza", consultingTitle: "Serve piu del semplice sviluppo?",
+        chartDisclaimer: "Risultati di campagna di esempio - i risultati reali variano per cliente",
+        portfolioEyebrow: "Screenshot Portfolio", portfolioTitle: "Screenshot reali di progetti e preview dashboard.",
+        portfolioSub: "Mostriamo dashboard e siti web per far capire subito ai clienti il tipo di lavoro che possiamo consegnare.",
+        comingSoonSub: "Questi concept CRM, resort website e marketplace viaggi mostrano i prossimi sistemi che NusaTech Solutions puo lanciare per clienti seri.",
+        industrySub: "Un partner flessibile per soluzioni IT e integrazioni AI per aziende indonesiane, imprenditori stranieri, hotel, esportatori, consulenti e clienti internazionali.",
+        processSub: "I clienti decidono piu velocemente quando il processo e chiaro, professionale e collegato ai risultati di business.",
+        packagesSub: "Inizia con un sito professionale, passa a un dashboard CRM o crea un sistema completo di crescita con marketing e consulenza.",
+        testimonialsSub: "Feedback reale da aziende hospitality, travel e commercio internazionale.",
+        marketingSub: "Colleghiamo design premium e strategia digitale: SEO, pagine campagna, funnel WhatsApp, contenuti, tracking e acquisizione lead CRM.",
+        consultingSub: "Oltre a website e CRM, supportiamo ingresso nel mercato, setup aziendale, strategia commerciale, operazioni hotel e travel, trasformazione digitale e crescita in Indonesia."
+    },
+    ar: {
+        metaTitle: "NusaTech Solutions | مواقع و CRM في اندونيسيا",
+        metaDescription: "NusaTech Solutions تبني مواقع اعمال فاخرة ولوحات CRM وبوابات عملاء وانظمة تسويق رقمية للفنادق وشركات السفر والمصدرين والشركات الجادة في اندونيسيا وحول العالم.",
+        badge: "شريك حلول تقنية وتكاملات ذكاء اصطناعي من اندونيسيا",
+        heroTitle: "مواقع فاخرة، لوحات CRM، تطبيقات وانظمة تسويق للشركات الجادة.",
+        heroSub: "تساعد NusaTech Solutions الفنادق وشركات السفر والمصدرين والمستشارين وشركات الخدمات على الظهور باحتراف، ادارة العملاء بشكل افضل، وتحويل الانظمة الرقمية الى فرص بيع حقيقية.",
+        cta1: "ابن موقعي / CRM", cta2: "عرض الاعمال",
+        metrics: [{ a: "10+", b: "مشاريع منجزة" }, { a: "3+", b: "دول مخدومة" }, { a: "100%", b: "حلول مخصصة" }],
+        startProject: "ابدأ المشروع", consulting: "استشارات",
+        servicesEyebrow: "الخدمات", servicesTitle: "حلول رقمية مبنية حول عمليات العمل الحقيقية.",
+        servicesSub: "من الموقع العام الى لوحة التحكم الخاصة، نبني انظمة رقمية تعزز الثقة والمبيعات وادارة العملاء وسير العمل اليومي.",
+        packagesEyebrow: "الباقات", packagesTitle: "باقات مصممة لمراحل مختلفة من نمو الاعمال.",
+        faqEyebrow: "الاسئلة", faqTitle: "اسئلة يطرحها العملاء الجادون.",
+        contactEyebrow: "ابدأ مشروعك", contactTitle: "هل انت جاهز لبناء نظام يستحقه عملك؟",
+        sendMsg: "ارسل لنا رسالة", sendCta: "ارسال عبر واتساب",
+        formName: "اسمك", formContact: "البريد او واتساب", formService: "انا مهتم بـ", formMsg: "اخبرنا عن مشروعك",
+        formPlaceholderName: "احمد", formPlaceholderContact: "you@company.com",
+        formPlaceholderMsg: "اشرح باختصار عملك، ما تحتاجه، والجدول الزمني...",
+        disclaimer: "سيتم فتح رسالتك جاهزة في واتساب. لا يتم حفظ البيانات.",
+        sentTitle: "الرسالة جاهزة!", sentSub: "تم فتح واتساب برسالتك الجاهزة.", sendAnother: "ارسال رسالة اخرى",
+        popular: "الاكثر طلبا", getStarted: "ابدأ الان",
+        comingSoonEyebrow: "قريبا", comingSoonTitle: "مشاريع جديدة قيد التطوير.",
+        processCta: "استكشف الاستشارات", testimonialsEyebrow: "نتائج العملاء", testimonialsTitle: "ماذا يقول العملاء عن العمل معنا.",
+        industryEyebrow: "القطاعات", industryTitle: "قطاعات نخدمها من اندونيسيا.",
+        processEyebrow: "العملية", processTitle: "عملية واضحة يثق بها العملاء.",
+        marketingEyebrow: "التسويق الرقمي", marketingTitle: "ليس مجرد موقع جميل - بل نظام كامل لجذب العملاء المحتملين.",
+        consultingEyebrow: "استشارات", consultingTitle: "هل تحتاج اكثر من التطوير؟",
+        chartDisclaimer: "نتائج حملات كمثال - النتائج الفعلية تختلف حسب العميل",
+        portfolioEyebrow: "لقطات من الاعمال", portfolioTitle: "لقطات حقيقية للمشاريع ولوحات التحكم.",
+        portfolioSub: "نعرض لوحات ومواقع حقيقية حتى يفهم العميل بسرعة نوع العمل الذي نستطيع تنفيذه.",
+        comingSoonSub: "هذه مفاهيم CRM ومواقع منتجعات ومنصات سفر توضح الانظمة القادمة التي يمكن لـ NusaTech Solutions اطلاقها للعملاء الجادين.",
+        industrySub: "شريك مرن لحلول التقنية وتكاملات الذكاء الاصطناعي للشركات الاندونيسية ورواد الاعمال الاجانب والفنادق والمصدرين والمستشارين والعملاء الدوليين.",
+        processSub: "يتخذ العملاء القرار اسرع عندما تكون العملية واضحة واحترافية ومرتبطة بنتائج العمل.",
+        packagesSub: "ابدأ بموقع احترافي، ثم طور الى لوحة CRM، او ابن نظام نمو كامل مع التسويق والاستشارات.",
+        testimonialsSub: "آراء حقيقية من شركات في الضيافة والسفر والتجارة الدولية.",
+        marketingSub: "نربط التصميم الفاخر بالاستراتيجية الرقمية: SEO، صفحات حملات، مسارات واتساب، محتوى، تتبع، وجمع العملاء داخل CRM.",
+        consultingSub: "بالاضافة الى المواقع و CRM، ندعم دخول السوق، تأسيس الاعمال، الاستراتيجية التجارية، عمليات الفنادق والسفر، التحول الرقمي والنمو في اندونيسيا."
     }
 };
 
@@ -913,11 +1041,12 @@ function DigitalStudioWebsite() {
     useEffect(function () {
         try {
             document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
             var d = document.querySelector('meta[name="description"]');
             if (d && t.metaDescription) d.setAttribute("content", t.metaDescription);
             if (document.title && t.metaTitle) document.title = t.metaTitle;
         } catch (e) { }
-    }, [lang]);
+    }, [lang, t.metaDescription, t.metaTitle]);
 
     return (
         <main id="main-content" className="min-h-screen overflow-hidden bg-[#0F172A] text-white">
@@ -958,8 +1087,8 @@ function DigitalStudioWebsite() {
                         <div className="flex shrink-0 items-center gap-2">
                             {/* Lang switcher */}
                             <div className="hidden items-center gap-0.5 rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 p-0.5 lg:flex">
-                                {["en", "id", "fr"].map(function (l) {
-                                    return <button key={l} onClick={function () { switchLang(l); }} className={"rounded-lg px-2.5 py-1 text-[11px] font-black transition " + (lang === l ? "bg-[#E96A9A] text-white" : "text-slate-400 hover:text-white")}>{l.toUpperCase()}</button>;
+                                {languageOptions.map(function (item) {
+                                    return <button key={item.code} onClick={function () { switchLang(item.code); }} className={"rounded-lg px-2 py-1 text-[10px] font-black transition " + (lang === item.code ? "bg-[#E96A9A] text-white" : "text-slate-400 hover:text-white")}>{item.label}</button>;
                                 })}
                             </div>
                             <a href="#contact" className="hidden rounded-xl border border-[#E96A9A]/30 bg-[#E96A9A]/10 px-5 py-2.5 text-sm font-black text-white transition hover:border-[#E96A9A]/50 hover:bg-[#E96A9A]/20 lg:inline-flex">
@@ -979,7 +1108,7 @@ function DigitalStudioWebsite() {
                         </div>
                     </nav>
 
-                    <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} />
+                    <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} onLangChange={switchLang} />
 
                     <div className="grid items-center gap-14 pb-24 pt-6 lg:grid-cols-2 lg:pb-32 lg:pt-8">
                         <FadeIn>
