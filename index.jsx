@@ -558,9 +558,9 @@ function RobotChat() {
 function SectionTitle({ eyebrow, title, text }) {
     return (
         <div className="mx-auto mb-14 max-w-3xl text-center">
-            <p className="mb-3 text-sm font-black uppercase tracking-[0.55em] text-[#F6A08A]">{eyebrow}</p>
-            <h2 className="text-4xl font-black tracking-tight text-white md:text-5xl">{title}</h2>
-            {text ? <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-400">{text}</p> : null}
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-[#F6A08A] sm:text-sm sm:tracking-[0.45em]">{eyebrow}</p>
+            <h2 className="text-balance text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl">{title}</h2>
+            {text ? <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{text}</p> : null}
         </div>
     );
 }
@@ -581,15 +581,15 @@ function FAQSection({ eyebrow, title, items, lang }) {
                                 <button
                                     type="button"
                                     onClick={function () { setOpen(active ? -1 : index); }}
-                                    className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
+                                    className="flex w-full items-center justify-between gap-3 px-4 py-5 text-left sm:gap-5 sm:px-6"
                                     aria-expanded={active}
                                 >
-                                    <span className="text-lg font-black text-white md:text-xl">{item.q}</span>
+                                    <span className="text-base font-black leading-snug text-white sm:text-lg md:text-xl">{item.q}</span>
                                     <span className={"grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-[#E96A9A]/20 text-[#F6A08A] transition " + (active ? "rotate-45 bg-[#E96A9A]/10" : "")}>
                                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="h-4 w-4"><path d="M12 5v14M5 12h14" strokeLinecap="round" /></svg>
                                     </span>
                                 </button>
-                                {active ? <div className="px-6 pb-6 pr-16 text-base leading-8 text-slate-400">{item.a}</div> : null}
+                                {active ? <div className="px-4 pb-6 text-sm leading-7 text-slate-400 sm:px-6 sm:text-base sm:leading-8">{item.a}</div> : null}
                             </div>
                         );
                     })}
@@ -601,18 +601,18 @@ function FAQSection({ eyebrow, title, items, lang }) {
 
 function SoftwareShowcase() {
     return (
-        <div className="relative min-h-[520px]">
-            <div className="absolute inset-x-0 top-10 h-[360px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0F172A] shadow-2xl shadow-[#1E4FA6]/40">
+        <div className="relative min-h-[420px] sm:min-h-[520px]">
+            <div className="absolute inset-x-0 top-8 h-[300px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F172A] shadow-2xl shadow-[#1E4FA6]/40 sm:top-10 sm:h-[360px] sm:rounded-[2.5rem]">
                 <div className="heroMesh absolute -inset-12 opacity-95" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:54px_54px] opacity-35" />
                 <div className="lineFlow absolute left-8 right-8 top-28 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0F172A] to-transparent" />
-                <div className="absolute left-8 top-8 text-xs font-black uppercase tracking-[0.8em] text-white/70">NUSATECH</div>
+                <div className="absolute left-5 top-6 text-[10px] font-black uppercase tracking-[0.45em] text-white/70 sm:left-8 sm:top-8 sm:text-xs sm:tracking-[0.8em]">NUSATECH</div>
                 <div className="absolute right-8 top-8 hidden gap-8 text-xs font-bold text-white/70 sm:flex"><span>CRM</span><span>Apps</span><span>AI</span><span>Web</span></div>
-                <div className="absolute left-8 top-36 max-w-[320px]">
+                <div className="absolute left-5 top-28 max-w-[250px] sm:left-8 sm:top-36 sm:max-w-[320px]">
                     <p className="text-xs font-black uppercase tracking-[0.45em] text-[#FFFFFF]/80">Software Studio</p>
-                    <p className="mt-4 text-5xl font-black leading-none tracking-[0.18em] text-white/90">WEB<br />CRM<br />AI</p>
-                    <p className="mt-5 text-sm leading-6 text-white/75">Luxury interfaces for dashboards, portals, websites, workflows and intelligent business systems.</p>
+                    <p className="mt-4 text-3xl font-black leading-none tracking-[0.18em] text-white/90 sm:text-5xl">WEB<br />CRM<br />AI</p>
+                    <p className="mt-4 text-xs leading-5 text-white/75 sm:mt-5 sm:text-sm sm:leading-6">Luxury interfaces for dashboards, portals, websites, workflows and intelligent business systems.</p>
                 </div>
             </div>
 
@@ -647,11 +647,11 @@ function SoftwareShowcase() {
                 </div>
             </div>
 
-            <div className="absolute bottom-2 right-6 w-[190px] rounded-[2rem] border-[9px] border-black bg-black shadow-2xl shadow-black/60 sm:right-10 lg:right-auto lg:left-4">
+            <div className="absolute bottom-8 right-4 w-[160px] rounded-[1.6rem] border-[8px] border-black bg-black shadow-2xl shadow-black/60 sm:bottom-2 sm:right-10 sm:w-[190px] sm:rounded-[2rem] sm:border-[9px] lg:right-auto lg:left-4">
                 <div className="absolute left-1/2 top-0 h-4 w-16 -translate-x-1/2 rounded-b-2xl bg-black" />
                 <div className="overflow-hidden rounded-[1.25rem] bg-[#100024] p-4">
                     <div className="mb-4 flex items-center justify-between"><Logo className="h-8 w-8" /><span className="rounded-full bg-white/10 px-3 py-1 text-[10px] font-black text-[#FFFFFF]">Mobile</span></div>
-                    <p className="text-xl font-black leading-tight">Client Portal</p>
+                    <p className="text-lg font-black leading-tight sm:text-xl">Client Portal</p>
                     <p className="mt-2 text-xs leading-5 text-slate-400">Invoices, bookings, forms and customer status in one app.</p>
                     <div className="mt-5 space-y-2">
                         {["Booking", "Payment", "Documents"].map(function (item, i) {
@@ -1328,7 +1328,7 @@ function DigitalStudioWebsite() {
             <RobotChat />
             <CookieConsent />
 
-            <section className="relative px-4 pb-24 pt-0 lg:px-16">
+            <section className="relative px-3 pb-20 pt-0 sm:px-4 sm:pb-24 lg:px-16">
                 {/* Background */}
                 <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 15% 20%, rgba(246,160,138,0.38) 0%, transparent 42%), radial-gradient(ellipse at 82% 12%, rgba(233,106,154,0.34) 0%, transparent 40%), radial-gradient(ellipse at 60% 72%, rgba(45,93,184,0.34) 0%, transparent 52%), linear-gradient(135deg, #1E4FA6 0%, #7A4F9A 35%, #E96A9A 65%, #F6A08A 100%)" }} />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -1336,11 +1336,11 @@ function DigitalStudioWebsite() {
 
                 <div className="relative z-10 mx-auto max-w-7xl">
 
-                    <nav aria-label="Main navigation" className="flex items-center justify-between gap-4 rounded-2xl border border-[#E96A9A]/20 bg-[#1A1A1F]/70 px-5 py-3 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur-2xl">
+                    <nav aria-label="Main navigation" className="flex items-center justify-between gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#1A1A1F]/70 px-3 py-3 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur-2xl sm:gap-4 sm:px-5">
 
                         {/* Brand */}
                         <div className="flex shrink-0 items-center gap-3">
-                            <BrandLogo className="h-12 w-auto max-w-[180px]" />
+                            <BrandLogo className="h-10 w-auto max-w-[145px] sm:h-12 sm:max-w-[180px]" />
                         </div>
 
                         {/* Centre links */}
@@ -1381,35 +1381,35 @@ function DigitalStudioWebsite() {
 
                     <MobileMenu open={menuOpen} onClose={function () { setMenuOpen(false); }} lang={lang} onLangChange={switchLang} />
 
-                    <div className="grid items-center gap-14 pb-24 pt-6 lg:grid-cols-2 lg:pb-32 lg:pt-8">
+                    <div className="grid items-center gap-10 pb-16 pt-6 sm:gap-14 sm:pb-24 lg:grid-cols-2 lg:pb-32 lg:pt-8">
                         <FadeIn>
-                            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E96A9A]/25 bg-[#E96A9A]/10 px-4 py-2 text-sm font-semibold text-[#F6A08A]">
+                            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-[#E96A9A]/25 bg-[#E96A9A]/10 px-3 py-2 text-xs font-semibold leading-5 text-[#F6A08A] sm:px-4 sm:text-sm">
                                 {t.badge}
                             </div>
-                            <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-5xl xl:text-7xl">{t.heroTitle}</h1>
-                            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">{t.heroSub}</p>
+                            <h1 className="max-w-3xl text-balance text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:text-5xl xl:text-6xl">{t.heroTitle}</h1>
+                            <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:mt-7 sm:text-lg sm:leading-8">{t.heroSub}</p>
                             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                                 <a href="#contact" className="rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-7 py-4 text-center font-black text-white shadow-xl shadow-[#1E4FA6]/40 transition hover:opacity-90">{t.cta1}</a>
                                 <a href="#work" className="rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-7 py-4 text-center font-black text-white transition hover:bg-[#E96A9A]/10">{t.cta2}</a>
                             </div>
-                            <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
+                            <div className="mt-10 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
                                 {t.metrics.map(function (m, i) { return <div key={m.a} className="rounded-2xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 p-4 transition hover:-translate-y-0.5 hover:bg-[#E96A9A]/10" style={{ animation: "fadeInUp .7s cubic-bezier(.16,1,.3,1) " + (.15 + i * .1) + "s both" }}><Counter value={m.a} className="text-xl font-black" /><p className="text-sm text-slate-400">{m.b}</p></div>; })}
                             </div>
                         </FadeIn>
-                        <FadeIn delay={0.15} className="-mt-32 lg:-mt-48">
+                        <FadeIn delay={0.15} className="lg:-mt-48">
                             <SoftwareShowcase />
                         </FadeIn>
                     </div>
                 </div>
             </section>
 
-            <section id="services" className="px-6 py-24 lg:px-20">
+            <section id="services" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.servicesEyebrow} title={t.servicesTitle} text={t.servicesSub} /></FadeIn>
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         {c.services.map(function (item) {
                             return (
-                                <div key={item.title} className="luxBorder rounded-3xl p-7 transition hover:-translate-y-1 hover:bg-[#E96A9A]/5">
+                                <div key={item.title} className="luxBorder rounded-3xl p-5 transition hover:-translate-y-1 hover:bg-[#E96A9A]/5 sm:p-7">
                                     <div className="mb-6 inline-flex rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 px-3 py-2 text-sm font-black text-[#F6A08A]">{item.icon}</div>
                                     <h3 className="mb-3 text-xl font-black">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
@@ -1424,11 +1424,11 @@ function DigitalStudioWebsite() {
 
             <ServiceLandingLinks lang={lang} items={c.serviceLandingPages} />
 
-            <section className="px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid gap-4 md:grid-cols-4">
                         {[{ n: "4", l: copy("Core services") }, { n: "24/7", l: copy("Online presence") }, { n: "100%", l: copy("Custom workflow") }, { n: "Global", l: copy("Client ready") }].map(function (s) {
-                            return <div key={s.l} className="luxBorder rounded-3xl p-7 text-center"><p className="text-4xl font-black text-[#F6A08A]">{s.n}</p><p className="mt-2 text-sm text-slate-400">{s.l}</p></div>;
+                            return <div key={s.l} className="luxBorder rounded-3xl p-5 text-center sm:p-7"><p className="text-3xl font-black text-[#F6A08A] sm:text-4xl">{s.n}</p><p className="mt-2 text-sm text-slate-400">{s.l}</p></div>;
                         })}
                     </div>
                 </div>
@@ -1438,17 +1438,17 @@ function DigitalStudioWebsite() {
 
             <CaseStudySection lang={lang} items={c.caseStudies} />
 
-            <section id="work" className="px-6 py-24 lg:px-20">
+            <section id="work" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.portfolioEyebrow} title={t.portfolioTitle} text={t.portfolioSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-2">
                         {c.projects.map(function (item, i) {
                             return (
-                                <div key={item.title} className="luxBorder rounded-[2rem] p-6 shadow-xl shadow-[#1E4FA6]/30">
+                                <div key={item.title} className="luxBorder rounded-[2rem] p-4 shadow-xl shadow-[#1E4FA6]/30 sm:p-6">
                                     <div className="mb-3 w-fit rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 px-3 py-2 text-xs text-[#F6A08A]">{copy("Project")} 0{i + 1}</div>
                                     <ProjectScreenshot type={item.key} />
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
-                                    <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
+                                    <h3 className="mb-3 text-xl font-black sm:text-2xl">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
                                     {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">{copy("Visit Website")} <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a> : null}
                                 </div>
@@ -1458,19 +1458,19 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="coming-soon" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <section id="coming-soon" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.comingSoonEyebrow} title={t.comingSoonTitle} text={t.comingSoonSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {c.comingSoonProjects.map(function (item) {
                             return (
-                                <div key={item.title} className="luxBorder rounded-[2rem] p-6 shadow-xl shadow-[#1E4FA6]/30">
+                                <div key={item.title} className="luxBorder rounded-[2rem] p-4 shadow-xl shadow-[#1E4FA6]/30 sm:p-6">
                                     <div className="mb-5 h-56 overflow-hidden rounded-3xl border border-[#E96A9A]/15 bg-[#1A1A1F]">
                                         <img src={item.image} alt={item.title + " screenshot"} className="h-full w-full object-cover object-left-top" loading="lazy" />
                                     </div>
                                     <div className="mb-3 w-fit rounded-2xl bg-[#F6A08A] px-3 py-2 text-xs font-black text-slate-950">{copy("Coming Soon")}</div>
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
-                                    <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
+                                    <h3 className="mb-3 text-xl font-black sm:text-2xl">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
                                 </div>
                             );
@@ -1479,12 +1479,12 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="marketing" className="relative overflow-hidden px-6 py-24 lg:px-20">
+            <section id="marketing" className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <FloatingBlobs variant="section" />
                 <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
                     <FadeIn>
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.marketingEyebrow}</p>
-                        <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.marketingTitle}</h2>
+                        <h2 className="text-balance text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{t.marketingTitle}</h2>
                         <p className="mt-6 text-lg leading-8 text-slate-400">{t.marketingSub}</p>
                     </FadeIn>
                     <FadeIn delay={0.15}>
@@ -1506,14 +1506,14 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="platform" className="relative overflow-hidden px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 52%, #7A4F9A 100%)" }}>
+            <section id="platform" className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 52%, #7A4F9A 100%)" }}>
                 <FloatingBlobs variant="section" />
                 <div className="relative z-10 mx-auto max-w-7xl">
                     <FadeIn>
                         <div className="mb-14 grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr]">
                             <div>
                                 <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{copy("Software Systems")}</p>
-                                <h2 className="text-4xl font-black tracking-tight md:text-6xl">{copy("From beautiful website to complete business operating system.")}</h2>
+                                <h2 className="text-balance text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">{copy("From beautiful website to complete business operating system.")}</h2>
                             </div>
                             <p className="text-lg leading-8 text-slate-400">{copy("Inspired by modern app builders, but custom-made for your company: data, workflows, dashboards, AI assistants, client portals, and premium interfaces connected into one system.")}</p>
                         </div>
@@ -1522,14 +1522,14 @@ function DigitalStudioWebsite() {
                         {c.platformFeatures.map(function (feature, index) {
                             return (
                                 <FadeIn key={feature.title} delay={index * 0.08}>
-                                    <div className="luxBorder group relative min-h-[220px] overflow-hidden rounded-[2rem] p-7 transition hover:-translate-y-1">
+                                    <div className="luxBorder group relative min-h-[220px] overflow-hidden rounded-[2rem] p-5 transition hover:-translate-y-1 sm:p-7">
                                         <div className="absolute inset-x-6 top-6 h-20 rounded-3xl bg-gradient-to-r from-[#E96A9A]/20 via-[#F28B7A]/10 to-[#2563EB]/20 blur-2xl transition group-hover:opacity-100" style={{ opacity: .45 }} />
                                         <div className="relative z-10">
                                             <div className="mb-8 flex items-center justify-between gap-3">
                                                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 text-sm font-black text-[#F6A08A]">0{index + 1}</span>
                                                 <span className="h-px flex-1 bg-gradient-to-r from-[#E96A9A]/40 to-transparent" />
                                             </div>
-                                            <h3 className="text-2xl font-black">{feature.title}</h3>
+                                            <h3 className="text-xl font-black sm:text-2xl">{feature.title}</h3>
                                             <p className="mt-4 leading-7 text-slate-400">{feature.text}</p>
                                         </div>
                                     </div>
@@ -1540,7 +1540,7 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <section className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.industryEyebrow} title={t.industryTitle} text={t.industrySub} /></FadeIn>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1549,14 +1549,14 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="process" className="px-6 py-24 lg:px-20">
+            <section id="process" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.processEyebrow} title={t.processTitle} text={t.processSub} /></FadeIn>
                     <div className="grid gap-5 lg:grid-cols-4">
                         {c.processSteps.map(function (s) {
                             return (
-                                <div key={s.num} className="luxBorder rounded-3xl p-7">
-                                    <p className="mb-5 text-4xl font-black text-[#F6A08A]">{s.num}</p>
+                                <div key={s.num} className="luxBorder rounded-3xl p-5 sm:p-7">
+                                    <p className="mb-5 text-3xl font-black text-[#F6A08A] sm:text-4xl">{s.num}</p>
                                     <h3 className="mb-3 text-xl font-black">{s.title}</h3>
                                     <p className="leading-7 text-slate-400">{s.desc}</p>
                                 </div>
@@ -1566,17 +1566,17 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="packages" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <section id="packages" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.packagesEyebrow} title={t.packagesTitle} text={t.packagesSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {c.packages.map(function (item, idx) {
                             const featured = idx === 1;
                             return (
-                                <div key={item.name} className={"flex flex-col rounded-[2rem] p-7 " + (featured ? "border border-[#E96A9A]/40 bg-[#E96A9A]/10 shadow-2xl shadow-[#1E4FA6]/35 ring-1 ring-[#E96A9A]/20" : "luxBorder")}>
+                                <div key={item.name} className={"flex flex-col rounded-[2rem] p-5 sm:p-7 " + (featured ? "border border-[#E96A9A]/40 bg-[#E96A9A]/10 shadow-2xl shadow-[#1E4FA6]/35 ring-1 ring-[#E96A9A]/20" : "luxBorder")}>
                                     {featured ? <p className="mb-4 w-fit rounded-full bg-[#F6A08A] px-3 py-1 text-xs font-black text-slate-950">{t.popular}</p> : null}
-                                    <h3 className="text-2xl font-black">{item.name}</h3>
-                                    <p className="mt-3 text-4xl font-black text-[#F6A08A]">{item.price}</p>
+                                    <h3 className="text-xl font-black sm:text-2xl">{item.name}</h3>
+                                    <p className="mt-3 text-3xl font-black text-[#F6A08A] sm:text-4xl">{item.price}</p>
                                     <p className="mt-4 leading-7 text-slate-400">{item.desc}</p>
                                     <ul className="mt-5 flex-1 space-y-2">
                                         {item.features.map(function (f) {
@@ -1599,10 +1599,10 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="consulting" className="px-6 py-24 lg:px-20">
+            <section id="consulting" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <div className="mx-auto max-w-6xl text-center">
                     <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.consultingEyebrow}</p>
-                    <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.consultingTitle}</h2>
+                    <h2 className="text-balance text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{t.consultingTitle}</h2>
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">{t.consultingSub}</p>
                     <div className="mt-8">
                         <a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#F28B7A] to-[#F6A08A] px-9 py-4 font-black text-slate-900 shadow-2xl shadow-[#F28B7A]/30 ring-1 ring-[#F6A08A]/50 transition-all hover:scale-105 hover:from-[#F6A08A] hover:to-[#F28B7A] hover:shadow-[#F28B7A]/40">
@@ -1613,13 +1613,13 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <section id="testimonials" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <section id="testimonials" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.testimonialsEyebrow} title={t.testimonialsTitle} text={t.testimonialsSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
                         {c.testimonials.map(function (item) {
                             return (
-                                <div key={item.name} className="luxBorder relative rounded-[2rem] p-8 shadow-xl shadow-[#1E4FA6]/30">
+                                <div key={item.name} className="luxBorder relative rounded-[2rem] p-5 shadow-xl shadow-[#1E4FA6]/30 sm:p-8">
                                     <span className="pointer-events-none absolute right-6 top-2 select-none text-8xl font-black leading-none text-[#7C3AED]/10">"</span>
                                     <StarRating />
                                     <p className="relative z-10 leading-7 text-slate-300">"{item.quote}"</p>
@@ -1639,26 +1639,26 @@ function DigitalStudioWebsite() {
 
             <FAQSection eyebrow={t.faqEyebrow} title={t.faqTitle} items={c.faqs} lang={lang} />
 
-            <section id="contact" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 100%)" }}>
+            <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
                         <div className="flex flex-col justify-center">
                             <Logo className="mb-6 h-16 w-16" />
                             <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.contactEyebrow}</p>
-                            <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.contactTitle}</h2>
+                            <h2 className="text-balance text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">{t.contactTitle}</h2>
                             <p className="mt-6 text-lg leading-8 text-slate-300">{copy("Fill in the form and we'll open WhatsApp with your message pre-filled, ready to send. Or reach us directly below.")}</p>
                             <div className="mt-8 flex flex-col gap-3">
-                                <a href={WHATSAPP_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
+                                <a href={WHATSAPP_URL} className="inline-flex min-w-0 items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-4 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10 sm:px-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-green-400"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm5.07 13.6c-.213.598-1.249 1.14-1.712 1.213-.438.069-.993.097-1.6-.1-.369-.12-.843-.28-1.448-.548-2.55-1.1-4.213-3.66-4.34-3.83-.127-.17-1.033-1.374-1.033-2.62 0-1.248.654-1.862.887-2.116.233-.254.508-.318.677-.318.17 0 .339.002.487.008.156.007.365-.059.572.436.212.508.72 1.757.783 1.884.063.127.106.277.021.445-.085.17-.127.277-.254.424-.128.148-.268.33-.384.444-.127.127-.258.264-.11.517.148.254.654 1.079 1.404 1.747.963.856 1.775 1.12 2.028 1.247.255.127.403.106.55-.064.149-.17.635-.742.804-.996.17-.254.338-.212.572-.127.233.084 1.48.698 1.734.825.254.127.424.19.487.296.063.106.063.614-.15 1.212Z" /></svg>
                                     {WHATSAPP_DISPLAY}
                                 </a>
-                                <a href={EMAIL_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
+                                <a href={EMAIL_URL} className="inline-flex min-w-0 items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-4 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10 sm:px-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-[#7C3AED]"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
-                                    {EMAIL_DISPLAY}
+                                    <span className="min-w-0 break-all">{EMAIL_DISPLAY}</span>
                                 </a>
                             </div>
                         </div>
-                        <div className="luxBorder rounded-[2rem] p-8 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur">
+                        <div className="luxBorder rounded-[2rem] p-5 shadow-2xl shadow-[#1E4FA6]/40 backdrop-blur sm:p-8">
                             <p className="mb-6 text-xl font-black">{t.sendMsg}</p>
                             <ContactForm lang={lang} />
                         </div>
@@ -1674,11 +1674,11 @@ function DigitalStudioWebsite() {
                 </div>
             </div>
 
-            <footer className="border-t border-[#E96A9A]/10 px-6 pt-16 pb-8 lg:px-20" style={{ background: "linear-gradient(180deg, #1A1A1F 0%, #0F172A 100%)" }}>
+            <footer className="border-t border-[#E96A9A]/10 px-4 pb-8 pt-14 sm:px-6 sm:pt-16 lg:px-20" style={{ background: "linear-gradient(180deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
 
                     {/* Top: brand + columns */}
-                    <div className="mb-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
+                    <div className="mb-14 grid gap-9 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
 
                         {/* Brand column */}
                         <div className="sm:col-span-2 lg:col-span-1">
@@ -1688,7 +1688,7 @@ function DigitalStudioWebsite() {
                             <p className="text-sm leading-7 text-slate-400">{copy("Premium websites, CRM dashboards, AI integrations and digital marketing - built in Indonesia for serious global businesses.")}</p>
                             <div className="mt-6 flex gap-3">
                                 {/* WhatsApp */}
-                                <a href={WHATSAPP_URL} aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-green-400/40 hover:text-green-400">
+                                <a href={WHATSAPP_URL} aria-label="WhatsApp" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-green-400/40 hover:text-green-400">
                                     <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" /></svg>
                                 </a>
                             </div>
@@ -1744,14 +1744,14 @@ function DigitalStudioWebsite() {
                     <div className="mb-6 h-px w-full bg-gradient-to-r from-transparent via-fuchsia-400/20 to-transparent" />
 
                     {/* Bottom bar */}
-                    <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 md:flex-row">
-                        <p>Copyright 2026 NusaTech Solutions. {copy("All rights reserved.")} - Indonesia</p>
-                        <div className="flex gap-6">
+                    <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-slate-500 md:flex-row md:text-left">
+                        <p className="max-w-full">Copyright 2026 NusaTech Solutions. {copy("All rights reserved.")} - Indonesia</p>
+                        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 md:justify-start">
                             <a href="/privacy.html" className="transition hover:text-slate-300">{copy("Privacy Policy")}</a>
                             <a href="/terms.html" className="transition hover:text-slate-300">{copy("Terms of Use")}</a>
                             <a href="/cookies.html" className="transition hover:text-slate-300">{copy("Cookie Policy")}</a>
                         </div>
-                        <p>WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
+                        <p className="max-w-full break-words">WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="break-all transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
                     </div>
                 </div>
             </footer>
