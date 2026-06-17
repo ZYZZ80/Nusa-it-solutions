@@ -145,6 +145,20 @@ const languageOptions = [
     { code: "ko", label: "KO" }
 ];
 
+const alternateLanguages = {
+    en: "",
+    id: "id",
+    fr: "fr",
+    es: "es",
+    it: "it",
+    ar: "ar",
+    ru: "ru",
+    zh: "zh-CN",
+    ja: "ja",
+    de: "de",
+    ko: "ko"
+};
+
 const noTranslateFields = new Set(["key", "url", "image", "logo", "icon", "price", "num", "src", "initial"]);
 
 function translateCopy(lang, text) {
@@ -162,6 +176,21 @@ function localizeContent(lang, value, key) {
         }, {});
     }
     return value;
+}
+
+function readInitialLanguage() {
+    try {
+        const fromUrl = new URLSearchParams(window.location.search).get("lang");
+        if (fromUrl && languageOptions.some(function (item) { return item.code === fromUrl; })) return fromUrl;
+        return window.localStorage.getItem("lang") || "en";
+    } catch (error) {
+        return "en";
+    }
+}
+
+function canonicalForLanguage(lang) {
+    const base = "https://www.nusatechsolutions.company/";
+    return lang && lang !== "en" ? base + "?lang=" + encodeURIComponent(lang) : base;
 }
 
 const cssRules = [
@@ -1240,9 +1269,7 @@ Object.assign(LANGS, {
 
 function DigitalStudioWebsite() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [lang, setLang] = useState(function () {
-        try { return window.localStorage.getItem("lang") || "en"; } catch (e) { return "en"; }
-    });
+    const [lang, setLang] = useState(readInitialLanguage);
     const t = LANGS[lang] || LANGS.en;
     const c = localizeContent(lang, {
         services,
@@ -1260,7 +1287,16 @@ function DigitalStudioWebsite() {
         navLinks
     });
     const copy = function (text) { return translateCopy(lang, text); };
-    function switchLang(l) { setLang(l); try { window.localStorage.setItem("lang", l); } catch (e) { } }
+    function switchLang(l) {
+        setLang(l);
+        try {
+            window.localStorage.setItem("lang", l);
+            const next = new URL(window.location.href);
+            if (l === "en") next.searchParams.delete("lang");
+            else next.searchParams.set("lang", l);
+            window.history.replaceState({}, "", next.pathname + next.search + next.hash);
+        } catch (e) { }
+    }
     useEffect(function () {
         try {
             document.documentElement.lang = lang;
@@ -1268,6 +1304,18 @@ function DigitalStudioWebsite() {
             var d = document.querySelector('meta[name="description"]');
             if (d && t.metaDescription) d.setAttribute("content", t.metaDescription);
             if (document.title && t.metaTitle) document.title = t.metaTitle;
+            var canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.setAttribute("href", canonicalForLanguage(lang));
+            var ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.setAttribute("content", canonicalForLanguage(lang));
+            var ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle && t.metaTitle) ogTitle.setAttribute("content", t.metaTitle);
+            var ogDescription = document.querySelector('meta[property="og:description"]');
+            if (ogDescription && t.metaDescription) ogDescription.setAttribute("content", t.metaDescription);
+            var twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twTitle && t.metaTitle) twTitle.setAttribute("content", t.metaTitle);
+            var twDescription = document.querySelector('meta[name="twitter:description"]');
+            if (twDescription && t.metaDescription) twDescription.setAttribute("content", t.metaDescription);
         } catch (e) { }
     }, [lang, t.metaDescription, t.metaTitle]);
 

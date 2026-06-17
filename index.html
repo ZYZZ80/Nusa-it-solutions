@@ -25,6 +25,18 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://www.nusatechsolutions.company/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" hreflang="x-default" href="https://www.nusatechsolutions.company/" />
+    <link rel="alternate" hreflang="en" href="https://www.nusatechsolutions.company/" />
+    <link rel="alternate" hreflang="id" href="https://www.nusatechsolutions.company/?lang=id" />
+    <link rel="alternate" hreflang="fr" href="https://www.nusatechsolutions.company/?lang=fr" />
+    <link rel="alternate" hreflang="es" href="https://www.nusatechsolutions.company/?lang=es" />
+    <link rel="alternate" hreflang="it" href="https://www.nusatechsolutions.company/?lang=it" />
+    <link rel="alternate" hreflang="ar" href="https://www.nusatechsolutions.company/?lang=ar" />
+    <link rel="alternate" hreflang="ru" href="https://www.nusatechsolutions.company/?lang=ru" />
+    <link rel="alternate" hreflang="zh-CN" href="https://www.nusatechsolutions.company/?lang=zh" />
+    <link rel="alternate" hreflang="ja" href="https://www.nusatechsolutions.company/?lang=ja" />
+    <link rel="alternate" hreflang="de" href="https://www.nusatechsolutions.company/?lang=de" />
+    <link rel="alternate" hreflang="ko" href="https://www.nusatechsolutions.company/?lang=ko" />
 
     <!-- Open Graph (WhatsApp, LinkedIn, Facebook previews) -->
     <meta property="og:type" content="website" />
@@ -66,6 +78,7 @@
           "@id": "https://www.nusatechsolutions.company/#website",
           "name": "NusaTech Solutions",
           "url": "https://www.nusatechsolutions.company/",
+          "alternateName": ["NusaTech", "NusaTech AI Solutions", "Nusa IT Solutions"],
           "publisher": { "@id": "https://www.nusatechsolutions.company/#business" }
         },
         {
@@ -74,7 +87,15 @@
           "url": "https://www.nusatechsolutions.company/",
           "name": "NusaTech Solutions | Websites & CRM Indonesia",
           "isPartOf": { "@id": "https://www.nusatechsolutions.company/#website" },
-          "about": { "@id": "https://www.nusatechsolutions.company/#business" }
+          "about": { "@id": "https://www.nusatechsolutions.company/#business" },
+          "inLanguage": "en",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.nusatechsolutions.company/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
+          "breadcrumb": { "@id": "https://www.nusatechsolutions.company/#breadcrumb" }
         },
         {
           "@type": ["ProfessionalService", "LocalBusiness"],
@@ -85,6 +106,15 @@
           "url": "https://www.nusatechsolutions.company/",
           "email": "admin@jakartaglobaladviser.com",
           "telephone": "+6285770759300",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+6285770759300",
+              "contactType": "sales",
+              "availableLanguage": ["English", "Indonesian", "French", "Spanish", "Italian", "Arabic", "Russian", "Chinese", "Japanese", "German", "Korean"],
+              "areaServed": ["ID", "Worldwide"]
+            }
+          ],
           "priceRange": "$$",
           "description": "NusaTech Solutions builds premium business websites, CRM dashboards, client portals, and digital marketing systems for hotels, travel agencies, exporters, and serious businesses in Indonesia and globally.",
           "address": {
@@ -132,6 +162,39 @@
               }
             ]
           }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.nusatechsolutions.company/#organization",
+          "name": "NusaTech Solutions",
+          "url": "https://www.nusatechsolutions.company/",
+          "logo": "https://www.nusatechsolutions.company/nusatech-logo.svg",
+          "contactPoint": { "@id": "https://www.nusatechsolutions.company/#business" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.nusatechsolutions.company/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.nusatechsolutions.company/"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.nusatechsolutions.company/#services-list",
+          "name": "NusaTech Solutions services",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Web Development Jakarta", "url": "https://www.nusatechsolutions.company/web-development-jakarta.html" },
+            { "@type": "ListItem", "position": 2, "name": "CRM Dashboard Jakarta", "url": "https://www.nusatechsolutions.company/crm-dashboard-jakarta.html" },
+            { "@type": "ListItem", "position": 3, "name": "AI Integrations Jakarta", "url": "https://www.nusatechsolutions.company/ai-integrations-jakarta.html" },
+            { "@type": "ListItem", "position": 4, "name": "Hotel & Travel CRM", "url": "https://www.nusatechsolutions.company/hotel-travel-crm.html" },
+            { "@type": "ListItem", "position": 5, "name": "Business Website Indonesia", "url": "https://www.nusatechsolutions.company/business-website-indonesia.html" },
+            { "@type": "ListItem", "position": 6, "name": "WhatsApp Funnel + CRM", "url": "https://www.nusatechsolutions.company/whatsapp-funnel-crm.html" }
+          ]
         },
         {
           "@type": "Service",
@@ -238,6 +301,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <style>html,body{background:#0F172A;margin:0;min-height:100%}</style>
   </head>
   <body style="background:#0F172A">

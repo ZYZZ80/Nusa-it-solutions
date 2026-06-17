@@ -1,15 +1,22 @@
 {
   "name": "pt-nusatech-ai-solutions",
   "version": "1.0.0",
-  "description": "",
+  "description": "NusaTech Solutions website for premium websites, CRM dashboards, AI integrations, and digital marketing systems in Indonesia.",
   "main": "index.js",
   "scripts": {
     "build": "vite build",
     "dev": "vite --host 127.0.0.1",
     "start": "vite --host 127.0.0.1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web development jakarta",
+    "crm dashboard jakarta",
+    "ai integrations indonesia",
+    "business website indonesia",
+    "digital marketing jakarta",
+    "nusa tech solutions"
+  ],
+  "author": "NusaTech Solutions",
   "license": "ISC",
   "type": "module",
   "dependencies": {
