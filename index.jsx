@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import generatedTranslations from './translations.generated.json';
 import './index.css';
 
 const WHATSAPP_DISPLAY = "085770759300";
@@ -143,6 +144,25 @@ const languageOptions = [
     { code: "de", label: "DE" },
     { code: "ko", label: "KO" }
 ];
+
+const noTranslateFields = new Set(["key", "url", "image", "logo", "icon", "price", "num", "src", "initial"]);
+
+function translateCopy(lang, text) {
+    if (typeof text !== "string" || lang === "en") return text;
+    return (generatedTranslations[lang] && generatedTranslations[lang][text]) || text;
+}
+
+function localizeContent(lang, value, key) {
+    if (typeof value === "string") return noTranslateFields.has(key) ? value : translateCopy(lang, value);
+    if (Array.isArray(value)) return value.map(function (item) { return localizeContent(lang, item, key); });
+    if (value && typeof value === "object") {
+        return Object.keys(value).reduce(function (next, itemKey) {
+            next[itemKey] = localizeContent(lang, value[itemKey], itemKey);
+            return next;
+        }, {});
+    }
+    return value;
+}
 
 const cssRules = [
     "@keyframes spinInfinite { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }",
@@ -516,14 +536,16 @@ function SectionTitle({ eyebrow, title, text }) {
     );
 }
 
-function FAQSection({ eyebrow, title }) {
+function FAQSection({ eyebrow, title, items, lang }) {
     const [open, setOpen] = useState(0);
+    const copy = function (text) { return translateCopy(lang || "en", text); };
+    const faqItems = items || localizeContent(lang || "en", faqs);
     return (
         <section id="faq" className="px-6 py-24 lg:px-20">
             <div className="mx-auto max-w-7xl">
-                <FadeIn><SectionTitle eyebrow={eyebrow} title={title} text="Clear answers about websites, CRM dashboards, AI integrations, timelines, support, and how we work with serious businesses." /></FadeIn>
+                <FadeIn><SectionTitle eyebrow={eyebrow} title={title} text={copy("Clear answers about websites, CRM dashboards, AI integrations, timelines, support, and how we work with serious businesses.")} /></FadeIn>
                 <div className="mx-auto grid max-w-5xl gap-4">
-                    {faqs.map(function (item, index) {
+                    {faqItems.map(function (item, index) {
                         const active = open === index;
                         return (
                             <div key={item.q} className={"luxBorder overflow-hidden rounded-3xl transition " + (active ? "bg-[#E96A9A]/10" : "")}>
@@ -632,11 +654,12 @@ function ProjectScreenshot({ type }) {
 
 function MobileMenu({ open, onClose, lang, onLangChange }) {
     const t = LANGS[lang] || LANGS.en;
+    const menuLinks = localizeContent(lang, navLinks);
     if (!open) return null;
     return (
         <div className="mt-3 rounded-3xl border border-[#E96A9A]/15 bg-[#1A1A1F]/98 p-5 shadow-2xl backdrop-blur-xl lg:hidden">
             <nav className="flex flex-col gap-1">
-                {navLinks.map(function (link) {
+                {menuLinks.map(function (link) {
                     return <a key={link.href} href={link.href} onClick={onClose} className="rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-[#E96A9A]/10 hover:text-white">{link.label}</a>;
                 })}
             </nav>
@@ -658,6 +681,7 @@ function MobileMenu({ open, onClose, lang, onLangChange }) {
 
 function ContactForm({ lang }) {
     const t = LANGS[lang] || LANGS.en;
+    const copy = function (text) { return translateCopy(lang, text); };
     const [form, setForm] = useState({ name: "", contact: "", service: serviceOptions[0], message: "" });
     const [sent, setSent] = useState(false);
     const change = function (e) { const { name, value } = e.target; setForm(function (p) { return Object.assign({}, p, { [name]: value }); }); };
@@ -675,7 +699,7 @@ function ContactForm({ lang }) {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7 text-[#F6A08A]"><path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" /></svg>
                 </div>
                 <p className="text-xl font-black text-white">{t.sentTitle}</p>
-                <p className="mt-2 text-sm text-slate-400">{t.sentSub} <a href={WHATSAPP_URL} className="text-[#F6A08A] underline">click here</a>.</p>
+                <p className="mt-2 text-sm text-slate-400">{t.sentSub} <a href={WHATSAPP_URL} className="text-[#F6A08A] underline">{copy("click here")}</a>.</p>
                 <button type="button" onClick={function () { setSent(false); setForm({ name: "", contact: "", service: serviceOptions[0], message: "" }); }} className="mt-6 rounded-xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#E96A9A]/10">{t.sendAnother}</button>
             </div>
         );
@@ -688,7 +712,7 @@ function ContactForm({ lang }) {
             </div>
             <div><label htmlFor="contact-service" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formService}</label>
                 <select id="contact-service" name="service" value={form.service} onChange={change} className={inp + " cursor-pointer"}>
-                    {serviceOptions.map(function (s) { return <option key={s} value={s} className="bg-[#1A1A1F] text-white">{s}</option>; })}
+                    {serviceOptions.map(function (s) { return <option key={s} value={s} className="bg-[#1A1A1F] text-white">{copy(s)}</option>; })}
                 </select>
             </div>
             <div><label htmlFor="contact-message" className="mb-2 block text-xs font-bold uppercase tracking-widest text-slate-400">{t.formMsg}</label><textarea id="contact-message" name="message" value={form.message} onChange={change} required placeholder={t.formPlaceholderMsg} rows={5} className={inp + " resize-none"} /></div>
@@ -811,7 +835,8 @@ function CookieConsent() {
     );
 }
 
-function PartnersSection() {
+function PartnersSection({ lang }) {
+    const copy = function (text) { return translateCopy(lang || "en", text); };
     return (
         <section id="partners" className="relative overflow-hidden px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #070B18 0%, #111827 48%, #160B2F 100%)" }}>
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(37,99,235,0.20),transparent_28%),radial-gradient(circle_at_85%_10%,rgba(233,106,154,0.16),transparent_30%)]" />
@@ -819,10 +844,10 @@ function PartnersSection() {
                 <FadeIn>
                     <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
                         <div>
-                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Partners & Clients</p>
-                            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-5xl">Trusted by brands across travel, hospitality, retail and trade.</h2>
+                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{copy("Partners & Clients")}</p>
+                            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-white md:text-5xl">{copy("Trusted by brands across travel, hospitality, retail and trade.")}</h2>
                         </div>
-                        <p className="max-w-md text-sm leading-7 text-slate-400">A growing network of businesses using NusaTech for websites, dashboards, CRM systems and digital growth.</p>
+                        <p className="max-w-md text-sm leading-7 text-slate-400">{copy("A growing network of businesses using NusaTech for websites, dashboards, CRM systems and digital growth.")}</p>
                     </div>
                 </FadeIn>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -841,7 +866,9 @@ function PartnersSection() {
     );
 }
 
-function CredibilitySection() {
+function CredibilitySection({ lang, items }) {
+    const copy = function (text) { return translateCopy(lang || "en", text); };
+    const badges = items || localizeContent(lang || "en", trustBadges);
     return (
         <section id="jakarta-seo" className="relative overflow-hidden px-6 py-24 lg:px-20">
             <FloatingBlobs variant="section" />
@@ -849,9 +876,9 @@ function CredibilitySection() {
                 <FadeIn>
                     <div className="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
                         <div>
-                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Jakarta Digital Agency</p>
-                            <h2 className="text-4xl font-black tracking-tight md:text-6xl">Web development, CRM dashboards and AI integrations for Jakarta businesses.</h2>
-                            <p className="mt-6 text-lg leading-8 text-slate-400">NusaTech Solutions is built for companies that need more than a nice homepage. We help Jakarta hotels, travel companies, exporters, consultants, real estate teams and service businesses build websites, dashboards, CRM systems, WhatsApp funnels and AI-supported workflows that look premium and support real operations.</p>
+                            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{copy("Jakarta Digital Agency")}</p>
+                            <h2 className="text-4xl font-black tracking-tight md:text-6xl">{copy("Web development, CRM dashboards and AI integrations for Jakarta businesses.")}</h2>
+                            <p className="mt-6 text-lg leading-8 text-slate-400">{copy("NusaTech Solutions is built for companies that need more than a nice homepage. We help Jakarta hotels, travel companies, exporters, consultants, real estate teams and service businesses build websites, dashboards, CRM systems, WhatsApp funnels and AI-supported workflows that look premium and support real operations.")}</p>
                             <div className="mt-8 flex flex-wrap gap-3">
                                 {["Jakarta", "Indonesia", "Hotels", "Travel", "Export", "CRM", "AI", "WhatsApp"].map(function (tag) {
                                     return <span key={tag} className="rounded-full border border-[#E96A9A]/20 bg-[#E96A9A]/8 px-4 py-2 text-sm font-bold text-slate-200">{tag}</span>;
@@ -859,9 +886,9 @@ function CredibilitySection() {
                             </div>
                         </div>
                         <div className="luxBorder rounded-[2rem] p-7 shadow-2xl shadow-[#1E4FA6]/30">
-                            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Trust Signals</p>
+                            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{copy("Trust Signals")}</p>
                             <div className="grid gap-3 sm:grid-cols-2">
-                                {trustBadges.map(function (badge) {
+                                {badges.map(function (badge) {
                                     return (
                                         <div key={badge} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-slate-300">
                                             <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[#F6A08A]" />
@@ -878,19 +905,21 @@ function CredibilitySection() {
     );
 }
 
-function ServiceLandingLinks() {
+function ServiceLandingLinks({ lang, items }) {
+    const copy = function (text) { return translateCopy(lang || "en", text); };
+    const pages = items || localizeContent(lang || "en", serviceLandingPages);
     return (
         <section id="service-pages" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
             <div className="mx-auto max-w-7xl">
-                <FadeIn><SectionTitle eyebrow="SEO Service Pages" title="Focused pages for the searches clients actually make." text="Each page targets a high-intent Jakarta or Indonesia search topic and gives prospects a clearer path to the service they need." /></FadeIn>
+                <FadeIn><SectionTitle eyebrow={copy("SEO Service Pages")} title={copy("Focused pages for the searches clients actually make.")} text={copy("Each page targets a high-intent Jakarta or Indonesia search topic and gives prospects a clearer path to the service they need.")} /></FadeIn>
                 <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    {serviceLandingPages.map(function (item) {
+                    {pages.map(function (item) {
                         return (
                             <a key={item.href} href={item.href} className="luxBorder group rounded-3xl p-7 transition hover:-translate-y-1">
-                                <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-[#F6A08A]">Landing Page</p>
+                                <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-[#F6A08A]">{copy("Landing Page")}</p>
                                 <h3 className="text-2xl font-black text-white">{item.title}</h3>
                                 <p className="mt-4 leading-7 text-slate-400">{item.text}</p>
-                                <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#F6A08A]">Open page <span className="transition group-hover:translate-x-1">→</span></span>
+                                <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#F6A08A]">{copy("Open page")} <span className="transition group-hover:translate-x-1">→</span></span>
                             </a>
                         );
                     })}
@@ -900,13 +929,15 @@ function ServiceLandingLinks() {
     );
 }
 
-function CaseStudySection() {
+function CaseStudySection({ lang, items }) {
+    const copy = function (text) { return translateCopy(lang || "en", text); };
+    const studies = items || localizeContent(lang || "en", caseStudies);
     return (
         <section id="case-studies" className="px-6 py-24 lg:px-20">
             <div className="mx-auto max-w-7xl">
-                <FadeIn><SectionTitle eyebrow="Case Studies" title="Proof clients can inspect before they talk to us." text="Credibility grows when prospects can see the business problem, the system delivered, and the operational value behind each project." /></FadeIn>
+                <FadeIn><SectionTitle eyebrow={copy("Case Studies")} title={copy("Proof clients can inspect before they talk to us.")} text={copy("Credibility grows when prospects can see the business problem, the system delivered, and the operational value behind each project.")} /></FadeIn>
                 <div className="grid gap-6 lg:grid-cols-4">
-                    {caseStudies.map(function (item, index) {
+                    {studies.map(function (item, index) {
                         return (
                             <FadeIn key={item.title} delay={index * 0.06}>
                                 <div className="luxBorder h-full rounded-[2rem] p-7">
@@ -1213,6 +1244,22 @@ function DigitalStudioWebsite() {
         try { return window.localStorage.getItem("lang") || "en"; } catch (e) { return "en"; }
     });
     const t = LANGS[lang] || LANGS.en;
+    const c = localizeContent(lang, {
+        services,
+        projects,
+        comingSoonProjects,
+        packages,
+        faqs,
+        testimonials,
+        industries,
+        platformFeatures,
+        processSteps,
+        serviceLandingPages,
+        caseStudies,
+        trustBadges,
+        navLinks
+    });
+    const copy = function (text) { return translateCopy(lang, text); };
     function switchLang(l) { setLang(l); try { window.localStorage.setItem("lang", l); } catch (e) { } }
     useEffect(function () {
         try {
@@ -1250,7 +1297,7 @@ function DigitalStudioWebsite() {
 
                         {/* Centre links */}
                         <div className="hidden items-center gap-1 lg:flex">
-                            {navLinks.map(function (link) {
+                            {c.navLinks.map(function (link) {
                                 return (
                                     <a key={link.href} href={link.href} className="rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-[#E96A9A]/12 hover:text-white">
                                         {link.label}
@@ -1312,7 +1359,7 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.servicesEyebrow} title={t.servicesTitle} text={t.servicesSub} /></FadeIn>
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                        {services.map(function (item) {
+                        {c.services.map(function (item) {
                             return (
                                 <div key={item.title} className="luxBorder rounded-3xl p-7 transition hover:-translate-y-1 hover:bg-[#E96A9A]/5">
                                     <div className="mb-6 inline-flex rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 px-3 py-2 text-sm font-black text-[#F6A08A]">{item.icon}</div>
@@ -1325,37 +1372,37 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <CredibilitySection />
+            <CredibilitySection lang={lang} items={c.trustBadges} />
 
-            <ServiceLandingLinks />
+            <ServiceLandingLinks lang={lang} items={c.serviceLandingPages} />
 
             <section className="px-6 py-20 lg:px-20" style={{ background: "linear-gradient(135deg, #1A1A1F 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
                     <div className="grid gap-4 md:grid-cols-4">
-                        {[{ n: "4", l: "Core services" }, { n: "24/7", l: "Online presence" }, { n: "100%", l: "Custom workflow" }, { n: "Global", l: "Client ready" }].map(function (s) {
+                        {[{ n: "4", l: copy("Core services") }, { n: "24/7", l: copy("Online presence") }, { n: "100%", l: copy("Custom workflow") }, { n: "Global", l: copy("Client ready") }].map(function (s) {
                             return <div key={s.l} className="luxBorder rounded-3xl p-7 text-center"><p className="text-4xl font-black text-[#F6A08A]">{s.n}</p><p className="mt-2 text-sm text-slate-400">{s.l}</p></div>;
                         })}
                     </div>
                 </div>
             </section>
 
-            <PartnersSection />
+            <PartnersSection lang={lang} />
 
-            <CaseStudySection />
+            <CaseStudySection lang={lang} items={c.caseStudies} />
 
             <section id="work" className="px-6 py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.portfolioEyebrow} title={t.portfolioTitle} text={t.portfolioSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-2">
-                        {projects.map(function (item, i) {
+                        {c.projects.map(function (item, i) {
                             return (
                                 <div key={item.title} className="luxBorder rounded-[2rem] p-6 shadow-xl shadow-[#1E4FA6]/30">
-                                    <div className="mb-3 w-fit rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 px-3 py-2 text-xs text-[#F6A08A]">Project 0{i + 1}</div>
+                                    <div className="mb-3 w-fit rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/10 px-3 py-2 text-xs text-[#F6A08A]">{copy("Project")} 0{i + 1}</div>
                                     <ProjectScreenshot type={item.key} />
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
                                     <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
-                                    {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">Visit Website <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a> : null}
+                                    {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#E96A9A] via-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#1E4FA6]/40">{copy("Visit Website")} <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5"><path fillRule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clipRule="evenodd" /></svg></a> : null}
                                 </div>
                             );
                         })}
@@ -1367,13 +1414,13 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.comingSoonEyebrow} title={t.comingSoonTitle} text={t.comingSoonSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
-                        {comingSoonProjects.map(function (item) {
+                        {c.comingSoonProjects.map(function (item) {
                             return (
                                 <div key={item.title} className="luxBorder rounded-[2rem] p-6 shadow-xl shadow-[#1E4FA6]/30">
                                     <div className="mb-5 h-56 overflow-hidden rounded-3xl border border-[#E96A9A]/15 bg-[#1A1A1F]">
                                         <img src={item.image} alt={item.title + " screenshot"} className="h-full w-full object-cover object-left-top" loading="lazy" />
                                     </div>
-                                    <div className="mb-3 w-fit rounded-2xl bg-[#F6A08A] px-3 py-2 text-xs font-black text-slate-950">Coming Soon</div>
+                                    <div className="mb-3 w-fit rounded-2xl bg-[#F6A08A] px-3 py-2 text-xs font-black text-slate-950">{copy("Coming Soon")}</div>
                                     <p className="mb-2 text-sm font-bold text-[#F6A08A]">{item.category}</p>
                                     <h3 className="mb-3 text-2xl font-black">{item.title}</h3>
                                     <p className="leading-7 text-slate-400">{item.text}</p>
@@ -1396,7 +1443,7 @@ function DigitalStudioWebsite() {
                         <div className="luxBorder rounded-[2rem] p-6">
                             <div className="rounded-3xl bg-[#0F172A] p-6">
                                 <p className="mb-5 text-xs font-bold uppercase tracking-widest text-slate-500">{t.chartDisclaimer}</p>
-                                {["Website Visitors", "WhatsApp Clicks", "Qualified Leads", "Client Meetings"].map(function (label, i) {
+                                {[copy("Website Visitors"), copy("WhatsApp Clicks"), copy("Qualified Leads"), copy("Client Meetings")].map(function (label, i) {
                                     const vals = [90, 78, 62, 48], gr = [74, 58, 41, 26];
                                     return (
                                         <div key={label} className="mb-6 last:mb-0">
@@ -1417,14 +1464,14 @@ function DigitalStudioWebsite() {
                     <FadeIn>
                         <div className="mb-14 grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr]">
                             <div>
-                                <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">Software Systems</p>
-                                <h2 className="text-4xl font-black tracking-tight md:text-6xl">From beautiful website to complete business operating system.</h2>
+                                <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{copy("Software Systems")}</p>
+                                <h2 className="text-4xl font-black tracking-tight md:text-6xl">{copy("From beautiful website to complete business operating system.")}</h2>
                             </div>
-                            <p className="text-lg leading-8 text-slate-400">Inspired by modern app builders, but custom-made for your company: data, workflows, dashboards, AI assistants, client portals, and premium interfaces connected into one system.</p>
+                            <p className="text-lg leading-8 text-slate-400">{copy("Inspired by modern app builders, but custom-made for your company: data, workflows, dashboards, AI assistants, client portals, and premium interfaces connected into one system.")}</p>
                         </div>
                     </FadeIn>
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                        {platformFeatures.map(function (feature, index) {
+                        {c.platformFeatures.map(function (feature, index) {
                             return (
                                 <FadeIn key={feature.title} delay={index * 0.08}>
                                     <div className="luxBorder group relative min-h-[220px] overflow-hidden rounded-[2rem] p-7 transition hover:-translate-y-1">
@@ -1449,7 +1496,7 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.industryEyebrow} title={t.industryTitle} text={t.industrySub} /></FadeIn>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {industries.map(function (ind) { return <div key={ind} className="luxBorder rounded-2xl p-5 text-center font-bold text-slate-200 transition hover:bg-[#E96A9A]/5">{ind}</div>; })}
+                        {c.industries.map(function (ind) { return <div key={ind} className="luxBorder rounded-2xl p-5 text-center font-bold text-slate-200 transition hover:bg-[#E96A9A]/5">{ind}</div>; })}
                     </div>
                 </div>
             </section>
@@ -1458,7 +1505,7 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.processEyebrow} title={t.processTitle} text={t.processSub} /></FadeIn>
                     <div className="grid gap-5 lg:grid-cols-4">
-                        {processSteps.map(function (s) {
+                        {c.processSteps.map(function (s) {
                             return (
                                 <div key={s.num} className="luxBorder rounded-3xl p-7">
                                     <p className="mb-5 text-4xl font-black text-[#F6A08A]">{s.num}</p>
@@ -1475,7 +1522,7 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.packagesEyebrow} title={t.packagesTitle} text={t.packagesSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
-                        {packages.map(function (item, idx) {
+                        {c.packages.map(function (item, idx) {
                             const featured = idx === 1;
                             return (
                                 <div key={item.name} className={"flex flex-col rounded-[2rem] p-7 " + (featured ? "border border-[#E96A9A]/40 bg-[#E96A9A]/10 shadow-2xl shadow-[#1E4FA6]/35 ring-1 ring-[#E96A9A]/20" : "luxBorder")}>
@@ -1522,7 +1569,7 @@ function DigitalStudioWebsite() {
                 <div className="mx-auto max-w-7xl">
                     <FadeIn><SectionTitle eyebrow={t.testimonialsEyebrow} title={t.testimonialsTitle} text={t.testimonialsSub} /></FadeIn>
                     <div className="grid gap-6 lg:grid-cols-3">
-                        {testimonials.map(function (item) {
+                        {c.testimonials.map(function (item) {
                             return (
                                 <div key={item.name} className="luxBorder relative rounded-[2rem] p-8 shadow-xl shadow-[#1E4FA6]/30">
                                     <span className="pointer-events-none absolute right-6 top-2 select-none text-8xl font-black leading-none text-[#7C3AED]/10">"</span>
@@ -1542,7 +1589,7 @@ function DigitalStudioWebsite() {
                 </div>
             </section>
 
-            <FAQSection eyebrow={t.faqEyebrow} title={t.faqTitle} />
+            <FAQSection eyebrow={t.faqEyebrow} title={t.faqTitle} items={c.faqs} lang={lang} />
 
             <section id="contact" className="px-6 py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #1E4FA6 0%, #0F172A 100%)" }}>
                 <div className="mx-auto max-w-7xl">
@@ -1551,7 +1598,7 @@ function DigitalStudioWebsite() {
                             <Logo className="mb-6 h-16 w-16" />
                             <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-[#F6A08A]">{t.contactEyebrow}</p>
                             <h2 className="text-4xl font-black tracking-tight md:text-5xl">{t.contactTitle}</h2>
-                            <p className="mt-6 text-lg leading-8 text-slate-300">Fill in the form and we'll open WhatsApp with your message pre-filled, ready to send. Or reach us directly below.</p>
+                            <p className="mt-6 text-lg leading-8 text-slate-300">{copy("Fill in the form and we'll open WhatsApp with your message pre-filled, ready to send. Or reach us directly below.")}</p>
                             <div className="mt-8 flex flex-col gap-3">
                                 <a href={WHATSAPP_URL} className="inline-flex items-center gap-3 rounded-2xl border border-[#E96A9A]/20 bg-[#E96A9A]/5 px-6 py-4 font-bold text-white transition hover:bg-[#E96A9A]/10">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0 text-green-400"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm5.07 13.6c-.213.598-1.249 1.14-1.712 1.213-.438.069-.993.097-1.6-.1-.369-.12-.843-.28-1.448-.548-2.55-1.1-4.213-3.66-4.34-3.83-.127-.17-1.033-1.374-1.033-2.62 0-1.248.654-1.862.887-2.116.233-.254.508-.318.677-.318.17 0 .339.002.487.008.156.007.365-.059.572.436.212.508.72 1.757.783 1.884.063.127.106.277.021.445-.085.17-.127.277-.254.424-.128.148-.268.33-.384.444-.127.127-.258.264-.11.517.148.254.654 1.079 1.404 1.747.963.856 1.775 1.12 2.028 1.247.255.127.403.106.55-.064.149-.17.635-.742.804-.996.17-.254.338-.212.572-.127.233.084 1.48.698 1.734.825.254.127.424.19.487.296.063.106.063.614-.15 1.212Z" /></svg>
@@ -1573,7 +1620,7 @@ function DigitalStudioWebsite() {
 
             <div className="overflow-hidden border-y border-[#E96A9A]/10 py-4" style={{ background: "#1A1A1F" }}>
                 <div className="flex gap-10 whitespace-nowrap" style={{ animation: "ticker 28s linear infinite", width: "max-content" }}>
-                    {[...industries, "Web Development", "CRM Dashboards", "AI Integrations", "Digital Marketing", "Client Portals", "Business Apps", ...industries, "Web Development", "CRM Dashboards", "AI Integrations", "Digital Marketing", "Client Portals", "Business Apps"].map(function (t, i) {
+                    {[...c.industries, copy("Web Development"), copy("CRM Dashboards"), copy("AI Integrations"), copy("Digital Marketing"), copy("Client Portals"), copy("Business Apps"), ...c.industries, copy("Web Development"), copy("CRM Dashboards"), copy("AI Integrations"), copy("Digital Marketing"), copy("Client Portals"), copy("Business Apps")].map(function (t, i) {
                         return <span key={i} className="text-sm font-bold text-[#F6A08A]/40">* {t}</span>;
                     })}
                 </div>
@@ -1590,7 +1637,7 @@ function DigitalStudioWebsite() {
                             <div className="mb-5 flex items-center gap-3">
                                 <BrandLogo className="h-16 w-auto max-w-[220px]" />
                             </div>
-                            <p className="text-sm leading-7 text-slate-400">Premium websites, CRM dashboards, AI integrations and digital marketing - built in Indonesia for serious global businesses.</p>
+                            <p className="text-sm leading-7 text-slate-400">{copy("Premium websites, CRM dashboards, AI integrations and digital marketing - built in Indonesia for serious global businesses.")}</p>
                             <div className="mt-6 flex gap-3">
                                 {/* WhatsApp */}
                                 <a href={WHATSAPP_URL} aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#E96A9A]/15 bg-[#E96A9A]/5 text-slate-400 transition hover:border-green-400/40 hover:text-green-400">
@@ -1601,9 +1648,10 @@ function DigitalStudioWebsite() {
 
                         {/* Services */}
                         <div>
-                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">Services</p>
+                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">{copy("Services")}</p>
                             <ul className="space-y-2.5 text-sm text-slate-400">
                                 {["Premium Business Websites", "CRM Dashboard Systems", "Apps & Client Portals", "Digital Marketing & SEO", "AI Integrations", "Growth & Automation"].map(function (l) {
+                                    l = copy(l);
                                     return <li key={l}><a href="#services" className="transition hover:text-[#F6A08A]">{l}</a></li>;
                                 })}
                             </ul>
@@ -1611,19 +1659,20 @@ function DigitalStudioWebsite() {
 
                         {/* Company */}
                         <div>
-                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">Company</p>
+                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">{copy("Company")}</p>
                             <ul className="space-y-2.5 text-sm text-slate-400">
                                 {[["#work", "Our Portfolio"], ["#process", "Our Process"], ["#packages", "Packages & Pricing"], ["#consulting", "Consulting"], ["#testimonials", "Client Results"], ["#faq", "FAQ"]].map(function (l) {
-                                    return <li key={l[0]}><a href={l[0]} className="transition hover:text-[#F6A08A]">{l[1]}</a></li>;
+                                    return <li key={l[0]}><a href={l[0]} className="transition hover:text-[#F6A08A]">{copy(l[1])}</a></li>;
                                 })}
                             </ul>
                         </div>
 
                         {/* Industries */}
                         <div>
-                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">Industries</p>
+                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">{copy("Industries")}</p>
                             <ul className="space-y-2.5 text-sm text-slate-400">
                                 {["Hotels & Resorts", "Travel Agencies", "Vacation Clubs", "Export Companies", "Real Estate", "International Business"].map(function (l) {
+                                    l = copy(l);
                                     return <li key={l}><a href="#services" className="transition hover:text-[#F6A08A]">{l}</a></li>;
                                 })}
                             </ul>
@@ -1631,14 +1680,14 @@ function DigitalStudioWebsite() {
 
                         {/* Contact */}
                         <div>
-                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">Contact</p>
+                            <p className="mb-4 text-xs font-black uppercase tracking-widest text-white">{copy("Contact")}</p>
                             <ul className="space-y-2.5 text-sm text-slate-400">
-                                <li><a href="#contact" className="transition hover:text-[#F6A08A]">Start a Project</a></li>
+                                <li><a href="#contact" className="transition hover:text-[#F6A08A]">{copy("Start a Project")}</a></li>
                                 <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-green-400">{WHATSAPP_DISPLAY}</a></li>
                                 <li><a href={EMAIL_URL} className="break-all transition hover:text-[#F6A08A]">{EMAIL_DISPLAY}</a></li>
-                                <li><a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F28B7A]">Consulting Portal - open</a></li>
-                                <li><a href="https://esmeraldavacation.club/" target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F6A08A]">Esmeralda Vacation Club - open</a></li>
-                                <li className="pt-1 text-slate-500">Location: Jakarta, Indonesia</li>
+                                <li><a href={CONSULTANT_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F28B7A]">{copy("Consulting Portal - open")}</a></li>
+                                <li><a href="https://esmeraldavacation.club/" target="_blank" rel="noopener noreferrer" className="transition hover:text-[#F6A08A]">{copy("Esmeralda Vacation Club - open")}</a></li>
+                                <li className="pt-1 text-slate-500">{copy("Location: Jakarta, Indonesia")}</li>
                             </ul>
                         </div>
                     </div>
@@ -1648,11 +1697,11 @@ function DigitalStudioWebsite() {
 
                     {/* Bottom bar */}
                     <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 md:flex-row">
-                        <p>Copyright 2026 NusaTech Solutions. All rights reserved. - Indonesia</p>
+                        <p>Copyright 2026 NusaTech Solutions. {copy("All rights reserved.")} - Indonesia</p>
                         <div className="flex gap-6">
-                            <a href="/privacy.html" className="transition hover:text-slate-300">Privacy Policy</a>
-                            <a href="/terms.html" className="transition hover:text-slate-300">Terms of Use</a>
-                            <a href="/cookies.html" className="transition hover:text-slate-300">Cookie Policy</a>
+                            <a href="/privacy.html" className="transition hover:text-slate-300">{copy("Privacy Policy")}</a>
+                            <a href="/terms.html" className="transition hover:text-slate-300">{copy("Terms of Use")}</a>
+                            <a href="/cookies.html" className="transition hover:text-slate-300">{copy("Cookie Policy")}</a>
                         </div>
                         <p>WhatsApp {WHATSAPP_DISPLAY} - <a href={EMAIL_URL} className="transition hover:text-slate-300">{EMAIL_DISPLAY}</a></p>
                     </div>
