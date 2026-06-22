@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nusatechsolutions.company/</loc>
@@ -23,6 +24,41 @@
       <image:loc>https://www.nusatechsolutions.company/og-image.png</image:loc>
       <image:title>NusaTech Solutions - Websites, CRM Dashboards &amp; Digital Systems</image:title>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-01-poster.png</video:thumbnail_loc>
+      <video:title>Living Asia Hospitality Website</video:title>
+      <video:description>Hospitality website walkthrough by NusaTech Solutions.</video:description>
+      <video:content_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-01.mp4</video:content_loc>
+      <video:duration>15</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-02-poster.png</video:thumbnail_loc>
+      <video:title>Esmeralda Vacation Ownership Website</video:title>
+      <video:description>Vacation ownership website walkthrough by NusaTech Solutions.</video:description>
+      <video:content_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-02.mp4</video:content_loc>
+      <video:duration>19</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-03-poster.png</video:thumbnail_loc>
+      <video:title>Esmeralda Vacation Club CRM</video:title>
+      <video:description>Sales and operations CRM walkthrough by NusaTech Solutions.</video:description>
+      <video:content_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-03.mp4</video:content_loc>
+      <video:duration>20</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-04-poster.png</video:thumbnail_loc>
+      <video:title>TourToko Travel Marketplace</video:title>
+      <video:description>Travel tour marketplace walkthrough by NusaTech Solutions.</video:description>
+      <video:content_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-04.mp4</video:content_loc>
+      <video:duration>33</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-05-poster.png</video:thumbnail_loc>
+      <video:title>Multi-Hotel Vacation Club CRM</video:title>
+      <video:description>Multi-property hospitality management CRM walkthrough by NusaTech Solutions.</video:description>
+      <video:content_loc>https://www.nusatechsolutions.company/videos/portfolio-demo-05.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
   </url>
   <url><loc>https://www.nusatechsolutions.company/?lang=id</loc><lastmod>2026-06-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.nusatechsolutions.company/?lang=fr</loc><lastmod>2026-06-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>

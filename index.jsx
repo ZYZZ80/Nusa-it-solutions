@@ -100,6 +100,49 @@ const caseStudies = [
     { title: "Esmeralda Vacation Club Website", result: "Premium vacation ownership website connected to WhatsApp and email leads.", points: ["Luxury brand presentation", "SEO-ready structure", "Inquiry-focused CTAs"] }
 ];
 
+const videoShowcases = [
+    {
+        title: "Living Asia Hospitality Website",
+        category: "Hotel Group Website",
+        text: "A polished hospitality experience presenting hotels, island destinations, curated stays, reviews, and direct WhatsApp support.",
+        video: "/videos/portfolio-demo-01.mp4",
+        poster: "/videos/portfolio-demo-01-poster.png",
+        duration: "15 sec"
+    },
+    {
+        title: "Esmeralda Vacation Ownership Website",
+        category: "Vacation Club Website",
+        text: "An interactive walkthrough of the Caribbean World Mahdia ownership offer, buyer journey, exchange model, and trust messaging.",
+        video: "/videos/portfolio-demo-02.mp4",
+        poster: "/videos/portfolio-demo-02-poster.png",
+        duration: "19 sec"
+    },
+    {
+        title: "Esmeralda Vacation Club CRM",
+        category: "Sales & Operations CRM",
+        text: "A working CRM pipeline for leads, apartments, exchange requests, payments, reservations, and priority follow-up actions.",
+        video: "/videos/portfolio-demo-03.mp4",
+        poster: "/videos/portfolio-demo-03-poster.png",
+        duration: "20 sec"
+    },
+    {
+        title: "TourToko Marketplace",
+        category: "Travel Marketplace",
+        text: "A tour marketplace with verified agencies, destination filters, package comparison, seller onboarding, and quotation requests.",
+        video: "/videos/portfolio-demo-04.mp4",
+        poster: "/videos/portfolio-demo-04-poster.png",
+        duration: "33 sec"
+    },
+    {
+        title: "Multi-Hotel Vacation Club CRM",
+        category: "Hospitality Management System",
+        text: "A multi-property command center for hotel concepts, sales pipelines, lead conversion, payments, and ownership inventory.",
+        video: "/videos/portfolio-demo-05.mp4",
+        poster: "/videos/portfolio-demo-05-poster.png",
+        duration: "30 sec"
+    }
+];
+
 const trustBadges = [
     "Based in Jakarta, Indonesia",
     "Serving local and international clients",
@@ -988,6 +1031,55 @@ function CaseStudySection({ lang, items }) {
     );
 }
 
+function VideoShowcaseSection({ lang, items }) {
+    const copy = function (text) { return translateCopy(lang || "en", text); };
+    const videos = items || localizeContent(lang || "en", videoShowcases);
+    return (
+        <section id="project-videos" className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-20" style={{ background: "linear-gradient(135deg, #070B18 0%, #111827 48%, #160B2F 100%)" }}>
+            <FloatingBlobs variant="section" />
+            <div className="relative z-10 mx-auto max-w-7xl">
+                <FadeIn>
+                    <SectionTitle
+                        eyebrow={copy("Project Videos")}
+                        title={copy("See the systems in motion.")}
+                        text={copy("Short walkthroughs of websites, CRM dashboards, hospitality systems, and travel platforms built by NusaTech Solutions.")}
+                    />
+                </FadeIn>
+                <div className="grid gap-6 lg:grid-cols-2">
+                    {videos.map(function (item, index) {
+                        return (
+                            <FadeIn key={item.video} delay={index * 0.06} className={index === 0 ? "lg:col-span-2" : ""}>
+                                <article className="luxBorder group overflow-hidden rounded-[2rem]">
+                                    <div className={"relative overflow-hidden bg-black " + (index === 0 ? "aspect-video" : "aspect-[16/10]")}>
+                                        <video
+                                            controls
+                                            playsInline
+                                            preload="metadata"
+                                            poster={item.poster}
+                                            className="h-full w-full object-cover"
+                                            aria-label={item.title + " video demonstration"}
+                                        >
+                                            <source src={item.video} type="video/mp4" />
+                                        </video>
+                                        <span className="pointer-events-none absolute right-4 top-4 rounded-full border border-white/15 bg-black/65 px-3 py-1 text-xs font-black text-white backdrop-blur">
+                                            {item.duration}
+                                        </span>
+                                    </div>
+                                    <div className="p-5 sm:p-7">
+                                        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#F6A08A]">{item.category}</p>
+                                        <h3 className="mt-3 text-xl font-black text-white sm:text-2xl">{item.title}</h3>
+                                        <p className="mt-3 leading-7 text-slate-400">{item.text}</p>
+                                    </div>
+                                </article>
+                            </FadeIn>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
+
 const LANGS = {
     en: {
         metaTitle: "NusaTech Solutions | Websites & CRM Indonesia",
@@ -1283,6 +1375,7 @@ function DigitalStudioWebsite() {
         processSteps,
         serviceLandingPages,
         caseStudies,
+        videoShowcases,
         trustBadges,
         navLinks
     });
@@ -1437,6 +1530,8 @@ function DigitalStudioWebsite() {
             <PartnersSection lang={lang} />
 
             <CaseStudySection lang={lang} items={c.caseStudies} />
+
+            <VideoShowcaseSection lang={lang} items={c.videoShowcases} />
 
             <section id="work" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-20">
                 <div className="mx-auto max-w-7xl">
